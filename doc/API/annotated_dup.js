@@ -1,0 +1,26 @@
+var annotated_dup =
+[
+    [ "umdsd_dstat_config_msg_stct", "structumdsd__dstat__config__msg__stct.html", "structumdsd__dstat__config__msg__stct" ],
+    [ "umdsd_dstat_config_record_stct", "structumdsd__dstat__config__record__stct.html", "structumdsd__dstat__config__record__stct" ],
+    [ "umdsd_dstat_connection_attribute_msg_stct", "structumdsd__dstat__connection__attribute__msg__stct.html", "structumdsd__dstat__connection__attribute__msg__stct" ],
+    [ "umdsd_dstat_connection_attribute_record_stct", "structumdsd__dstat__connection__attribute__record__stct.html", "structumdsd__dstat__connection__attribute__record__stct" ],
+    [ "umdsd_dstat_connection_permission_msg_stct", "structumdsd__dstat__connection__permission__msg__stct.html", "structumdsd__dstat__connection__permission__msg__stct" ],
+    [ "umdsd_dstat_connection_permission_record_stct", "structumdsd__dstat__connection__permission__record__stct.html", "structumdsd__dstat__connection__permission__record__stct" ],
+    [ "umdsd_dstat_connection_pertopic_msg_stct", "structumdsd__dstat__connection__pertopic__msg__stct.html", "structumdsd__dstat__connection__pertopic__msg__stct" ],
+    [ "umdsd_dstat_connection_pertopic_record_stct", "structumdsd__dstat__connection__pertopic__record__stct.html", "structumdsd__dstat__connection__pertopic__record__stct" ],
+    [ "umdsd_dstat_connection_receiver_msg_stct", "structumdsd__dstat__connection__receiver__msg__stct.html", "structumdsd__dstat__connection__receiver__msg__stct" ],
+    [ "umdsd_dstat_connection_receiver_record_stct", "structumdsd__dstat__connection__receiver__record__stct.html", "structumdsd__dstat__connection__receiver__record__stct" ],
+    [ "umdsd_dstat_connection_source_msg_stct", "structumdsd__dstat__connection__source__msg__stct.html", "structumdsd__dstat__connection__source__msg__stct" ],
+    [ "umdsd_dstat_connection_source_record_stct", "structumdsd__dstat__connection__source__record__stct.html", "structumdsd__dstat__connection__source__record__stct" ],
+    [ "umdsd_dstat_connection_summary_msg_stct", "structumdsd__dstat__connection__summary__msg__stct.html", "structumdsd__dstat__connection__summary__msg__stct" ],
+    [ "umdsd_dstat_connection_summary_record_stct", "structumdsd__dstat__connection__summary__record__stct.html", "structumdsd__dstat__connection__summary__record__stct" ],
+    [ "umdsd_dstat_connection_totaltopic_msg_stct", "structumdsd__dstat__connection__totaltopic__msg__stct.html", "structumdsd__dstat__connection__totaltopic__msg__stct" ],
+    [ "umdsd_dstat_connection_totaltopic_record_stct", "structumdsd__dstat__connection__totaltopic__record__stct.html", "structumdsd__dstat__connection__totaltopic__record__stct" ],
+    [ "umdsd_dstat_mallinfo_msg_stct", "structumdsd__dstat__mallinfo__msg__stct.html", "structumdsd__dstat__mallinfo__msg__stct" ],
+    [ "umdsd_dstat_mallinfo_record_stct", "structumdsd__dstat__mallinfo__record__stct.html", "structumdsd__dstat__mallinfo__record__stct" ],
+    [ "umdsd_dstat_msg_hdr_t_stct", "structumdsd__dstat__msg__hdr__t__stct.html", "structumdsd__dstat__msg__hdr__t__stct" ],
+    [ "umdsd_dstat_smartheap_msg_stct", "structumdsd__dstat__smartheap__msg__stct.html", "structumdsd__dstat__smartheap__msg__stct" ],
+    [ "umdsd_dstat_smartheap_record_stct", "structumdsd__dstat__smartheap__record__stct.html", "structumdsd__dstat__smartheap__record__stct" ],
+    [ "umdsd_dstat_worker_msg_stct", "structumdsd__dstat__worker__msg__stct.html", "structumdsd__dstat__worker__msg__stct" ],
+    [ "umdsd_dstat_worker_record_stct", "structumdsd__dstat__worker__record__stct.html", "structumdsd__dstat__worker__record__stct" ]
+];
