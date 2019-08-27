@@ -85,8 +85,9 @@ Enhancements for UMDS 6.12&nbsp;&nbsp;<small><a href="#enhancementsforumds6_12">
 <p>The following new features and enhancements apply to the UMDS product.</p>
 <ul>
 <li>
-<b>UMDS Daemon Stats.</b> A new method of monitoring the UMDS server. The same information which is currently available on the server' web monitor can now be published on a normal UM topic. See <a class="elRef" doxygen="/29W/Amun/home/sford/sfordmac_REL_UMDS_6_12/29West/umds/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/daemonstatistics.html">Daemon Statistics</a>. </li>
+<b>UMDS Daemon Stats.</b> A new method of monitoring the UMDS server. The same information which is currently available on the server' web monitor can now be published on a normal UM topic. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/daemonstatistics.html">Daemon Statistics</a>. </li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>The Windows .NET client package is not offered in UMDS 6.12. This is because no changes were made to the client for version 6.12. <b>Users are directed to continue using the UMDS version 6.0 .NET client.</b> Be aware that although the Java client files are included in the UMDS 6.12 Linux package, no changes were made to the Java client as well. The files are included to have a consistent package.</dd></dl>
 <p><br />
  </p>
 <h2><a class="anchor" id="fixedlimitationsforumds6_12"></a>
@@ -101,8 +102,16 @@ Fixed Limitations for UMDS 6.12&nbsp;&nbsp;<small><a href="#fixedlimitationsforu
 <td>10382 </td><td><p class="starttd"><b>FIXED:</b> <em>Running the UMDS server with a UM version of 6.11 or later generates the following benign warning message:</em> </p><pre>
 Core-5688-28: WARNING: receiver config variable use_transport_thread is
  deprecated. Has no effect.
-</pre><p class="endtd">The warning was caused because the UMDS server is incompatible with Transport Threads (MTT), and actively disables it during initialization. This generates the warning message in UM 6.11 and beyond. The UMDS server now detects the version of the underlying UM and only disables MTT for versions that support it. </p>
+</pre><p>The warning was caused because the UMDS server is incompatible with Transport Threads (MTT), and actively disables it during initialization. This generates the warning message in UM 6.11 and beyond. The UMDS server now detects the version of the underlying UM and only disables MTT for versions that support it.</p>
+<p class="endtd"></p>
 </td></tr>
+<tr>
+<td>10002 </td><td><p class="starttd"><b>FIXED:</b> <em>Server can fail with a fatal assert:</em> </p><pre>
+failed assertion "worker_conn==umdsd_src-&gt;worker_conn"
+</pre><p class="endtd"></p>
+</td></tr>
+<tr>
+<td>9935 </td><td><b>FIXED:</b> <em>Server can fail with a segmentation fault in <code>umdsd_stats_queue_process_cmds</code>.</em> </td></tr>
 </table>
 <p><br />
  </p>
@@ -124,7 +133,7 @@ Known Limitations for UMDS&nbsp;&nbsp;<small><a href="#knownlimitationsforumds">
 </td></tr>
 <tr>
 <td>8581 </td><td><p class="starttd">Sending request messages on a topic subscribed by a pre-6.0 UMDS client causes the client to disconnect from the UMDS server with the following log message: </p><pre>
-WARNING :Error reading parameter 49:<a class="elRef" doxygen="/29W/Amun/home/sford/sfordmac_REL_UMDS_6_12/29West/umds/doc/UMDSReleaseNotes/umdsjavaapi.tag:../../UMDSJavaAPI/" href="../../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDS.html">com.latencybusters.umds.UMDS</a>+UMDSException:
+WARNING :Error reading parameter 49:<a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSReleaseNotes/umdsjavaapi.tag:../../UMDSJavaAPI/" href="../../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDS.html">com.latencybusters.umds.UMDS</a>+UMDSException:
 Bad data hdrid in UMDSMessageFormatter.parse()
 </pre><p class="endtd"></p>
 </td></tr>
