@@ -232,7 +232,7 @@ function newNode(o, po, text, link, childrenData, lastNode)
     return node.childrenUL;
   };
 
-  expandNode(o, node, false, false);  return node;
+  expandNode(o, node, true, true);  return node;
 }
 
 function showRoot()

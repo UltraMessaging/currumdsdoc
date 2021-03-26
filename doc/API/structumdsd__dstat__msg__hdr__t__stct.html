@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Umdsdmonmsgs.h
-   &#160;<span id="projectnumber">6.12</span>
+   &#160;<span id="projectnumber">6.13.1</span>
    </div>
   </td>
  </tr>
@@ -89,7 +89,7 @@ lbm_uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:af2f8d7475aefdf03b96db6778ef8a63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9b12f6de30473e06855ec0f300c7001"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9b12f6de30473e06855ec0f300c7001"></a>
 lbm_uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structumdsd__dstat__msg__hdr__t__stct.html#ac9b12f6de30473e06855ec0f300c7001">version</a></td></tr>
-<tr class="memdesc:ac9b12f6de30473e06855ec0f300c7001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version of the message definition. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/API/umdsuser.tag:../UMDSUserGuide/" href="../UMDSUserGuide/daemonstatistics.html#daemonstatisticsversioning">Daemon Statistics Versioning</a> for general information on versioning of these structures. <br /></td></tr>
+<tr class="memdesc:ac9b12f6de30473e06855ec0f300c7001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version of the message definition. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/API/umdsuser.tag:../UMDSUserGuide/" href="../UMDSUserGuide/daemonstatistics.html#daemonstatisticsversioning">Daemon Statistics Versioning</a> for general information on versioning of these structures. <br /></td></tr>
 <tr class="separator:ac9b12f6de30473e06855ec0f300c7001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a851dbe95f043c1910fdb7e6335c0de8b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a851dbe95f043c1910fdb7e6335c0de8b"></a>
 lbm_uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structumdsd__dstat__msg__hdr__t__stct.html#a851dbe95f043c1910fdb7e6335c0de8b">length</a></td></tr>
@@ -97,17 +97,17 @@ lbm_uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:a851dbe95f043c1910fdb7e6335c0de8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60747d97c398468f66bd96f017421c99"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60747d97c398468f66bd96f017421c99"></a>
 lbm_uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structumdsd__dstat__msg__hdr__t__stct.html#a60747d97c398468f66bd96f017421c99">tv_sec</a></td></tr>
-<tr class="memdesc:a60747d97c398468f66bd96f017421c99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Approximate timestamp when the message was sent. Represents local wall clock time from the sending host's perspective. Value is "POSIX Time" (seconds since 1-Jan-1970), but in sending host's timezone. <br /></td></tr>
+<tr class="memdesc:a60747d97c398468f66bd96f017421c99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Approximate timestamp when the message was sent. Represents UTC wall clock time from the sending host's perspective. Value is "POSIX Time" (seconds since 1-Jan-1970, UTC). <br /></td></tr>
 <tr class="separator:a60747d97c398468f66bd96f017421c99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9527be4f6be9d91e3372c8dfe623ff7c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9527be4f6be9d91e3372c8dfe623ff7c"></a>
 lbm_uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structumdsd__dstat__msg__hdr__t__stct.html#a9527be4f6be9d91e3372c8dfe623ff7c">tv_usec</a></td></tr>
 <tr class="memdesc:a9527be4f6be9d91e3372c8dfe623ff7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count of microseconds to be added to "tv_sec" to increase the precision of the timestamp. However, the accuracy of the timestamp is not guaranteed to be at the microsecond level. <br /></td></tr>
 <tr class="separator:a9527be4f6be9d91e3372c8dfe623ff7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a6c94b04040dae44c9e195129d8926a"><td class="memItemLeft" align="right" valign="top">lbm_uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structumdsd__dstat__msg__hdr__t__stct.html#a1a6c94b04040dae44c9e195129d8926a">workerId</a></td></tr>
-<tr class="memdesc:a1a6c94b04040dae44c9e195129d8926a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The worker associated with this message.  <a href="#a1a6c94b04040dae44c9e195129d8926a">More...</a><br /></td></tr>
+<tr class="memdesc:a1a6c94b04040dae44c9e195129d8926a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The worker number or index associated with this message.  <a href="#a1a6c94b04040dae44c9e195129d8926a">More...</a><br /></td></tr>
 <tr class="separator:a1a6c94b04040dae44c9e195129d8926a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab88b415a95b68a833ae0b71ae2420930"><td class="memItemLeft" align="right" valign="top">lbm_uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structumdsd__dstat__msg__hdr__t__stct.html#ab88b415a95b68a833ae0b71ae2420930">connId</a></td></tr>
-<tr class="memdesc:ab88b415a95b68a833ae0b71ae2420930"><td class="mdescLeft">&#160;</td><td class="mdescRight">The client connection associated with this message.  <a href="#ab88b415a95b68a833ae0b71ae2420930">More...</a><br /></td></tr>
+<tr class="memdesc:ab88b415a95b68a833ae0b71ae2420930"><td class="mdescLeft">&#160;</td><td class="mdescRight">The client connection index associated with this message.  <a href="#ab88b415a95b68a833ae0b71ae2420930">More...</a><br /></td></tr>
 <tr class="separator:ab88b415a95b68a833ae0b71ae2420930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -124,8 +124,9 @@ lbm_uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
       </table>
 </div><div class="memdoc">
 
-<p>The client connection associated with this message. </p>
-<p>Set to <a class="el" href="umdsdmonmsgs_8h.html#a3c5abc3a867cc89246e58a9370e6a09f">UMDS_DSTAT_CONN_NA</a> when the message is not associated with a specific client connection. </p>
+<p>The client connection index associated with this message. </p>
+<p>Set to <a class="el" href="umdsdmonmsgs_8h.html#a3c5abc3a867cc89246e58a9370e6a09f">UMDS_DSTAT_CONN_NA</a> when the message is not associated with a specific client connection.</p>
+<p>Note that the connection index is zero-based <code>0..num_connections-1</code>. The index is by worker. I.e. each worker's connections are numbered from 0 to the number of connections which that worker is handling. </p>
 
 </div>
 </div>
@@ -139,8 +140,11 @@ lbm_uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
       </table>
 </div><div class="memdoc">
 
-<p>The worker associated with this message. </p>
-<p>Set to <a class="el" href="umdsdmonmsgs_8h.html#a171fbfb2c558af6b322ad0273fa478bb">UMDS_DSTAT_WORKER_NA</a> when the message is not associated with a specific worker. </p>
+<p>The worker number or index associated with this message. </p>
+<p>To maintain consistency with the Web Monitor, this field is presented differently under different circumstances, depending on the next field, <code>"connId"</code>.</p>
+<p>If <code>"connId"</code> is valid (not <a class="el" href="umdsdmonmsgs_8h.html#a3c5abc3a867cc89246e58a9370e6a09f">UMDS_DSTAT_CONN_NA</a>), then <code>"workerId"</code> is zero-based <code>0..num_workers-1</code>, to correspond with the web monitor's <em>worker index</em>, part of the web monitor's "x.y" connection ID (where "x" is the <em>worker index</em>, and "y" is the <em>connection index</em>).</p>
+<p>If <code>"connId"</code> is not valid (set to <a class="el" href="umdsdmonmsgs_8h.html#a3c5abc3a867cc89246e58a9370e6a09f">UMDS_DSTAT_CONN_NA</a>), then <code>"workerId"</code> is one-based <code>1..num_workers</code>, corresponding to the web mon's <em>worker number</em>.</p>
+<p>There are some statistics message (e.g. memory usage) which are not specific to any worker or connection, in which case '"workerId"' is set to <a class="el" href="umdsdmonmsgs_8h.html#a171fbfb2c558af6b322ad0273fa478bb">UMDS_DSTAT_WORKER_NA</a>. </p>
 
 </div>
 </div>

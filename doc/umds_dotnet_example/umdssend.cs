@@ -45,6 +45,9 @@ class umdssend:UMDSServerConnection
 	"  -P msec = pause after each send msec milliseconds\n" + 
 	"  -s num_secs = Print statistics every num_secs\n" + 
 	"  -U username = set the user name and prompt for password\n" +
+    "  -T tls = use encrypted communication\n" +
+    "  -t truststore = truststore file path\n" +
+    "  -p truststore-password = truststore password\n" +
 	"  -v = be verbose in reporting to the console\n" ;
 	
 	internal int num_topics = 1;
@@ -68,6 +71,9 @@ class umdssend:UMDSServerConnection
 	internal int closeCount = 0;
 	internal bool loggedOut = false;
 	internal bool sendAppName = true;
+    internal System.String trustStoreFile = null;
+    internal System.String trustStorePassword = null;
+    internal bool useTls = true;
 	
 	private void  process_cmdline(System.String[] args)
 	{
@@ -87,6 +93,7 @@ class umdssend:UMDSServerConnection
 				case 'A':
 				case 'h':
 				case 'I':
+                case 'T':
 				case 'v':
 					/* These cases don't have args to validate */
 					System.Console.Out.WriteLine( "Parameter: " + ca[0] );
@@ -200,6 +207,18 @@ class umdssend:UMDSServerConnection
 				case 'U': 
 					username = args[argnum];
 					break;
+
+                case 'T':
+                    useTls = true;
+                    break;
+
+                case 't':
+                    trustStoreFile = args[argnum];
+                    break;
+
+                case 'p':
+                    trustStorePassword = args[argnum];
+                    break;
 
 				case 'v': 
 					verbose = true;
@@ -411,6 +430,18 @@ class umdssend:UMDSServerConnection
 				svrconn.setProperty("user", username);
 				svrconn.setProperty("password", password);
 			}
+            if (useTls)
+            {
+                svrconn.setProperty("use-tls", "1");
+            }
+            if (trustStoreFile != null)
+            {
+                svrconn.setProperty("truststore", trustStoreFile);
+            }
+            if (trustStorePassword != null)
+            {
+                svrconn.setProperty("truststore-password", trustStorePassword);
+            }
 			
 			// Set the linger value to set a timeout on draining data when
 			// closing

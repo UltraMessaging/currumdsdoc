@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UMDS .NET API
-   &#160;<span id="projectnumber">6.12</span>
+   &#160;<span id="projectnumber">6.13.1</span>
    </div>
   </td>
  </tr>
@@ -38,6 +38,7 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
     </ul>
@@ -172,7 +173,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>canSend</b> ()</td></
 </div><div class="memdoc">
 
 <p>Close this source. </p>
-<p>UMDSException When the source could not be cleanly deleted </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">UMDSException</td><td>When the source could not be cleanly deleted </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -210,7 +216,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>canSend</b> ()</td></
 
 <p>Log a receiver related message. This API currently does nothing unique, but is provided as an aid to users deriving from the class but may in the future be updated to identify the receiver automatically. </p>
 <p>the <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html" title="Base functionality for UMDS clients. ">UMDS</a> exception</p>
-<p>UMDSException </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">UMDSException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>References <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html#a349b7d9a030c80ababb9d03273f7cd50">com.latencybusters.umds.UMDS.log()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ab5b3b464f10229b13c5e8ed84aaf08db">com.latencybusters.umds.UMDSServerConnection.UMDS</a>.</p>
 
@@ -319,7 +330,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>canSend</b> ()</td></
 </div><div class="memdoc">
 
 <p>Send a request on a source topic. Requests and responses are not reliable (they may be lost), so it is expected that an application will periodically send new requests until satisfied with the responses received. </p>
-<p>The same exceptions as the <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSourceBase.html#ac5481a215f17ee6715c57f5f3d8fb50d" title="Send an array of data. ">send()</a> method, with no additional exception cases.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">The</td><td>same exceptions as the <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSourceBase.html#ac5481a215f17ee6715c57f5f3d8fb50d" title="Send an array of data. ">send()</a> method, with no additional exception cases.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">request_id</td><td>User defined and maintained id for this request. Responses and timeout notifications will reference this id. Any 32-bit signed integer value is valid. The same value can be used for multiple requests but this is not recommended as its purpose is to assist in correlating responses to each request. </td></tr>

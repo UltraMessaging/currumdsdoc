@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UMDS .NET API
-   &#160;<span id="projectnumber">6.12</span>
+   &#160;<span id="projectnumber">6.13.1</span>
    </div>
   </td>
  </tr>
@@ -38,6 +38,7 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
     </ul>
@@ -106,6 +107,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afe94c30d5c3599c8ffe4585a2485885e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverBase.html#afe94c30d5c3599c8ffe4585a2485885e">log</a> (int level, System.String comment)</td></tr>
 <tr class="memdesc:afe94c30d5c3599c8ffe4585a2485885e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a receiver related message. This API currently does nothing unique, but is provided as an aid to users deriving from the class but may in the future be updated to identify the receiver automatically.  <a href="#afe94c30d5c3599c8ffe4585a2485885e">More...</a><br /></td></tr>
 <tr class="separator:afe94c30d5c3599c8ffe4585a2485885e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc00a9be9d54bca62297e5e25d695ed3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc00a9be9d54bca62297e5e25d695ed3"></a>
+Object&#160;</td><td class="memItemRight" valign="bottom"><b>getReceiverRecoveryInfoCbArg</b> ()</td></tr>
+<tr class="separator:afc00a9be9d54bca62297e5e25d695ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>class <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSWildcardReceiver.html" title="class UMDSWildcardReceiver is the receiving class for UMDS receivers using a wildcard topic string...">UMDSWildcardReceiver</a> is the receiving class for <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html" title="Base functionality for UMDS clients. ">UMDS</a> receivers using a wildcard topic string. Applications shall derive from it to implement their receiving object. Applications must override the <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#a34cb1b3aff7f7abddfd993c45658e7cb" title="Message Delivery function. This is called to deliver messages to the application. This should be over...">onMessage()</a> API to receive data. </p>
@@ -136,7 +140,12 @@ Public Member Functions</h2></td></tr>
 
 <p>This constructor creates a wildcard receiver object on a <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html" title="Base functionality for UMDS clients. ">UMDS</a> connection. </p>
 <p>the <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html" title="Base functionality for UMDS clients. ">UMDS</a> exception</p>
-<p>UMDSException </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">UMDSException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">sconn</td><td>The server connection object this receiver is tied to. This explicitly ties the receiver to a server. </td></tr>
@@ -170,7 +179,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Close this receiver. The server will send an asynchronous ACK for this operation, queued messages will be received before the ACK is delivered. </p>
-<p>UMDSException When the receiver could not be cleanly deleted </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">UMDSException</td><td>When the receiver could not be cleanly deleted </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -208,7 +222,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Log a receiver related message. This API currently does nothing unique, but is provided as an aid to users deriving from the class but may in the future be updated to identify the receiver automatically. </p>
 <p>the <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html" title="Base functionality for UMDS clients. ">UMDS</a> exception</p>
-<p>UMDSException </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">UMDSException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>References <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html#a349b7d9a030c80ababb9d03273f7cd50">com.latencybusters.umds.UMDS.log()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ab5b3b464f10229b13c5e8ed84aaf08db">com.latencybusters.umds.UMDSServerConnection.UMDS</a>.</p>
 

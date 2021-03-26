@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UMDS .NET API
-   &#160;<span id="projectnumber">6.12</span>
+   &#160;<span id="projectnumber">6.13.1</span>
    </div>
   </td>
  </tr>
@@ -38,6 +38,7 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
     </ul>
@@ -155,6 +156,9 @@ sbyte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 System.String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#af126d20d5f12a83aa0076b72be8dd38d">topic</a></td></tr>
 <tr class="memdesc:af126d20d5f12a83aa0076b72be8dd38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The topic this message is associated with. <br /></td></tr>
 <tr class="separator:af126d20d5f12a83aa0076b72be8dd38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65f07bba59a412ccbab3a3bde1cb5332"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65f07bba59a412ccbab3a3bde1cb5332"></a>
+*Source session ID for persistent receiver *long&#160;</td><td class="memItemRight" valign="bottom"><b>source_session_id</b> = -1</td></tr>
+<tr class="separator:a65f07bba59a412ccbab3a3bde1cb5332"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>class <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html" title="class UMDSMessage is the main message class for UMDS clients. Application data is sent or received us...">UMDSMessage</a> is the main message class for <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html" title="Base functionality for UMDS clients. ">UMDS</a> clients. Application data is sent or received using <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html" title="class UMDSMessage is the main message class for UMDS clients. Application data is sent or received us...">UMDSMessage</a> objects </p>
@@ -183,7 +187,7 @@ System.String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <p>Get the length of the message. </p>
 <dl class="section return"><dt>Returns</dt><dd>The length of the message </dd></dl>
 
-<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#a34cb1b3aff7f7abddfd993c45658e7cb">com.latencybusters.umds.UMDSReceiver.onMessage()</a>.</p>
+<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#a34cb1b3aff7f7abddfd993c45658e7cb">com.latencybusters.umds.UMDSReceiver.onMessage()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a92e3c6b2f52efe645c9fd0728b29d5c3">com.latencybusters.umds.UMDSPersistentReceiver.onMessage()</a>.</p>
 
 </div>
 </div>
@@ -202,7 +206,12 @@ System.String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 </div><div class="memdoc">
 
 <p>Send a response to a request. Multiple responses may be sent for the same request. </p>
-<p>The same exceptions as the send() method, and additionally: <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1UMDSBadStateException.html" title="Exception used to indicate the connection is unauthorised. ">UMDS.UMDSBadStateException</a> - if called on a message not of REQUEST type </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">The</td><td>same exceptions as the send() method, and additionally: <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1UMDSBadStateException.html" title="Exception used to indicate the connection is unauthorised. ">UMDS.UMDSBadStateException</a> - if called on a message not of REQUEST type</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">response_msg</td><td>User specified response data. </td></tr>
@@ -226,7 +235,7 @@ System.String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <p>The server status string. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#aca531d7f6308fff7f030e3d3523844f6" title="The server status relating to this message. Only used with DISCONNECT type messages. ">status</a></dd></dl>
 
-<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#af4710f6c6c2d48b3377fb5740e831e85">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#aa591501a07ef510c2d4fade2083ea177">com.latencybusters.umds.UMDSSource.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ab38287131c436134ae2a67de2f244c62">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#aeae72334aaa55f43bbe3da527596e9e9">com.latencybusters.umds.UMDSServerConnection.send()</a>.</p>
+<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#af4710f6c6c2d48b3377fb5740e831e85">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a6a9ea4c9ff490ec347030e197ed8f21d">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#aa591501a07ef510c2d4fade2083ea177">com.latencybusters.umds.UMDSSource.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ab38287131c436134ae2a67de2f244c62">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#aeae72334aaa55f43bbe3da527596e9e9">com.latencybusters.umds.UMDSServerConnection.send()</a>.</p>
 
 </div>
 </div>
@@ -243,7 +252,7 @@ System.String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" h
 <p>The type of data in this message. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage_1_1MSG__TYPE.html" title="The types of data in a UMDSMessage. ">MSG_TYPE</a></dd></dl>
 
-<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#af4710f6c6c2d48b3377fb5740e831e85">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#aa591501a07ef510c2d4fade2083ea177">com.latencybusters.umds.UMDSSource.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ab38287131c436134ae2a67de2f244c62">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerThread.html#ae8f784adafd31e0f9d595ac56e137400">com.latencybusters.umds.UMDSServerThread.UMDSServerThread()</a>.</p>
+<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#af4710f6c6c2d48b3377fb5740e831e85">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a6a9ea4c9ff490ec347030e197ed8f21d">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#aa591501a07ef510c2d4fade2083ea177">com.latencybusters.umds.UMDSSource.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ab38287131c436134ae2a67de2f244c62">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerThread.html#ae8f784adafd31e0f9d595ac56e137400">com.latencybusters.umds.UMDSServerThread.UMDSServerThread()</a>.</p>
 
 </div>
 </div>

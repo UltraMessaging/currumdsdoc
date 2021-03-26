@@ -56,7 +56,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="contents">
 <div class="textblock"><p> 
 <img src="infa_logo.png" width="400" height="138" alt="Informatica"/><br/><br/>
-<big><b>UMDS</b></big> <small>(Version 6.12)</small><br/>
+<big><b>UMDS</b></big> <small>(Version 6.13.1)</small><br/>
 <br/><br/><br/>
 <center class="mytitle">UMDS Release Notes</center>
 <br/><br/><br/>
@@ -65,6 +65,9 @@ $(document).ready(function(){initNavTree('index.html','');});
  </p>
 <h1><a class="anchor" id="firstsect"></a>
 Introduction&nbsp;&nbsp;<small><a href="#firstsect">&lt;-</a></small></h1>
+<p>This document describes the important changes made to the UMDS product. This document is cumulative from UMDS version 6.0 till now.</p>
+<p>For policies and procedures related to Ultra Messaging Technical Support, see <a href="https://ultramessaging.github.io/UM_Support.html">UM Support</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>The UMDS product is based on the Ultra Messaging (UM) product. Users of UMDS are assumed to have familiarity with the UM product line. See the <a href="https://ultramessaging.github.io/currdoc/">Ultra Messaging Documentation Set</a>. In particular, review the <a href="https://ultramessaging.github.io/currdoc/doc/ChangeLog/index.html">UM Release Notes</a> documentation for the UM version you are using.</dd></dl>
 <p><b>&copy; Copyright Informatica LLC 2004-2019.</b></p>
 <p>This software and documentation are provided only under a separate license agreement containing restrictions on use and disclosure. No part of this document may be reproduced or transmitted in any form, by any means (electronic, photocopying, recording or otherwise) without prior consent of Informatica LLC.</p>
 <p>A current list of Informatica trademarks is available on the web at <a href="https://www.informatica.com/trademarks.html">https://www.informatica.com/trademarks.html</a>.</p>
@@ -73,6 +76,37 @@ Introduction&nbsp;&nbsp;<small><a href="#firstsect">&lt;-</a></small></h1>
 <p>The information in this documentation is subject to change without notice. If you find any problems in this documentation, please report them to us in writing at Informatica LLC 2100 Seaport Blvd. Redwood City, CA 94063.</p>
 <p>Informatica products are warranted according to the terms and conditions of the agreements under which they are provided. <br />
 INFORMATICA LLC PROVIDES THE INFORMATION IN THIS DOCUMENT "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND ANY WARRANTY OR CONDITION OF NON-INFRINGEMENT.</p>
+<p><br />
+ </p>
+<h1><a class="anchor" id="umdsversion6_13_1"></a>
+UMDS Version 6.13.1&nbsp;&nbsp;<small><a href="#umdsversion6_13_1">&lt;-</a></small></h1>
+<p>The most-significant updates to UMDS version 6.13.1 is the introduction of persistence and client/server encryption (TLS).</p>
+<p><br />
+ </p>
+<h2><a class="anchor" id="enhancementsforumds6_13_1"></a>
+Enhancements for UMDS 6.13.1&nbsp;&nbsp;<small><a href="#enhancementsforumds6_13_1">&lt;-</a></small></h2>
+<p>The following new features and enhancements apply to the UMDS product.</p>
+<ul>
+<li>
+<p class="startli"><b>Persistence.</b> UMDS now supports receiving Ultra Messaging persisted messages. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#usingumdspersistence">Using UMDS Persistence</a></p>
+<p class="endli"></p>
+</li>
+<li>
+<b>Client Encryption.</b> UMDS now supports TLS encryption between clients and the UMDS server. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a>. </li>
+</ul>
+<p><br />
+ </p>
+<h2><a class="anchor" id="fixedlimitationsforumds6_13_1"></a>
+Fixed Limitations for UMDS 6.13.1&nbsp;&nbsp;<small><a href="#fixedlimitationsforumds6_13_1">&lt;-</a></small></h2>
+<p>The following bug fixes apply to the UMDS product.</p>
+<table class="doxtable">
+<tr>
+<th>Change Request </th><th><p class="starttd">Description</p>
+<p class="endtd"></p>
+</th></tr>
+<tr>
+<td>11040 </td><td><b>FIXED:</b> <em>The <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/daemonstatistics.html">Daemon Statistics</a> feature has a slow memory leak.</em> </td></tr>
+</table>
 <p><br />
  </p>
 <h1><a class="anchor" id="umdsversion6_12"></a>
@@ -85,7 +119,7 @@ Enhancements for UMDS 6.12&nbsp;&nbsp;<small><a href="#enhancementsforumds6_12">
 <p>The following new features and enhancements apply to the UMDS product.</p>
 <ul>
 <li>
-<b>UMDS Daemon Stats.</b> A new method of monitoring the UMDS server. The same information which is currently available on the server' web monitor can now be published on a normal UM topic. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/daemonstatistics.html">Daemon Statistics</a>. </li>
+<b>UMDS Daemon Stats.</b> A new method of monitoring the UMDS server. The same information which is currently available on the server' web monitor can now be published on a normal UM topic. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/daemonstatistics.html">Daemon Statistics</a>. </li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>The Windows .NET client package is not offered in UMDS 6.12. This is because no changes were made to the client for version 6.12. <b>Users are directed to continue using the UMDS version 6.0 .NET client.</b> Be aware that although the Java client files are included in the UMDS 6.12 Linux package, no changes were made to the Java client as well. The files are included to have a consistent package.</dd></dl>
 <p><br />
@@ -112,93 +146,6 @@ failed assertion "worker_conn==umdsd_src-&gt;worker_conn"
 </td></tr>
 <tr>
 <td>9935 </td><td><b>FIXED:</b> <em>Server can fail with a segmentation fault in <code>umdsd_stats_queue_process_cmds</code>.</em> </td></tr>
-</table>
-<p><br />
- </p>
-<h1><a class="anchor" id="knownlimitationsforumds"></a>
-Known Limitations for UMDS&nbsp;&nbsp;<small><a href="#knownlimitationsforumds">&lt;-</a></small></h1>
-<p>The following open limitations applies to the UMDS product.</p>
-<table class="doxtable">
-<tr>
-<th>Change Request </th><th><p class="starttd">Description</p>
-<p class="endtd"></p>
-</th></tr>
-<tr>
-<td>8411 </td><td><p class="starttd">License keys including the UMSM product option are not recognized as valid when running a version of Ultra Messaging earlier than 6.5. The UMSM license is only required to run the System Monitoring components. Enabling monitoring of applications and other products does not require a license containing UMSM.</p>
-<p class="endtd"></p>
-</td></tr>
-<tr>
-<td>8579 </td><td><p class="starttd">The <code>UMDSMessage</code> <code>low_seqnum</code> field is not the low sequence number of a fragmented message as documented. Instead, it contains the <code>seqnum</code> field value.</p>
-<p class="endtd"></p>
-</td></tr>
-<tr>
-<td>8581 </td><td><p class="starttd">Sending request messages on a topic subscribed by a pre-6.0 UMDS client causes the client to disconnect from the UMDS server with the following log message: </p><pre>
-WARNING :Error reading parameter 49:<a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSReleaseNotes/umdsjavaapi.tag:../../UMDSJavaAPI/" href="../../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDS.html">com.latencybusters.umds.UMDS</a>+UMDSException:
-Bad data hdrid in UMDSMessageFormatter.parse()
-</pre><p class="endtd"></p>
-</td></tr>
-<tr>
-<td>8582 </td><td><p class="starttd">The UMDS web monitor incorrectly displays <code>can-reqresp=1</code> on the client details page for older UMDS clients that do not have the capability to participate in request/response.</p>
-<p class="endtd"></p>
-</td></tr>
-<tr>
-<td>8586 </td><td><p class="starttd">If UM automatic monitoring is enabled on the server with an invalid monitoring configuration, the server does not properly report the configuration error, but instead issues log messages such as the following example: </p><pre>
-Warning: Attempt to send data to tidx 0 when source not initialized
-</pre><p class="endtd"></p>
-</td></tr>
-<tr>
-<td>8587 </td><td><p class="starttd">For a source that matches a wildcard receiver pattern, creates a per-topic queue, then ends, the per-topic queue is not deleted until the wildcard receiver gets deleted.</p>
-<p class="endtd"></p>
-</td></tr>
-<tr>
-<td>8695 </td><td><p class="starttd">If the UMDS Server is running with Ultra Messaging 6.7 or earlier, UMDS Client receivers do not correctly format responses to request messages that have traversed a UM Router from sources in a different Topic Resolution Domain. Instead of delivering such response messages, the originating requester logs the following warning message: </p><pre>
-Core-6259-25: Deserialize Response: Context in domain 1 received response with
-no domain:...
-</pre><p class="endtd"></p>
-</td></tr>
-<tr>
-<td>9078 </td><td><p class="starttd">The UMDS Server might crash under the following conditions: </p><ul>
-<li>
-LBM_DEBUG_MASK is set to a value that includes the 0x10 topic resolution bit. </li>
-<li>
-The UMDS Server is running with Ultra Messaging 6.7 or earlier. </li>
-</ul>
-<p>To avoid this problem, do one of the following: </p><ul>
-<li>
-Do not set LBM_DEBUG_MASK to a value that includes the 0x10 topic resolution bit. </li>
-<li>
-Upgrade to a version of Ultra Messaging later than 6.7. </li>
-</ul>
-<p class="endtd"></p>
-</td></tr>
-<tr>
-<td>9118 </td><td><p class="starttd">The <code>umdsresponse</code> sample application erroneously requires an argument for the wildcard command-line option <code>-W</code>. To work around this limitation, either supply a dummy argument, such as "&lt;tt&gt;-W dummy&lt;/tt&gt;" or add a <code>case 'W':</code> near line 90 of the <code>umdsresponse.cs</code> file.</p>
-<p class="endtd"></p>
-</td></tr>
-<tr>
-<td>9129 </td><td><p class="starttd">You cannot set option <code>umq_queue_name</code>. If you set this option, instead of flagging error during the source create and exiting the source create, Ultra Messaging attempts to send and then logs the following warning message: </p><pre>
-[warning] Umds-8499-2: LBM error while sending message: CoreApi-5688-707:
-Not currently registered with enough UMQ queue instances
-</pre><p class="endtd"></p>
-</td></tr>
-<tr>
-<td>9130 </td><td><p class="starttd">You cannot use Request-Response with MIM.</p>
-<p class="endtd"></p>
-</td></tr>
-<tr>
-<td>9131 </td><td><p class="starttd">If you send a Request on a topic where no topic queue is configured, Ultra Messaging creates a per-topic queue anyway. This queue is unbound in size, although Requests do time out. For full control, configure a topic queue with size limit on these topics.</p>
-<p class="endtd"></p>
-</td></tr>
-<tr>
-<td>9132 </td><td><p class="starttd">If a wildcard receiver matches a topic for which no per-topic queue is configured, Ultra Messaging creates a per-topic queue anyway, but then still uses the default queue to deliver that topic's messages, and not the per-topic queue.</p>
-<p class="endtd"></p>
-</td></tr>
-<tr>
-<td>9133 </td><td><p class="starttd">If option <code>&lt;server-reconnect&gt;</code> is at the default settings of <code>0</code> and <code>client-write=yes</code>, and you have not set the UMDS Client to reconnect with the <code>setProperty()</code> API, a disconnected UMDS Client does not reconnect as expected. To insure proper behavior, use the <code>setProperty()</code> API to configure the UMDS Client for the desired reconnect mode.</p>
-<p class="endtd"></p>
-</td></tr>
-<tr>
-<td>9134 </td><td>Server reports the client authentication indicated by the client not the authentication method used by the server. When the server is configured for authentication none, and the client supplies an application name and / or a user name and password, the server will report that authentication type basic was used, when it was not. </td></tr>
 </table>
 <p><br />
  </p>
@@ -451,6 +398,94 @@ server-ka-threshold 11,000
 System.NullReferenceException: Object reference not set to an instance of an
 object...
 </pre> </td></tr>
+</table>
+<p><br />
+ </p>
+<h1><a class="anchor" id="knownlimitationsforumds"></a>
+Known Problems and Limitations for UMDS&nbsp;&nbsp;<small><a href="#knownlimitationsforumds">&lt;-</a></small></h1>
+<p>The following open limitations applies to the UMDS product.</p>
+<p>You should also review the known limitations for your underlying Ultra Messaging version. See the "Known Problems and Limitations" section in the UM Release Notes documentation for your UM version's, available at <a href="https://ultramessaging.github.io/um_doc.html">Informatica Ultra Messaging Documentation Sets</a>.</p>
+<table class="doxtable">
+<tr>
+<th>Change Request </th><th><p class="starttd">Description</p>
+<p class="endtd"></p>
+</th></tr>
+<tr>
+<td>8411 </td><td><p class="starttd">License keys including the UMSM product option are not recognized as valid when running a version of Ultra Messaging earlier than 6.5. The UMSM license is only required to run the System Monitoring components. Enabling monitoring of applications and other products does not require a license containing UMSM.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>8579 </td><td><p class="starttd">The <code>UMDSMessage</code> <code>low_seqnum</code> field is not the low sequence number of a fragmented message as documented. Instead, it contains the <code>seqnum</code> field value.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>8581 </td><td><p class="starttd">Sending request messages on a topic subscribed by a pre-6.0 UMDS client causes the client to disconnect from the UMDS server with the following log message: </p><pre>
+WARNING :Error reading parameter 49:<a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSReleaseNotes/umdsjavaapi.tag:../../UMDSJavaAPI/" href="../../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDS.html">com.latencybusters.umds.UMDS</a>+UMDSException:
+Bad data hdrid in UMDSMessageFormatter.parse()
+</pre><p class="endtd"></p>
+</td></tr>
+<tr>
+<td>8582 </td><td><p class="starttd">The UMDS web monitor incorrectly displays <code>can-reqresp=1</code> on the client details page for older UMDS clients that do not have the capability to participate in request/response.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>8586 </td><td><p class="starttd">If UM automatic monitoring is enabled on the server with an invalid monitoring configuration, the server does not properly report the configuration error, but instead issues log messages such as the following example: </p><pre>
+Warning: Attempt to send data to tidx 0 when source not initialized
+</pre><p class="endtd"></p>
+</td></tr>
+<tr>
+<td>8587 </td><td><p class="starttd">For a source that matches a wildcard receiver pattern, creates a per-topic queue, then ends, the per-topic queue is not deleted until the wildcard receiver gets deleted.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>8695 </td><td><p class="starttd">If the UMDS Server is running with Ultra Messaging 6.7 or earlier, UMDS Client receivers do not correctly format responses to request messages that have traversed a UM Router from sources in a different Topic Resolution Domain. Instead of delivering such response messages, the originating requester logs the following warning message: </p><pre>
+Core-6259-25: Deserialize Response: Context in domain 1 received response with
+no domain:...
+</pre><p class="endtd"></p>
+</td></tr>
+<tr>
+<td>9078 </td><td><p class="starttd">The UMDS Server might crash under the following conditions: </p><ul>
+<li>
+LBM_DEBUG_MASK is set to a value that includes the 0x10 topic resolution bit. </li>
+<li>
+The UMDS Server is running with Ultra Messaging 6.7 or earlier. </li>
+</ul>
+<p>To avoid this problem, do one of the following: </p><ul>
+<li>
+Do not set LBM_DEBUG_MASK to a value that includes the 0x10 topic resolution bit. </li>
+<li>
+Upgrade to a version of Ultra Messaging later than 6.7. </li>
+</ul>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>9118 </td><td><p class="starttd">The <code>umdsresponse</code> sample application erroneously requires an argument for the wildcard command-line option <code>-W</code>. To work around this limitation, either supply a dummy argument, such as "&lt;tt&gt;-W dummy&lt;/tt&gt;" or add a <code>case 'W':</code> near line 90 of the <code>umdsresponse.cs</code> file.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>9129 </td><td><p class="starttd">You cannot set option <code>umq_queue_name</code>. If you set this option, instead of flagging error during the source create and exiting the source create, Ultra Messaging attempts to send and then logs the following warning message: </p><pre>
+[warning] Umds-8499-2: LBM error while sending message: CoreApi-5688-707:
+Not currently registered with enough UMQ queue instances
+</pre><p class="endtd"></p>
+</td></tr>
+<tr>
+<td>9130 </td><td><p class="starttd">You cannot use Request-Response with MIM.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>9131 </td><td><p class="starttd">If you send a Request on a topic where no topic queue is configured, Ultra Messaging creates a per-topic queue anyway. This queue is unbound in size, although Requests do time out. For full control, configure a topic queue with size limit on these topics.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>9132 </td><td><p class="starttd">If a wildcard receiver matches a topic for which no per-topic queue is configured, Ultra Messaging creates a per-topic queue anyway, but then still uses the default queue to deliver that topic's messages, and not the per-topic queue.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>9133 </td><td><p class="starttd">If option <code>&lt;server-reconnect&gt;</code> is at the default settings of <code>0</code> and <code>client-write=yes</code>, and you have not set the UMDS Client to reconnect with the <code>setProperty()</code> API, a disconnected UMDS Client does not reconnect as expected. To insure proper behavior, use the <code>setProperty()</code> API to configure the UMDS Client for the desired reconnect mode.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td>9134 </td><td>Server reports the client authentication indicated by the client not the authentication method used by the server. When the server is configured for authentication none, and the client supplies an application name and / or a user name and password, the server will report that authentication type basic was used, when it was not. </td></tr>
 </table>
 </div></div><!-- contents -->
 </div><!-- doc-content -->

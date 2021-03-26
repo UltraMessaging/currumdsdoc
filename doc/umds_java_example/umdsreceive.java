@@ -50,6 +50,9 @@ class umdsreceive extends UMDSServerConnection {
 			+ "  -s num_secs = print statistics every num_secs along with bandwidth\n"
 			+ "  -S address:port = Server address and port\n"
 			+ "  -U username = set the user name and prompt for password\n"
+			+ "  -T tls = use encrypted communication\n"
+			+ "  -t truststore = truststore file path\n"
+			+ "  -p truststore-password = truststore password\n"
 			+ "  -v = be verbose about each message\n"
 			+ "  -W = Wildcard topic";
 
@@ -63,6 +66,9 @@ class umdsreceive extends UMDSServerConnection {
 	String topic = null;
 	String username = null;
 	String password = null;
+	boolean useTls = false;
+	String trustStoreFile = null;
+	String trustStorePassword = null;
 	boolean wildcard = false;
 	boolean auth_failed = false;
 	int createCount = 0;
@@ -73,68 +79,80 @@ class umdsreceive extends UMDSServerConnection {
 	private void process_cmdline(String[] args) throws Exception {
 		int c = -1;
 
-		Getopt gopt = new Getopt(appl_name, args, "+c:M:N:P:L:S:s:U:AhvW");
+		Getopt gopt = new Getopt(appl_name, args, "+c:M:N:P:L:S:s:U:t:p:TAhvW");
 		while ((c = gopt.getopt()) != -1) {
 			switch (c) {
-			case 'A' :
-				sendAppName = false;
-				break;
+				case 'A' :
+					sendAppName = false;
+					break;
 
-			case 'c':
-				conffname = gopt.getOptarg();
-				break;
+				case 'c':
+					conffname = gopt.getOptarg();
+					break;
 
-			case 'h':
-				help = true;
-				throw new Exception("Help:");
+				case 'h':
+					help = true;
+					throw new Exception("Help:");
 
-			case 'M':
-				try {
-					end_msgs = Integer.parseInt(gopt.getOptarg());
-				} catch (Exception e) {
-					throw new Exception("Invalid number of messages:"
-							+ gopt.getOptarg());
-				}
-				break;
+				case 'M':
+					try {
+						end_msgs = Integer.parseInt(gopt.getOptarg());
+					} catch (Exception e) {
+						throw new Exception("Invalid number of messages:"
+								+ gopt.getOptarg());
+					}
+					break;
 
-			case 'N':
-				try {
-					numtopics = Integer.parseInt(gopt.getOptarg());
-				} catch (Exception e) {
-					throw new Exception("Invalid number of receivers:"
-							+ gopt.getOptarg());
-				}
-				break;
+				case 'N':
+					try {
+						numtopics = Integer.parseInt(gopt.getOptarg());
+					} catch (Exception e) {
+						throw new Exception("Invalid number of receivers:"
+								+ gopt.getOptarg());
+					}
+					break;
 
-			case 's':
-				try {
-					stats_ms = Long.parseLong(gopt.getOptarg()) * 1000;
-				} catch (Exception e) {
+				case 's':
+					try {
+						stats_ms = Long.parseLong(gopt.getOptarg()) * 1000;
+					} catch (Exception e) {
+						throw new Exception(
+								"Invalid number of seconds for statistics:"
+										+ gopt.getOptarg());
+					}
+					break;
+
+				case 'S':
+					server_list = gopt.getOptarg();
+					break;
+
+				case 'U':
+					username = gopt.getOptarg();
+					break;
+
+				case 'T':
+					useTls = true;
+					break;
+
+				case 't':
+					trustStoreFile = gopt.getOptarg();
+					break;
+
+				case 'p':
+					trustStorePassword = gopt.getOptarg();
+					break;
+
+				case 'v':
+					verbose = true;
+					break;
+
+				case 'W':
+					wildcard = true;
+					break;
+
+				default:
 					throw new Exception(
-							"Invalid number of seconds for statistics:"
-									+ gopt.getOptarg());
-				}
-				break;
-
-			case 'S':
-				server_list = gopt.getOptarg();
-				break;
-
-			case 'U':
-				username = gopt.getOptarg();
-				break;
-
-			case 'v':
-				verbose = true;
-				break;
-
-			case 'W':
-				wildcard = true;
-				break;
-
-			default:
-				throw new Exception(
-						"Error occurred processing command line options");
+							"Error occurred processing command line options");
 			}
 		}
 		if(gopt.getOptind() >= args.length)
@@ -328,6 +346,15 @@ class umdsreceive extends UMDSServerConnection {
 			if (username != null) {
 				svrconn.setProperty("user", username);
 				svrconn.setProperty("password", password);
+			}
+			if (useTls) {
+				svrconn.setProperty("use-tls", "1");
+			}
+			if (trustStoreFile != null) {
+				svrconn.setProperty("truststore", trustStoreFile);
+			}
+			if (trustStorePassword != null) {
+				svrconn.setProperty("truststore-password", trustStorePassword);
 			}
 		} catch (UMDSException ex) {
 			System.err.println("Error setting UMDS configuration: "

@@ -7,8 +7,6 @@ import java.text.NumberFormat;
 
 // See https://communities.informatica.com/infakb/faq/5/Pages/80008.aspx
 import org.openmdx.uses.gnu.getopt.*;
-import java.sql.Timestamp;
-import java.util.Date;
 /*
  Copyright (c) 2005-2019 Informatica Corporation  Permission is granted to licensees to use
  or alter this software for any purpose, including commercial applications,
@@ -47,6 +45,9 @@ class umdssend extends UMDSServerConnection {
 			+ "  -P msec = pause after each send msec milliseconds\n"
 			+ "  -s num_secs = Print statistics every num_secs\n"
 			+ "  -U username = set the user name and prompt for password\n"
+			+ "  -T tls = use encrypted communcation\n"
+			+ "  -t truststore = truststore file path\n"
+			+ "  -p truststore-password = truststore password\n"
 			+ "  -v be verbose\n" ;
 
 	int num_topics = 1;
@@ -63,6 +64,9 @@ class umdssend extends UMDSServerConnection {
 	String topic = null;
 	String username = null;
 	String password = null;
+	boolean useTls = false;
+	String trustStoreFile = null;
+	String trustStorePassword = null;
 	boolean auth_failed = false;
 	boolean help = false;
 	boolean connsend = false;
@@ -71,98 +75,111 @@ class umdssend extends UMDSServerConnection {
 	boolean loggedOut = false;
 	boolean sendAppName = true;
 
+
 	private void process_cmdline(String[] args) throws Exception {
 		int c = -1;
 
-		Getopt gopt = new Getopt(appl_name, args, "+c:AhIvl:M:N:P:L:S:s:U:");
+		Getopt gopt = new Getopt(appl_name, args, "+c:AhIvl:M:N:P:L:S:s:U:t:p:T");
 		while ((c = gopt.getopt()) != -1) {
 			System.err.println("Parameter: " + (char)c + "\tArgument: " + gopt.getOptarg() );
 			switch (c) {
-			case 'A' :
-				sendAppName = false;
-				break;
+				case 'A' :
+					sendAppName = false;
+					break;
 
-			case 'c':
-				conffname = gopt.getOptarg();
-				break;
+				case 'c':
+					conffname = gopt.getOptarg();
+					break;
 
-			case 'I':
-				connsend = true;
-				break;
+				case 'I':
+					connsend = true;
+					break;
 
-			case 'h':
-				help = true;
-				throw new Exception("Help:");
+				case 'h':
+					help = true;
+					throw new Exception("Help:");
 
-			case 'l':
-				try {
-					msglen = Integer.parseInt(gopt.getOptarg());
-				} catch (Exception e) {
-					throw new Exception("Invalid message length:"
-							+ gopt.getOptarg());
-				}
-				break;
+				case 'l':
+					try {
+						msglen = Integer.parseInt(gopt.getOptarg());
+					} catch (Exception e) {
+						throw new Exception("Invalid message length:"
+								+ gopt.getOptarg());
+					}
+					break;
 
-			case 'L':
-				try {
-					linger = Integer.parseInt(gopt.getOptarg());
-				} catch (Exception e) {
-					throw new Exception("Invalid Linger time:"
-							+ gopt.getOptarg());
-				}
-				break;
+				case 'L':
+					try {
+						linger = Integer.parseInt(gopt.getOptarg());
+					} catch (Exception e) {
+						throw new Exception("Invalid Linger time:"
+								+ gopt.getOptarg());
+					}
+					break;
 
-			case 'M':
-				try {
-					msgs = Integer.parseInt(gopt.getOptarg());
-				} catch (Exception e) {
-					throw new Exception("Invalid number of messages:"
-							+ gopt.getOptarg());
-				}
-				break;
+				case 'M':
+					try {
+						msgs = Integer.parseInt(gopt.getOptarg());
+					} catch (Exception e) {
+						throw new Exception("Invalid number of messages:"
+								+ gopt.getOptarg());
+					}
+					break;
 
-			case 'N':
-				try {
-					num_topics = Integer.parseInt(gopt.getOptarg());
-				} catch (Exception e) {
-					throw new Exception("Invalid number of topics:"
-							+ gopt.getOptarg());
-				}
-				break;
-			case 'P':
-				try {
-					pause = Integer.parseInt(gopt.getOptarg());
-				} catch (Exception e) {
-					throw new Exception("Invalid pause time:"
-							+ gopt.getOptarg());
-				}
-				break;
+				case 'N':
+					try {
+						num_topics = Integer.parseInt(gopt.getOptarg());
+					} catch (Exception e) {
+						throw new Exception("Invalid number of topics:"
+								+ gopt.getOptarg());
+					}
+					break;
+				case 'P':
+					try {
+						pause = Integer.parseInt(gopt.getOptarg());
+					} catch (Exception e) {
+						throw new Exception("Invalid pause time:"
+								+ gopt.getOptarg());
+					}
+					break;
 
-			case 's':
-				try {
-					stats_ms = Long.parseLong(gopt.getOptarg()) * 1000;
-				} catch (Exception e) {
+				case 's':
+					try {
+						stats_ms = Long.parseLong(gopt.getOptarg()) * 1000;
+					} catch (Exception e) {
+						throw new Exception(
+								"Invalid number of seconds for statistics:"
+										+ gopt.getOptarg());
+					}
+					break;
+
+				case 'S':
+					server_list = gopt.getOptarg();
+					break;
+
+				case 'U':
+					username = gopt.getOptarg();
+					break;
+
+				case 'T':
+					useTls = true;
+					break;
+
+				case 't':
+					trustStoreFile = gopt.getOptarg();
+					break;
+
+				case 'p':
+					trustStorePassword = gopt.getOptarg();
+					break;
+
+				case 'v':
+					verbose = true;
+					break;
+
+				default:
 					throw new Exception(
-							"Invalid number of seconds for statistics:"
-									+ gopt.getOptarg());
-				}
-				break;
-
-			case 'S':
-				server_list = gopt.getOptarg();
-				break;
-
-			case 'U':
-				username = gopt.getOptarg();
-				break;
-
-			case 'v':
-				verbose = true;
-				break;
-
-			default:
-				throw new Exception(
-						"Error occurred processing command line options");
+							"Error occurred processing command line options");
 			}
 		}
 		if (gopt.getOptind() >= args.length)
@@ -359,6 +376,15 @@ class umdssend extends UMDSServerConnection {
 				svrconn.setProperty("password", password);
 			}
 
+			if (useTls) {
+				svrconn.setProperty("use-tls", "1");
+			}
+			if (trustStoreFile != null) {
+				svrconn.setProperty("truststore", trustStoreFile);
+			}
+			if (trustStorePassword != null) {
+				svrconn.setProperty("truststore-password", trustStorePassword);
+			}
 			// Set the linger value to set a timeout on draining data when
 			// closing
 			if (linger > 0)
@@ -419,7 +445,7 @@ class umdssend extends UMDSServerConnection {
 		 * and offset for payload verification
 		 */
 		byte[] message = new byte[msglen];
-		byte[] dummymsg = "UMDS".getBytes();
+		byte[] dummymsg = "UMDSSEND.JAVA-TEST-APP-TEST-MSG".getBytes();
 		System.arraycopy(dummymsg, 0, message, 0,
 				dummymsg.length < message.length ? dummymsg.length
 						: message.length);
@@ -563,6 +589,7 @@ class umdssend extends UMDSServerConnection {
 					/* This can occur while auto-reconnecting */
 					try {
 						// Give the connection time to reestablish
+						System.out.println("Error sending message: auth error:" + ex.toString());
 						Thread.sleep(10);
 					} catch (InterruptedException e) {
 					}
@@ -574,6 +601,7 @@ class umdssend extends UMDSServerConnection {
 					} catch (InterruptedException e) {
 					}
 				} catch (UMDSDisconnectException ex) {
+					System.out.println("Error sending message: disconnect:" + ex.toString());
 					try {
 						// Give the connection time to reestablish
 						Thread.sleep(10);
@@ -617,6 +645,11 @@ class umdssend extends UMDSServerConnection {
 
 		// If we aren't connected, we can't tell the server to delete sources
 		if ( true != auth_failed ) {
+			try {
+				System.err.println("Lingering for a second before closing source.");
+				Thread.sleep( 5000 );
+			} catch (InterruptedException e) {
+			}
 			Closes = 0;
 			for (int n = 0; n < srcs.length; n++) {
 				if ( null != srcs[n] )

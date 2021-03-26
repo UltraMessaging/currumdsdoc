@@ -56,13 +56,13 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="contents">
 <div class="textblock"><p> 
 <img src="infa_logo.png" width="400" height="138" alt="Informatica"/><br/><br/>
-<big><b>UMDS</b></big> <small>(Version 6.12)</small><br/>
+<big><b>UMDS</b></big> <small>(Version 6.13.1)</small><br/>
 <br/><br/><br/>
 <center class="mytitle">UMDS User Guide</center>
 <br/><br/><br/>
 [&nbsp;<a href="html1/index.html">Single-page HTML</a>&nbsp;]&nbsp;&nbsp;|&nbsp;&nbsp;[&nbsp;<a href="UMDSUserGuide=en.pdf">PDF</a>&nbsp;]
 <br/><br/>
-<h1>Introduction&nbsp;&nbsp;<small><a href="#umdsdaemonstatisticsexamplefiles">&lt;-</a></small></h1>
+<h1>Introduction</h1>
 </p>
 <p><b>&copy; Copyright Informatica LLC 2004-2019.</b></p>
 <p>This software and documentation are provided only under a separate license agreement containing restrictions on use and disclosure. No part of this document may be reproduced or transmitted in any form, by any means (electronic, photocopying, recording or otherwise) without prior consent of Informatica LLC.</p>
@@ -76,11 +76,13 @@ INFORMATICA LLC PROVIDES THE INFORMATION IN THIS DOCUMENT "AS IS" WITHOUT WARRAN
  </p>
 <h1><a class="anchor" id="umdsoverview"></a>
 UMDS Overview&nbsp;&nbsp;<small><a href="#umdsoverview">&lt;-</a></small></h1>
-<p>This document introduces the basic concepts and design approaches used by Ultra Messaging Desktop Services (UMDS). The reader is assumed to already be familiar with basic UM concepts. See the <a href="../Design/index.html">UM Concepts Guide</a> for more general information about UM.</p>
+<p>This document introduces the basic concepts and design approaches used by Ultra Messaging Desktop Services (UMDS). The reader is assumed to already be familiar with basic UM concepts. See the <a href="https://ultramessaging.github.io/currdoc/">Ultra Messaging documentation set</a> for full information about UM.</p>
 <p>Ultra Messaging Desktop Services (UMDS) extends Ultra Messaging to diverse desktop networks throughout an enterprise. With the UMDS client-server model, desktop applications can receive and send topic-based messages.</p>
 <p>The UMDS Server runs on a server-class machine and communicates over TCP connections with desktop-class machines. A UMDS Server can also communicate with other Ultra Messaging components, such as UMS applications and other UMDS Servers.</p>
-<p>Customer desktop applications call the UMDS API to send and receive messages over a TCP connection to the UMDS Server. This API is a subset of Ultra Messaging functionality, for Java and .NET. The UMDS Server routes messages to clients according to topic interest. The UMDS Server also routes messages between desktop UMDS Client applications and other Ultra Messaging components. For message security in the UMDS desktop environment, you can use application authentication and user authentication.</p>
-<p>UMDS, you can centrally manage UMDS Client functionality from the UMDS Server, and use the Web Monitor to view client connection statistics and the server's current configuration file.</p>
+<p>Customer desktop applications call the UMDS API to send and receive messages over a TCP connection to the UMDS Server. This API is a subset of Ultra Messaging functionality, for Java and .NET. The UMDS Server routes messages to clients according to topic interest. The UMDS Server also routes messages between desktop UMDS Client applications and other Ultra Messaging components.</p>
+<p>You can centrally manage UMDS Client functionality from the UMDS Server, and use the Web Monitor to view client connection statistics and the server's current configuration file.</p>
+<p>UMDS supports redundant servers so that if one server fails, clients can reconnect to an alternate server and resume messaging (see <a class="el" href="umdsclient.html#umdsserverlist">UMDS Server List</a>).</p>
+<dl class="section note"><dt>Note</dt><dd>In this document, links to the UMDS API reference documentation will always be to the Java API. The .NET and Java APIs are identical for all practical purposes, and the two reference documents can be used interchangeably.</dd></dl>
 <p><br />
  </p>
 <h1><a class="anchor" id="umdsarchitecture"></a>

@@ -14,6 +14,11 @@ var hierarchy =
     [ "com.latencybusters.umds.UMDS.LOG_LEVEL", "classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1LOG__LEVEL.html", null ],
     [ "com.latencybusters.umds.UMDSMessage.MSG_STATUS", "classcom_1_1latencybusters_1_1umds_1_1UMDSMessage_1_1MSG__STATUS.html", null ],
     [ "com.latencybusters.umds.UMDSMessage.MSG_TYPE", "classcom_1_1latencybusters_1_1umds_1_1UMDSMessage_1_1MSG__TYPE.html", null ],
+    [ "TcpClient", null, [
+      [ "com.latencybusters.umds.UMDSIOStream", "classcom_1_1latencybusters_1_1umds_1_1UMDSIOStream.html", [
+        [ "com.latencybusters.umds.UMDSSslIOStream", "classcom_1_1latencybusters_1_1umds_1_1UMDSSslIOStream.html", null ]
+      ] ]
+    ] ],
     [ "com.latencybusters.umds.UMDS", "classcom_1_1latencybusters_1_1umds_1_1UMDS.html", null ],
     [ "com.latencybusters.umds.UMDSDump", "classcom_1_1latencybusters_1_1umds_1_1UMDSDump.html", null ],
     [ "com.latencybusters.umds.UMDSInternalMessage", "classcom_1_1latencybusters_1_1umds_1_1UMDSInternalMessage.html", null ],
@@ -22,10 +27,13 @@ var hierarchy =
     [ "com.latencybusters.umds.UMDSMessageOptions", "classcom_1_1latencybusters_1_1umds_1_1UMDSMessageOptions.html", null ],
     [ "com.latencybusters.umds.UMDSParameter", "classcom_1_1latencybusters_1_1umds_1_1UMDSParameter.html", null ],
     [ "com.latencybusters.umds.UMDSReceiverBase", "classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverBase.html", [
+      [ "com.latencybusters.umds.UMDSPersistentReceiver", "classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html", null ],
       [ "com.latencybusters.umds.UMDSReceiver", "classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html", [
         [ "com.latencybusters.umds.UMDSWildcardReceiver", "classcom_1_1latencybusters_1_1umds_1_1UMDSWildcardReceiver.html", null ]
       ] ]
     ] ],
+    [ "com.latencybusters.umds.UMDSReceiverRecoveryInfo", "classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfo.html", null ],
+    [ "com.latencybusters.umds.UMDSReceiverRecoveryInfoCallback", "interfacecom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfoCallback.html", null ],
     [ "com.latencybusters.umds.UMDSServerConnection", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html", [
       [ "com.latencybusters.umds.UMDSTestApp", "classcom_1_1latencybusters_1_1umds_1_1UMDSTestApp.html", null ]
     ] ],

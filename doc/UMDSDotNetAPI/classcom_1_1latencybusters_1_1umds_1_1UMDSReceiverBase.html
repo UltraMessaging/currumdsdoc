@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UMDS .NET API
-   &#160;<span id="projectnumber">6.12</span>
+   &#160;<span id="projectnumber">6.13.1</span>
    </div>
   </td>
  </tr>
@@ -38,6 +38,7 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
     </ul>
@@ -81,8 +82,9 @@ Inheritance diagram for com.latencybusters.umds.UMDSReceiverBase:</div>
  <div class="center">
   <img src="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverBase.png" usemap="#com.latencybusters.umds.UMDSReceiverBase_map" alt=""/>
   <map id="com.latencybusters.umds.UMDSReceiverBase_map" name="com.latencybusters.umds.UMDSReceiverBase_map">
-<area href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html" title="class UMDSReceiver is the receiving class for UMDS receivers. Applications shall derive from it to im..." alt="com.latencybusters.umds.UMDSReceiver" shape="rect" coords="0,56,295,80"/>
-<area href="classcom_1_1latencybusters_1_1umds_1_1UMDSWildcardReceiver.html" title="class UMDSWildcardReceiver is the receiving class for UMDS receivers using a wildcard topic string..." alt="com.latencybusters.umds.UMDSWildcardReceiver" shape="rect" coords="0,112,295,136"/>
+<area href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html" title="Class to receive persisted messages by a topic or wildcard receiver. " alt="com.latencybusters.umds.UMDSPersistentReceiver" shape="rect" coords="0,56,300,80"/>
+<area href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html" title="class UMDSReceiver is the receiving class for UMDS receivers. Applications shall derive from it to im..." alt="com.latencybusters.umds.UMDSReceiver" shape="rect" coords="310,56,610,80"/>
+<area href="classcom_1_1latencybusters_1_1umds_1_1UMDSWildcardReceiver.html" title="class UMDSWildcardReceiver is the receiving class for UMDS receivers using a wildcard topic string..." alt="com.latencybusters.umds.UMDSWildcardReceiver" shape="rect" coords="310,112,610,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -97,6 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afe94c30d5c3599c8ffe4585a2485885e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverBase.html#afe94c30d5c3599c8ffe4585a2485885e">log</a> (int level, System.String comment)</td></tr>
 <tr class="memdesc:afe94c30d5c3599c8ffe4585a2485885e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a receiver related message. This API currently does nothing unique, but is provided as an aid to users deriving from the class but may in the future be updated to identify the receiver automatically.  <a href="#afe94c30d5c3599c8ffe4585a2485885e">More...</a><br /></td></tr>
 <tr class="separator:afe94c30d5c3599c8ffe4585a2485885e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc00a9be9d54bca62297e5e25d695ed3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc00a9be9d54bca62297e5e25d695ed3"></a>
+Object&#160;</td><td class="memItemRight" valign="bottom"><b>getReceiverRecoveryInfoCbArg</b> ()</td></tr>
+<tr class="separator:afc00a9be9d54bca62297e5e25d695ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>class <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverBase.html" title="class UMDSReceiverBase is the collection of common functionality for all UMDS receiving classes...">UMDSReceiverBase</a> is the collection of common functionality for all <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html" title="Base functionality for UMDS clients. ">UMDS</a> receiving classes. It is purely internal. </p>
@@ -135,7 +140,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Log a receiver related message. This API currently does nothing unique, but is provided as an aid to users deriving from the class but may in the future be updated to identify the receiver automatically. </p>
 <p>the <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html" title="Base functionality for UMDS clients. ">UMDS</a> exception</p>
-<p>UMDSException </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">UMDSException</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>References <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html#a349b7d9a030c80ababb9d03273f7cd50">com.latencybusters.umds.UMDS.log()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ab5b3b464f10229b13c5e8ed84aaf08db">com.latencybusters.umds.UMDSServerConnection.UMDS</a>.</p>
 
@@ -171,7 +181,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#af4710f6c6c2d48b3377fb5740e831e85">com.latencybusters.umds.UMDSReceiver</a>.</p>
+<p>Implemented in <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a6a9ea4c9ff490ec347030e197ed8f21d">com.latencybusters.umds.UMDSPersistentReceiver</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#af4710f6c6c2d48b3377fb5740e831e85">com.latencybusters.umds.UMDSReceiver</a>.</p>
 
 </div>
 </div>
@@ -205,7 +215,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#a5816ec6062ffbcbcc092b628e41c9821">com.latencybusters.umds.UMDSReceiver</a>.</p>
+<p>Implemented in <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a9fadb635b2cba616872961101a7601c7">com.latencybusters.umds.UMDSPersistentReceiver</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#a5816ec6062ffbcbcc092b628e41c9821">com.latencybusters.umds.UMDSReceiver</a>.</p>
 
 <p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerThread.html#ae8f784adafd31e0f9d595ac56e137400">com.latencybusters.umds.UMDSServerThread.UMDSServerThread()</a>.</p>
 

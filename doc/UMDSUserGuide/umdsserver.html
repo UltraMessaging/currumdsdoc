@@ -80,16 +80,16 @@ $(document).ready(function(){initNavTree('umdsserver.html','');});
 <h1><a class="anchor" id="userauthentication"></a>
 User Authentication&nbsp;&nbsp;<small><a href="#userauthentication">&lt;-</a></small></h1>
 <p>You can assign a user or application name, or both, and a password, to authenticate your client applications or individual desktop users. Authentication occurs when a user or application requests a server connection.</p>
-<p>You assign user passwords in the <code>&lt;user&gt;</code> element in the <a class="el" href="umdsserverconfiguration.html#basicauthenticationfile">Basic Authentication File</a>, which you specify in the <code>&lt;authentication&gt;</code> element in the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">umdsd Configuration File</a>. You can specify an application or user name in the <a class="el" href="umdsserverconfiguration.html#umdsuserelement">UMDS user Element</a>. If you specify <code>&lt;none/&gt;</code> for the <code>&lt;authentication&gt;</code> element in the umdsd configuration file, the UMDS Server authenticates all applications and users.</p>
+<p>You assign user passwords in the <a class="el" href="umdsserverconfiguration.html#umdsuserelement">UMDS user Element</a> in the <a class="el" href="umdsserverconfiguration.html#basicauthenticationfile">Basic Authentication File</a>, which you specify in the <a class="el" href="umdsserverconfiguration.html#umdsxmlauthentication">UMDS Element "&lt;authentication&gt;"</a> in the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">umdsd Configuration File</a>. You can specify an application or user name in the <a class="el" href="umdsserverconfiguration.html#umdsuserelement">UMDS user Element</a>. If you specify <a class="el" href="umdsserverconfiguration.html#umdsxmlnone">&lt;none&gt;</a> for the <a class="el" href="umdsserverconfiguration.html#umdsxmlauthentication">UMDS Element "&lt;authentication&gt;"</a> in the umdsd configuration file, the UMDS Server authenticates all applications and users.</p>
 <p><br />
  </p>
 <h1><a class="anchor" id="clientapplicationparameters"></a>
 Client Application Parameters&nbsp;&nbsp;<small><a href="#clientapplicationparameters">&lt;-</a></small></h1>
-<p>When a client application requests a server connection, the UMDS Server looks at a sequence of <code>&lt;client&gt;</code>element settings to determine what parameters to apply to the client application.</p>
+<p>When a client application requests a server connection, the UMDS Server looks at a sequence of <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">&lt;client&gt;</a> element settings to determine what parameters to apply to the client application.</p>
 <p>Operating parameters control the degree of resource utilization allowed by a client application, such as keep-alive intervals and thresholds. You can override all client application parameter values from multiple sources.</p>
 <p>With overrides, you can select the optimal trade offs between flexibility and centralized control of client configuration. For example, a deployment that requires control would allow the client application to override fewer settings, which might simplify the job of the application programmer, but increase the responsibility of the server administrator.</p>
-<p>UMDS Server factory defaults are the least restrictive, allowing clients to change any setting. However, you can configure a more restrictive, generic set of UMDS daemon <code>&lt;client&gt;</code>element settings that disable client overrides for certain settings. You can also set up acceptable ranges of values for other settings. Plus, you can then configure other applications or users to use different settings, which maybe more or less restrictive than the generic set of parameters.</p>
-<p>The following table shows the sequence of <code>&lt;client&gt;</code>element settings the UMDS Server goes through when choosing the operating parameters for a particular UMDS Client application connection.</p>
+<p>UMDS Server factory defaults are the least restrictive, allowing clients to change any setting. However, you can configure a more restrictive, generic set of UMDS daemon <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">UMDS Element "&lt;client&gt;"</a> settings that disable client overrides for certain settings. You can also set up acceptable ranges of values for other settings. Plus, you can then configure other applications or users to use different settings, which maybe more or less restrictive than the generic set of parameters.</p>
+<p>The following table shows the sequence of <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">UMDS Element "&lt;client&gt;"</a> settings the UMDS Server goes through when choosing the operating parameters for a particular UMDS Client application connection.</p>
 <table class="doxtable">
 <tr>
 <th>Step </th><th>Client Settings Used by UMDS Server </th><th>Can Configure Parameters </th><th><p class="starttd">Can Authenticate User</p>
@@ -100,7 +100,7 @@ Client Application Parameters&nbsp;&nbsp;<small><a href="#clientapplicationparam
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>2 </td><td><b>umdsdconfiguration file <code>&lt;client&gt;</code>element settings.</b> Overrides factory defaults. You can apply different settings to different UMDS Servers across the enterprise. </td><td>Yes </td><td><p class="starttd">No</p>
+<td>2 </td><td><b>umdsdconfiguration file <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">UMDS Element "&lt;client&gt;"</a> settings.</b> Overrides factory defaults. You can apply different settings to different UMDS Servers across the enterprise. </td><td>Yes </td><td><p class="starttd">No</p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
@@ -153,19 +153,20 @@ If the server receives no messages from the client, it disconnects the client wh
 <h1><a class="anchor" id="messagequeue"></a>
 Message Queue&nbsp;&nbsp;<small><a href="#messagequeue">&lt;-</a></small></h1>
 <p>The UMDS Server maintains a default message queue for the messages that it forwards to UMDS Client receiving applications. Because connections to UMDS Client applications use receiver-paced TCP, the UMDS Server queues these messages to prevent loss from fast senders.</p>
-<p>In the UMDS Server configuration file, you can configure the queue's age limit and size limit with the <code>&lt;server&gt;</code> element <code>msg-age-limit</code> and <code>msg-q-size-limit</code> attributes. The UMDS Server deletes messages that stay in the queue longer than the age limit. If the queue reaches the configured size limit, the UMDS Server deletes the oldest messages in the queue to make room for new messages.</p>
+<p>In the UMDS Server configuration file, you can configure the queue's age limit and size limit with the <b>"msg-age-limit"</b> and <b>"msg-q-size-limit"</b> attributes of the <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">UMDS Element "&lt;server&gt;"</a>. The UMDS Server deletes messages that stay in the queue longer than the age limit. If the queue reaches the configured size limit, the UMDS Server deletes the oldest messages in the queue to make room for new messages.</p>
 <dl class="section note"><dt>Note</dt><dd>When considering memory usage, be aware that when the UMDS Server creates sources and receivers, it also creates other buffers and caches. Examples include the topic Late Join message cache, and buffers created using the standard Ultra Messaging configuration options. Note also that when UMDS configuration files do not specify standard Ultra Messaging configuration options, these options use default values.</dd></dl>
 <p><br />
  </p>
 <h2><a class="anchor" id="pertopicmessagequeues"></a>
 Per-Topic Message Queues&nbsp;&nbsp;<small><a href="#pertopicmessagequeues">&lt;-</a></small></h2>
-<p>When the default queue reaches its size limit and a new message arrives, the UMDS Server deletes the oldest message. This might be undesirable if the oldest message is for a different topic than the newest message. The UMDS Server can also maintain per-topic message queues to address the possibility of message loss across topics when using the single default message queue. You can configure topics in the UMDS Server configuration file to use their own message queue or the default queue with the <code>&lt;topics&gt;</code> element. You can configure topics by pattern matching or explicit names. Each queue maintains its own statistics, which you can view in the Web Monitor Client Details page.</p>
+<p>When the default queue reaches its size limit and a new message arrives, the UMDS Server deletes the oldest message. This might be undesirable if the oldest message is for a different topic than the newest message. The UMDS Server can also maintain per-topic message queues to address the possibility of message loss across topics when using the single default message queue. You can configure topics in the UMDS Server configuration file to use their own message queue or the default queue with the <a class="el" href="umdsserverconfiguration.html#umdsxmltopic">UMDS Element "&lt;topic&gt;"</a>. You can configure topics by pattern matching or explicit names. Each queue maintains its own statistics, which you can view in the Web Monitor Client Details page.</p>
 <p><br />
  </p>
 <h2><a class="anchor" id="configuringmessagequeuesize"></a>
 Configuring Message Queue Size&nbsp;&nbsp;<small><a href="#configuringmessagequeuesize">&lt;-</a></small></h2>
 <p>Use the following information and examples to determine the optimum settings for the <code>msg-q-size-limit</code> parameter, and to properly size the physical memory contained in the UMDS Server host machine.</p>
-<p>n</p>
+<p><br />
+ </p>
 <h2><a class="anchor" id="approximatingperqueuememoryuse"></a>
 Approximating Per-Queue Memory Use&nbsp;&nbsp;<small><a href="#approximatingperqueuememoryuse">&lt;-</a></small></h2>
 <p>The <code>msg-q-size-limit</code> parameter sets the maximum number of message payload bytes that the UMDS Server allows before deleting older messages to make room for new messages. This limit does not include the Ultra Messaging overhead of approximately 900 bytes per message.</p>

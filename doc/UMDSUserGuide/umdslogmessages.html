@@ -126,7 +126,7 @@ is recommended.
 <tr>
 <td>Umds-10372-39: UMDS received unknown lbm_msg_t type x [s][s]</td><td>UM daemon monitor received unknown lbm_msg_t type.</td><td>Stop the source of unknown messages to the daemon monitor. </td></tr>
 <tr>
-<td>Umds-10372-3: lbmaux_context_attr_setopt_from_file() failed, s</td><td>Failure while setting up extra config opts for UMDS daemon monitor</td><td>Check attributes in "lbm-config" config file specified in the "daemonmonitor" section of the UMDS's xml file </td></tr>
+<td>Umds-10372-3: lbmaux_context_attr_setopt_from_file() failed, s</td><td>Failure while setting up extra config opts for UMDS daemon monitor</td><td>Check attributes in "lbm-config" config file specified in the "daemon-monitor" section of umdsd's xml file </td></tr>
 <tr>
 <td>Umds-10372-40: error from umdsd_dstat_mallinfo_stat_grp_snapshot()</td><td>Failure reading malloc info stat group record</td><td>Contact Informatica Support. </td></tr>
 <tr>
@@ -142,7 +142,7 @@ is recommended.
 <tr>
 <td>Umds-10372-46: error from umdsd_dstat_conn_snapshot()</td><td>Failure reading connection stat group record</td><td>This is an information only message. </td></tr>
 <tr>
-<td>Umds-10372-47: bad worker ID returned from umdsd_getworkerID_fromstring()</td><td>The worker ID is invalid</td><td>Verify that the worker ID is within the range of Workers specified UMDS XML file </td></tr>
+<td>Umds-10372-47: bad worker ID returned from umdsd_getworkerID_fromstring()</td><td>The worker ID is invalid</td><td>Verify that the worker ID is within the range of Workers specified in umdsd's XML file </td></tr>
 <tr>
 <td>Umds-10372-48: error from umdsd_dstat_workers_snapshot()</td><td>Failure reading worker stat group record</td><td>This is an information only message </td></tr>
 <tr>
@@ -152,7 +152,7 @@ is recommended.
 <tr>
 <td>Umds-10372-50: error returned from umdsd_dstat_setinterval()</td><td>Failure changing the publishing interval for mallinfo stat group</td><td>Contact Informatica Support. </td></tr>
 <tr>
-<td>Umds-10372-51: bad worker ID returned from umdsd_getworkerID_fromstring()</td><td>The worker ID is invalid</td><td>Verify that the worker ID is within the range of workers specified in the UMDS XML file </td></tr>
+<td>Umds-10372-51: bad worker ID returned from umdsd_getworkerID_fromstring()</td><td>The worker ID is invalid</td><td>Verify that the worker ID is within the range of workers specified in the umdsd XML file </td></tr>
 <tr>
 <td>Umds-10372-52: error returned from umdsd_dstat_setinterval()</td><td>Failure changing the publishing interval for worksum stat group</td><td>Contact Informatica Support. </td></tr>
 <tr>
@@ -172,7 +172,7 @@ is recommended.
 <tr>
 <td>Umds-10372-5: unable to create context attributes: s</td><td>Failure creating lbm context for daemon stats monitor</td><td>Contact Informatica Support. </td></tr>
 <tr>
-<td>Umds-10372-60: lbmaux_src_topic_attr_setopt_from_file() failed, s</td><td>Failure while setting up extra config opts for UMDS daemon monitor source object</td><td>Check attributes in "lbm-config" config file specified in the "daemonmonitor" section of the UMDS's xml file </td></tr>
+<td>Umds-10372-60: lbmaux_src_topic_attr_setopt_from_file() failed, s</td><td>Failure while setting up extra config opts for UMDS daemon monitor source object</td><td>Check attributes in "lbm-config" config file specified in the "daemon-monitor" section of umdsd's xml file </td></tr>
 <tr>
 <td>Umds-10372-6: unable to create src topic attributes: s</td><td>Error creating source attributes for daemon stats monitor</td><td>Contact Informatica Support. </td></tr>
 <tr>
@@ -189,6 +189,60 @@ is recommended.
 <td>Umds-10759-2: umdsd_dstat_send_thread_create() error creating TL queue: s</td><td>Unable to create two-lock queue</td><td>Contact Informatica Support. </td></tr>
 <tr>
 <td>Umds-10759-3: umdsd_dstat_send_thread_main(): Error while dequeueing</td><td>Error while dequeueing from TL queue</td><td>Contact Informatica Support. </td></tr>
+<tr>
+<td>Umds-10929-01: Problem detected trying to setup a TLS context. TLS initialization failed or no configured ciphers were available.</td><td>An error occurred when creating the OpenSSL context.</td><td>Check the OpenSSL version to make sure it is the version delivered with LBM. Also check the tls_cipher_suites configuration option. </td></tr>
+<tr>
+<td>Umds-10929-10: umdsd_worker_conn_read_cb: worker_conn (p) decryption error (s)</td><td>Decrypting a UMDS message from the client resulted in an UM error.</td><td>A description of the UM error is included in the message text. </td></tr>
+<tr>
+<td>Umds-10929-11: umdsd_worker_conn_read_cb: worker_conn (p) decryption error (s)</td><td>Decrypting a UMDS message from the client resulted in an UM error.</td><td>A description of the UM error is included in the message text. </td></tr>
+<tr>
+<td>Umds-10929-20: umdsd_worker_cont_sending_cntl: worker_conn (p) encryption error (s)</td><td>Encrypting a UMDS Control message to the client resulted in an UM error.</td><td>A description of the UM error is included in the message text. </td></tr>
+<tr>
+<td>Umds-10929-21: umdsd_worker_cont_sending_data: worker_conn (p) encryption error (s)</td><td>Encrypting a UMDS Control message to the client resulted in an UM error.</td><td>A description of the UM error is included in the message text. </td></tr>
+<tr>
+<td>Umds-10929-4: TLS initialization failed : s</td><td>Initialization of SSL failed</td><td>Check OpenSSL library version and availability. </td></tr>
+<tr>
+<td>Umds-10929-635: Ultra Messaging UMDS using TLS library version [s]</td><td>Reports the version of SSL.</td><td>No resolution, this in formation is provided for audit and debugging purposes. </td></tr>
+<tr>
+<td>Umds-10958-1: Using default context and source config values for daemon stats</td><td>No "lbm-config" file was specified in the "daemon-monitor" section of umdsd's xml file. This is not a problem, but be aware that daemon statistics might be sent over the same transport session as application data. Most users choose to avoid this.</td><td>Add "lbm-config" config file specified in the "daemon-monitor" section of umdsd's xml file </td></tr>
+<tr>
+<td>Umds-10969-1: Created client thread: id[s]</td><td>The UMDS created the client thread with the reported thread ID.</td><td>This is for informational purposes only and can be ignored. </td></tr>
+<tr>
+<td>Umds-10969-2: Created DCTL thread: id[s]</td><td>UMDS created the DCTL thread with the reported thread ID.</td><td>This is for informational purposes only and can be ignored. </td></tr>
+<tr>
+<td>Umds-10969-3: Created Daemon stats send thread: id[s]</td><td>Umdsd created the daemon stats send thread with the reported thread id.</td><td>This is for informational purposes only and can be ignored. </td></tr>
+<tr>
+<td>Umds-10969-4: Created Signal handler thread: id[s]</td><td>The Umds created the Signal poller thread with the reported thread id.</td><td>This is for informational purposes only and can be ignored. </td></tr>
+<tr>
+<td>Umds-10969-5: Created MIM server thread: id[s]</td><td>The UMDS created the MIM server thread with the reported thread id.</td><td>This is for informational purposes only and can be ignored. </td></tr>
+<tr>
+<td>Umds-10969-6: Created Primary server thread: id[s]</td><td>The UMDS created the Primary server thread with the reported thread id.</td><td>This is for informational purposes only and can be ignored. </td></tr>
+<tr>
+<td>Umds-10969-7: Created Webmon thread: id[s]</td><td>The UMDS created the Webmon thread with the reported thread id.</td><td>This is for informational purposes only and can be ignored. </td></tr>
+<tr>
+<td>Umds-10969-8: Created Worker queue dispatch thread: id[s]</td><td>The UMDS created Worker queue dispatch thread with the reported thread id.</td><td>This is for informational purposes only and can be ignored. </td></tr>
+<tr>
+<td>Umds-10969-9: Created Worker thread: id[s]</td><td>The UMDS created a Worker thread with the reported thread id.</td><td>This is for informational purposes only and can be ignored. </td></tr>
+<tr>
+<td>Umds-11008-01: Source (s) is delivering msgs but has no Session ID with Source Session ID caching enabled&ndash;dropping messages</td><td>A streaming source was discovered by a UMDS Server configured to cache message per Source Session ID.</td><td>This is not necessarily an issue but messages from this source will not be delivered. </td></tr>
+<tr>
+<td>Umds-11008-02: umdsd_worker_client_rcv_create&ndash;Source Session ID caching is NOT enabled and therefore receive clients using Source Session ID caching will not be accepted.</td><td>Source Session ID caching is not enabled but a Source Session ID caching client has attempted to connect. The client will be disconnected.</td><td>The configuration needs to be corrected. </td></tr>
+<tr>
+<td>Umds-11008-03: umdsd_worker_client_rcv_create&ndash;Source Session ID caching enabled but use-late-join is disabled. CHANGING TO ENABLED</td><td>Source Session ID caching is set but use-late-join is not enabled. The use-late-join option is required and being forced to ENABLED.</td><td>The configuration needs to be corrected. </td></tr>
+<tr>
+<td>Umds-11008-04: umdsd_worker_client_rcv_create&ndash;Source Session ID caching is enabled and therefore receive clients need to support Source Session ID caching.</td><td>Source Session ID caching is enabled but a legacy client has attempted to connect. The client will be disconnected.</td><td>Use only receive clients that support Source Session ID caching. </td></tr>
+<tr>
+<td>Umds-11008-05: umdsd_worker_client_rcv_create&ndash;Source Session ID caching is enabled; topic config for this topic expected (s).</td><td>Source Session ID caching is enabled but there is no topic configuration for the topic given. The client will be disconnected.</td><td>Make sure there is topic configuration for all topics when using Source Session ID caching. </td></tr>
+<tr>
+<td>Umds-11008-10: umdsd_topic_deletion_delay_set&ndash;problem setting up the Proxy Receiver (s); no deletion delay will be implemented.</td><td>There was an error setting up the Proxy Receiver for the configured Deletion Delay.</td><td>Check topic symbol or contact support. </td></tr>
+<tr>
+<td>Umds-11008-22: umdsd_worker_client_wrcv_create&ndash;Source Session ID caching is NOT enabled and therefore receive clients using Source Session ID caching will not be accepted.</td><td>Source Session ID caching is not enabled but a Source Session ID caching client has attempted to connect. The client will be disconnected.</td><td>The configuration needs to be corrected. </td></tr>
+<tr>
+<td>Umds-11008-23: umdsd_rcv_create_func_cb&ndash;Source Session ID caching enabled but use-late-join is disabled (s). CHANGING TO ENABLED</td><td>Source Session ID caching is set but use-late-join is not enabled. The use-late-join option is required and being forced to ENABLED.</td><td>The configuration needs to be corrected. </td></tr>
+<tr>
+<td>Umds-11008-24: umdsd_worker_client_wrcv_create&ndash;Source Session ID caching is enabled and therefore receive clients need to support Source Session ID cachging.</td><td>Source Session ID caching is enabled but a legacy client has attempted to connect. The client will be disconnected.</td><td>Use only receive clients that support Source Session ID caching. </td></tr>
+<tr>
+<td>Umds-11008-25: umdsd_rcv_create_func_cb&ndash;Source Session ID caching is enabled; topic config for this topic expected (s).</td><td>Source Session ID caching is enabled but there is no required topic configuration for the topic given.</td><td>Make sure there is topic configuration for all topics when using Source Session ID caching. </td></tr>
 <tr>
 <td>Umds-4892-1: Attempt to set use_late_join failed for attrs p err(d)</td><td>ERROR: Attempt to turn use_late_join ON in the rcvr attrs failed.</td><td></td></tr>
 <tr>

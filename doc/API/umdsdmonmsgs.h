@@ -119,9 +119,8 @@ typedef struct umdsd_dstat_msg_hdr_t_stct {
 	*/
 	lbm_uint16_t length;
 	/*! \brief Approximate timestamp when the message was sent.
-	*	Represents local wall clock time from the sending host's perspective.
-	*	Value is "POSIX Time" (seconds since 1-Jan-1970),
-	*	but in sending host's timezone.
+	*	Represents UTC wall clock time from the sending host's perspective.
+	*	Value is "POSIX Time" (seconds since 1-Jan-1970, UTC).
 	*/
 	lbm_uint32_t tv_sec;
 	/*! \brief Count of microseconds to be added to "tv_sec" to increase
@@ -129,16 +128,35 @@ typedef struct umdsd_dstat_msg_hdr_t_stct {
 	*	timestamp is not guaranteed to be at the microsecond level.
 	*/
 	lbm_uint32_t tv_usec;
-	/*! \brief The worker associated with this message.
+	/*! \brief The worker number or index associated with this message.
 	*
-	*	Set to \ref UMDS_DSTAT_WORKER_NA when the message is not
-	*	associated with a specific worker.
+	*	To maintain consistency with the Web Monitor, this field is presented
+	*	differently under different circumstances, depending on the next
+	*	field, `"connId"`.
+	*
+	*	If `"connId"` is valid (not \ref UMDS_DSTAT_CONN_NA), then `"workerId"`
+	*	is zero-based `0..num_workers-1`, to correspond with the web monitor's
+	*	<i>worker index</i>, part of the web monitor's "x.y" connection ID
+	*	(where "x" is the <i>worker index</i>, and "y" is the <i>connection
+	*	index</i>).
+	*
+	*	If `"connId"` is not valid (set to \ref UMDS_DSTAT_CONN_NA), then
+	*	`"workerId"` is one-based `1..num_workers`, corresponding to the web
+	*	mon's <i>worker number</i>.
+	*
+	*	There are some statistics message (e.g. memory usage) which are not
+	*	specific to any worker or connection, in which case '"workerId"' is
+	*	set to \ref UMDS_DSTAT_WORKER_NA.
 	*/
 	lbm_uint32_t workerId;
-	/*! \brief The client connection associated with this message.
+	/*! \brief The client connection index associated with this message.
 	*
 	*	Set to \ref UMDS_DSTAT_CONN_NA when the message is not
 	*	associated with a specific client connection.
+	*
+	*	Note that the connection index is zero-based `0..num_connections-1`.
+	*	The index is by worker.  I.e. each worker's connections are numbered
+	*	from 0 to the number of connections which that worker is handling.
 	*/
 	lbm_uint32_t connId;
 } umdsd_dstat_msg_hdr_t;
@@ -162,7 +180,8 @@ typedef struct umdsd_dstat_msg_hdr_t_stct {
 *	byte-swapped if `hdr.magic` is equal to \ref LBM_UMDS_DMON_ANTIMAGIC.
 */
 typedef struct umdsd_dstat_worker_record_stct {
-	/*! \brief The worker associated with this message. */
+	/*! \brief The worker number `1..num_workers` associated with
+	*	this message. */
 	lbm_uint32_t workerId;
 	/*! \brief The number of active client connections being managed
 	*	by this worker.
@@ -811,8 +830,9 @@ typedef struct umdsd_dstat_smartheap_msg_stct {
 *	byte-swapped if `hdr.magic` is equal to \ref LBM_UMDS_DMON_ANTIMAGIC.
 */
 typedef struct umdsd_dstat_config_record_stct {
-	/*! \brief Variable-length string, null-terminated, containing
+	/*! \brief Variable-length string, NOT null-terminated, containing
 	*	the configuration.
+	*	(Use the message length to determine the length of the string data.)
 	*/
 	char data;
 } umdsd_dstat_config_record_t;

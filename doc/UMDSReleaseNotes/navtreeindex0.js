@@ -2,7 +2,7 @@ var NAVTREEINDEX0 =
 {
 "index.html":[],
 "index.html":[0],
-"knownlimitationsforumds.html":[2],
+"knownlimitationsforumds.html":[5],
 "pages.html":[],
 "umdsversion6_0.html":[3],
 "umdsversion6_0.html#enhancementsforumds6_0":[3,0],
@@ -10,7 +10,10 @@ var NAVTREEINDEX0 =
 "umdsversion6_0_200.html":[4],
 "umdsversion6_0_200.html#enhancementsforumds6_0_200":[4,0],
 "umdsversion6_0_200.html#fixedlimitationsforumds6_0_200":[4,1],
-"umdsversion6_12.html":[1],
-"umdsversion6_12.html#enhancementsforumds6_12":[1,0],
-"umdsversion6_12.html#fixedlimitationsforumds6_12":[1,1]
+"umdsversion6_12.html":[2],
+"umdsversion6_12.html#enhancementsforumds6_12":[2,0],
+"umdsversion6_12.html#fixedlimitationsforumds6_12":[2,1],
+"umdsversion6_13_1.html":[1],
+"umdsversion6_13_1.html#enhancementsforumds6_13_1":[1,0],
+"umdsversion6_13_1.html#fixedlimitationsforumds6_13_1":[1,1]
 };

@@ -42,6 +42,9 @@ class umdsreceive:UMDSServerConnection
 			"  -s num_secs = print statistics every num_secs along with bandwidth\n" + 
 			"  -S address:port = Server address and port\n" + 
 			"  -U username = set the user name and prompt for password\n" + 
+            "  -T tls = use encrypted communication\n" +
+			"  -t truststore = truststore file path\n" + 
+			"  -p truststore-password = truststore password\n" +
 			"  -v = be verbose about each message\n" + 
 			"  -W = Wildcard topic";
 	
@@ -61,6 +64,9 @@ class umdsreceive:UMDSServerConnection
 	internal int closeCount = 0;
 	internal bool help = false;
 	internal bool sendAppName = true;
+    internal System.String trustStoreFile = null;
+    internal System.String trustStorePassword = null;
+    internal bool useTls = false;
 
 	private void  process_cmdline(System.String[] args)
 	{
@@ -79,6 +85,7 @@ class umdsreceive:UMDSServerConnection
 			{
 				case 'A':
 				case 'h':
+                case 'T':
 				case 'v':
 				case 'W':
 					/* These cases don't have args to validate */
@@ -154,13 +161,23 @@ class umdsreceive:UMDSServerConnection
 				case 'U': 
 					username = args[argnum];
 					break;
-				
-				
+
+                case 'T':
+                    useTls = true;
+                    break;
+
+                case 't':
+                    trustStoreFile = args[argnum];
+                    break;
+
+                case 'p':
+                    trustStorePassword = args[argnum];
+                    break;
+
 				case 'v': 
 					verbose = true;
 					break;
-				
-				
+
 				case 'W': 
 					wildcard = true;
 					break;
@@ -375,6 +392,18 @@ class umdsreceive:UMDSServerConnection
 				svrconn.setProperty("user", username);
 				svrconn.setProperty("password", password);
 			}
+            if (useTls)
+            {
+                svrconn.setProperty("use-tls", "1");
+            }
+            if (trustStoreFile != null)
+            {
+                svrconn.setProperty("truststore", trustStoreFile);
+            }
+            if (trustStorePassword != null)
+            {
+                svrconn.setProperty("truststore-password", trustStorePassword);
+            }
 		}
 		catch (UMDSException ex)
 		{

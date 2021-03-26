@@ -271,8 +271,9 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 	case UMDS_DSTATTYPE_MALLINFO:
 	{
 		umdsd_dstat_mallinfo_msg_t * msg;
-		msg = (umdsd_dstat_mallinfo_msg_t *) aligned_msg_buffer;
 		umdsd_dstat_mallinfo_record_t * record;
+
+		msg = (umdsd_dstat_mallinfo_msg_t *) aligned_msg_buffer;
 		record = &msg->record;
 		if (msg_length < sizeof(umdsd_dstat_mallinfo_msg_t)) {
 			printf("undersized umdsd_DSTATTYPE_MALLINFO message: %d\n", size);
@@ -291,8 +292,9 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 	case UMDS_DSTATTYPE_SMARTHEAP:
 	{
 		umdsd_dstat_smartheap_msg_t *smartheap_msg;
-		smartheap_msg = (umdsd_dstat_smartheap_msg_t *)aligned_msg_buffer;
 		umdsd_dstat_smartheap_record_t * record;
+
+		smartheap_msg = (umdsd_dstat_smartheap_msg_t *)aligned_msg_buffer;
 		record = &smartheap_msg->record;
 		if (msg_length < sizeof(umdsd_dstat_smartheap_msg_t)) {
 			printf("undersized umdsd_DSTATTYPE_SMARTHEAP message: %d\n", size);
@@ -318,8 +320,9 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 	case UMDS_DSTATTYPE_CONNSUMMARY:
 		{
 			umdsd_dstat_connection_summary_msg_t * msg;
-			msg = (umdsd_dstat_connection_summary_msg_t *) aligned_msg_buffer;
 			umdsd_dstat_connection_summary_record_t *record;
+
+			msg = (umdsd_dstat_connection_summary_msg_t *) aligned_msg_buffer;
 			record = &msg->record;
 			printf("\n=================Connection (%d.%d) Summary Stats(Version: %d)=================\n%s Sent\n", msg_workerId, msg_connId, msg_version, time_buff_sent);
 			printf("                            ID:  %d\n",COND_SWAP32(msg_swap, record->id));
@@ -355,8 +358,9 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 	case UMDS_DSTATTYPE_CLIENTPERMS:
 		{
 			umdsd_dstat_connection_permission_msg_t * msg;
-			msg = (umdsd_dstat_connection_permission_msg_t *) aligned_msg_buffer;
 			int numpads, i, j;
+
+			msg = (umdsd_dstat_connection_permission_msg_t *) aligned_msg_buffer;
 			printf("\n=================Client Permissions for Connection (%d.%d) (Version: %d)====================\n%s Sent\n", COND_SWAP32(msg_swap,msg->hdr.workerId), COND_SWAP32(msg_swap,msg->hdr.connId), msg_version,time_buff_sent);
 			printf("               Permission Name : Permission Value\n");
 			for(i = 0; i < UMDS_DSTAT_NUM_CLIENT_PERMS; i++){
@@ -369,8 +373,9 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 	case UMDS_DSTATTYPE_CLIENTATTRS:
 		{
 			umdsd_dstat_connection_attribute_msg_t * msg;
-			msg = (umdsd_dstat_connection_attribute_msg_t *) aligned_msg_buffer;
 			int numpads, i, j;
+
+			msg = (umdsd_dstat_connection_attribute_msg_t *) aligned_msg_buffer;
 			printf("\n====================Client Attributes for Connection (%d.%d) (Version: %d)====================\n%s Sent\n", COND_SWAP32(msg_swap,msg->hdr.workerId), COND_SWAP32(msg_swap,msg->hdr.connId), msg_version,time_buff_sent);
 			printf("                Attribute Name : Attribute Value\n");
 			for(i = 0; i < UMDS_DSTAT_NUM_CLIENT_ATTRS; i++){
@@ -383,8 +388,9 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 	case UMDS_DSTATTYPE_WORKER:
 		{
 			umdsd_dstat_worker_msg_t *msg;
-			msg = (umdsd_dstat_worker_msg_t *) aligned_msg_buffer;
 			umdsd_dstat_worker_record_t * record;
+
+			msg = (umdsd_dstat_worker_msg_t *) aligned_msg_buffer;
 			record = &msg->record;
 			printf("\n================Worker %d Summary (Version: %d)===============\n%s Sent\n", COND_SWAP32(msg_swap, record->workerId), msg_version, time_buff_sent);	
 			printf("           Number of connections: %d\n", COND_SWAP32(msg_swap,record->num_connections));
@@ -395,9 +401,10 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 		{
 
 			umdsd_dstat_connection_pertopic_msg_t * msg;
-			msg = (umdsd_dstat_connection_pertopic_msg_t *) aligned_msg_buffer;
 			umdsd_dstat_connection_pertopic_record_t * record;
 			char *topic_name;
+
+			msg = (umdsd_dstat_connection_pertopic_msg_t *) aligned_msg_buffer;
 			record = &msg->record;
 			topic_name = (strlen(record->topic_name) == 0 ) ? "Default" : record->topic_name;
 			printf("\n================Topic Data for Connection (%d.%d)  (Version: %d)===============\n%s Sent\n", COND_SWAP32(msg_swap,msg->hdr.workerId), COND_SWAP32(msg_swap,msg->hdr.connId),  msg_version, time_buff_sent);
@@ -434,8 +441,9 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 		{
 
 			umdsd_dstat_connection_totaltopic_msg_t * msg;
-			msg = (umdsd_dstat_connection_totaltopic_msg_t *) aligned_msg_buffer;
 			umdsd_dstat_connection_totaltopic_record_t * record;
+
+			msg = (umdsd_dstat_connection_totaltopic_msg_t *) aligned_msg_buffer;
 			record = &msg->record;
 			printf("\n================Data for All Topics on Connection(%d.%d) (Version: %d)===============\n%s Sent\n", COND_SWAP32(msg_swap,msg->hdr.workerId), COND_SWAP32(msg_swap,msg->hdr.connId),  msg_version, time_buff_sent);
 			printf("             Data messages ever in queue:  %"PRIu64"\n",COND_SWAP64(msg_swap, record->tot_data_msgs_ever_enq));
@@ -463,8 +471,9 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 	case UMDS_DSTATTYPE_SOURCE:
 		{
 			umdsd_dstat_connection_source_msg_t * msg;
-			msg = (umdsd_dstat_connection_source_msg_t *) aligned_msg_buffer;
 			umdsd_dstat_connection_source_record_t * record;
+
+			msg = (umdsd_dstat_connection_source_msg_t *) aligned_msg_buffer;
 			record = &msg->record;
 			printf("\n================Source Info for Connection (%d.%d) (Version: %d)===============\n%s Sent\n", COND_SWAP32(msg_swap, msg->hdr.workerId), COND_SWAP32(msg_swap, msg->hdr.connId),  msg_version, time_buff_sent);
 			printf("                              Topic Name: %s\n", record->topic);
@@ -474,8 +483,9 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 	case UMDS_DSTATTYPE_RECEIVER:
 		{
 			umdsd_dstat_connection_receiver_msg_t * msg;
-			msg = (umdsd_dstat_connection_receiver_msg_t *) aligned_msg_buffer;
 			umdsd_dstat_connection_receiver_record_t * record;
+
+			msg = (umdsd_dstat_connection_receiver_msg_t *) aligned_msg_buffer;
 			record = &msg->record;
 			printf("\n================Receiver Info for Connection (%d.%d) (Version: %d)===============\n%s Sent\n", COND_SWAP32(msg_swap, msg->hdr.workerId), COND_SWAP32(msg_swap, msg->hdr.connId),  msg_version, time_buff_sent);
 			printf("                              Topic Name: %s\n", record->topic);

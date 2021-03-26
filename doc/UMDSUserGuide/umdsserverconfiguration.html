@@ -167,7 +167,7 @@ UMDS Element "&lt;daemon&gt;"&nbsp;&nbsp;<small><a href="#umdsxmldaemon">&lt;-</
 <li>
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlumdsdaemon">&lt;umds-daemon&gt;</a> </li>
 <li>
-<b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmllog">&lt;log&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmluid">&lt;uid&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlgid">&lt;gid&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlpidfile">&lt;pidfile&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmllbmlicensefile">&lt;lbm-license-file&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmllbmconfig">&lt;lbm-config&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">&lt;server&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">&lt;client&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlpermissions">&lt;permissions&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlauthentication">&lt;authentication&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlwebmonitor">&lt;web-monitor&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmldaemonmonitor">&lt;daemon-monitor&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlmonitor">&lt;monitor&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmltopics">&lt;topics&gt;</a> </li>
+<b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmllog">&lt;log&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmluid">&lt;uid&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlgid">&lt;gid&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlpidfile">&lt;pidfile&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmllbmlicensefile">&lt;lbm-license-file&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmllbmconfig">&lt;lbm-config&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">&lt;server&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">&lt;client&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlpermissions">&lt;permissions&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlauthentication">&lt;authentication&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlwebmonitor">&lt;web-monitor&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmldaemonmonitor">&lt;daemon-monitor&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlmonitor">&lt;monitor&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmltopics">&lt;topics&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;umds-daemon version="1.0"&gt;
@@ -176,6 +176,85 @@ UMDS Element "&lt;daemon&gt;"&nbsp;&nbsp;<small><a href="#umdsxmldaemon">&lt;-</
   &lt;/daemon&gt;
 &lt;/umds-daemon&gt;
 </pre><hr/>
+<p> <br />
+ </p>
+<h2><a class="anchor" id="umdsxmltls"></a>
+UMDS Element "&lt;tls&gt;"&nbsp;&nbsp;<small><a href="#umdsxmltls">&lt;-</a></small></h2>
+<p>Contains elements to configure client link encryption.</p>
+<p>For more information, see <a class="el" href="umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a>.</p>
+<ul>
+<li>
+<b>Cardinality:</b> 0 .. 1 </li>
+<li>
+<b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmldaemon">&lt;daemon&gt;</a> </li>
+<li>
+<b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlcertificate">&lt;certificate&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlcertificatekey">&lt;certificate-key&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlcertificatekeypassword">&lt;certificate-key-password&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmltrustedcertificates">&lt;trusted-certificates&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlciphersuites">&lt;cipher-suites&gt;</a> </li>
+</ul>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate&gt;test.crt&lt;certificate&gt;</div><div class="line">      &lt;certificate-key&gt;test.key&lt;certificate-key&gt;</div><div class="line">      &lt;certificate-key-password&gt;</div><div class="line">        CorrectHorseBatteryStaple</div><div class="line">      &lt;/certificate-key-password&gt;</div><div class="line">      &lt;trusted-certificates&gt;peers.crt&lt;trusted-certificates&gt;</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p> <br />
+ </p>
+<h2><a class="anchor" id="umdsxmlciphersuites"></a>
+UMDS Element "&lt;cipher-suites&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlciphersuites">&lt;-</a></small></h2>
+<p>Defines the list of one or more (comma separated) names of cipher suites that the UMDS server will accept. See OpenSSL's <a href="https://www.openssl.org/docs/manmaster/man1/openssl-ciphers.html#CIPHER-SUITE-NAMES">Cipher Suite Names</a> for the full list of suite names. When configuring UM, use the OpenSSL names (with dashes), <b>not</b> the IANA names (with underscores).</p>
+<p>If more than one suite name is supplied, they should be in descending order of preference. When a client negotiates encrypted TCP, the two sides must find a cipher suite in common, otherwise the connection will be canceled.</p>
+<p>The default is highly secure and is recommended.</p>
+<p>For more information, see <a class="el" href="umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a>.</p>
+<ul>
+<li>
+<b>Cardinality:</b> 0 .. 1 </li>
+<li>
+<b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
+</ul>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;cipher-suites&gt;TLS_DHE_RSA_WITH_AES_256_GCM_SHA384&lt;cipher-suites&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p> <br />
+ </p>
+<h2><a class="anchor" id="umdsxmltrustedcertificates"></a>
+UMDS Element "&lt;trusted-certificates&gt;"&nbsp;&nbsp;<small><a href="#umdsxmltrustedcertificates">&lt;-</a></small></h2>
+<p>Specifies the path to a file containing one or more OpenSSL-compatible PEM-formatted TLS client certificates and certificate authorities. If this element is not supplied, the default behavior is to use the system-level trusted certificates and certificate authorities (operating-system dependent). The TLS server uses these trusted certificates to verify the identity of connecting clients.</p>
+<p>If a client connects and presents a certificate which is not in the server's trusted certificates file, the connection will be canceled.</p>
+<p>For more information, see <a class="el" href="umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a>.</p>
+<ul>
+<li>
+<b>Cardinality:</b> 0 .. 1 </li>
+<li>
+<b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
+</ul>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;trusted-certificates&gt;peers.crt&lt;trusted-certificates&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p> <br />
+ </p>
+<h2><a class="anchor" id="umdsxmlcertificatekeypassword"></a>
+UMDS Element "&lt;certificate-key-password&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlcertificatekeypassword">&lt;-</a></small></h2>
+<p>Specifies the passphrase needed to decrypt the server private key file specified by <a class="el" href="umdsserverconfiguration.html#umdsxmlcertificatekey">&lt;certificate-key&gt;</a>.</p>
+<p>For more information, see <a class="el" href="umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a>.</p>
+<ul>
+<li>
+<b>Cardinality:</b> 0 .. 1 </li>
+<li>
+<b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
+</ul>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate-key-password&gt;</div><div class="line">        CorrectHorseBatteryStaple</div><div class="line">      &lt;/certificate-key-password&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p> <br />
+ </p>
+<h2><a class="anchor" id="umdsxmlcertificatekey"></a>
+UMDS Element "&lt;certificate-key&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlcertificatekey">&lt;-</a></small></h2>
+<p>Specifies the path to a file containing the private key associated with the "server" certificate specified by <a class="el" href="umdsserverconfiguration.html#umdsxmlcertificate">&lt;certificate&gt;</a>. Note that this private key must be protected from intruders. For that reason, when the certificate and private key files are generated, the private key file is typically encrypted with a passphrase. The passphrase is supplied using <a class="el" href="umdsserverconfiguration.html#umdsxmlcertificatekeypassword">&lt;certificate-key-password&gt;</a>.</p>
+<p>For more information, see <a class="el" href="umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a>.</p>
+<ul>
+<li>
+<b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
+</ul>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate-key&gt;test.key&lt;certificate-key&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p> <br />
+ </p>
+<h2><a class="anchor" id="umdsxmlcertificate"></a>
+UMDS Element "&lt;certificate&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlcertificate">&lt;-</a></small></h2>
+<p>Specifies the path to a file containing an OpenSSL-compatible PEM-formatted certificate that will be presented as the TLS server certificate when a TLS connection is established by a client.</p>
+<p>For more information, see <a class="el" href="umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a>.</p>
+<ul>
+<li>
+<b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
+</ul>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate&gt;test.crt&lt;certificate&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
 <p> <br />
  </p>
 <h2><a class="anchor" id="umdsxmltopics"></a>
@@ -271,10 +350,14 @@ UMDS Element "&lt;umds-attributes&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlumdsat
 UMDS Element "&lt;option&gt;"&nbsp;&nbsp;<small><a href="#umdsxmloption">&lt;-</a></small></h2>
 <p>Specifies a configuration option for the topic(s) matching the parent <a class="el" href="umdsserverconfiguration.html#umdsxmltopic">UMDS Element "&lt;topic&gt;"</a>.</p>
 <p>Required, if <a class="el" href="umdsserverconfiguration.html#umdsxmlumdsattributes">UMDS Element "&lt;umds-attributes&gt;"</a> is present.</p>
-<p>Each option supplied is of one of six types divided into two classes: <br />
-- Types "lbm-receiver", "lbm-wildcard-receiver", "lbm-source", and "lbm-context". These are used to specify UM configuration options, as described in the <a href="../Config/index.html">UM Configuration Guide</a>. <br />
-- Types "umds-receiver" and "umds-source". These are used to specify UMDS-specific options, as described in section <a class="el" href="umdsserverconfiguration.html#umdstopicoptions">UMDS Topic Options</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Although "umds-source" is a valid "type" attribute for the <a class="el" href="umdsserverconfiguration.html#umdsxmloption">UMDS Element "&lt;option&gt;"</a>, there are currently no supported "umds-source" options available. The "umds-source" type is defined in the DTD for future expansion.</dd></dl>
+<p>Each option supplied is of one of six types: </p><ul>
+<li>
+Types <b>"lbm-receiver"</b>, <b>"lbm-wildcard-receiver"</b>, <b>"lbm-source"</b>, and <b>"lbm-context"</b> are used to specify LBM configuration options, as described in the <a href="https://ultramessaging.github.io/currdoc/doc/Config/index.html">UM Configuration Guide</a>. </li>
+<li>
+Type <b>"umds-receiver"</b> is used to specify UMDS-specific receiver configuration options, as described in section <a class="el" href="umdsserverconfiguration.html#umdsreceivertopicoptions">UMDS Receiver Topic Options</a>. </li>
+<li>
+Type <b>"umds-source"</b> is used to specify UMDS-specific receiver configuration options, as described in section <a class="el" href="umdsserverconfiguration.html#umdssourcetopicoptions">UMDS Source Topic Options</a>. </li>
+</ul>
 <ul>
 <li>
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlumdsattributes">&lt;umds-attributes&gt;</a> </li>
@@ -283,12 +366,12 @@ UMDS Element "&lt;option&gt;"&nbsp;&nbsp;<small><a href="#umdsxmloption">&lt;-</
 <tr>
 <th>Attribute </th><th>Description </th><th>Valid Values </th><th>Default Value </th></tr>
 <tr>
-<td><b>type</b> </td><td>Specifies the scope of the configuration option being set. </td><td><b><code>"lbm-receiver"</code></b> - UM configuration option of "receiver" scope. See <a href="../Config/index.html">Config Guide</a>. <br />
-<b><code>"lbm-wildcard-receiver"</code></b> - UM configuration option of "wildcard_receiver" scope. See <a href="../Config/index.html">Config Guide</a>. <br />
-<b><code>"lbm-context"</code></b> - UM configuration option of "context" scope. See <a href="../Config/index.html">Config Guide</a>. <br />
-<b><code>"lbm-source"</code></b> - UM configuration option of "source" scope. See <a href="../Config/index.html">Config Guide</a>. <br />
-<b><code>"umds-receiver"</code></b> - Configuration option specific to UMDS client-side receivers. See <a class="el" href="umdsserverconfiguration.html#umdstopicoptions">UMDS Topic Options</a>. <br />
-<b><code>"umds-source"</code></b> - Configuration option specific to UMDS client-side sources. See <a class="el" href="umdsserverconfiguration.html#umdstopicoptions">UMDS Topic Options</a>. </td><td>(no default; must be specified) </td></tr>
+<td><b>type</b> </td><td>Specifies the scope of the configuration option being set. </td><td><b><code>"lbm-receiver"</code></b> - UM configuration option of "receiver" scope. See <a href="https://ultramessaging.github.io/currdoc/doc/Config/index.html">UM Configuration Guide</a>. <br />
+<b><code>"lbm-wildcard-receiver"</code></b> - UM configuration option of "wildcard_receiver" scope. See <a href="https://ultramessaging.github.io/currdoc/doc/Config/index.html">UM Configuration Guide</a>. <br />
+<b><code>"lbm-context"</code></b> - UM configuration option of "context" scope. See <a href="https://ultramessaging.github.io/currdoc/doc/Config/index.html">UM Configuration Guide</a>. <br />
+<b><code>"lbm-source"</code></b> - UM configuration option of "source" scope. See <a href="https://ultramessaging.github.io/currdoc/doc/Config/index.html">UM Configuration Guide</a>. <br />
+<b><code>"umds-receiver"</code></b> - Configuration option specific to UMDS client-side receivers. See <a class="el" href="umdsserverconfiguration.html#umdsreceivertopicoptions">UMDS Receiver Topic Options</a>. <br />
+<b><code>"umds-source"</code></b> - Configuration option specific to UMDS client-side sources. See <a class="el" href="umdsserverconfiguration.html#umdssourcetopicoptions">UMDS Source Topic Options</a>. </td><td>(no default; must be specified) </td></tr>
 <tr>
 <td><b>name</b> </td><td>Specifies the name of the configuration option being set. </td><td>attr_name </td><td>(no default; must be specified) </td></tr>
 <tr>
@@ -607,9 +690,9 @@ UMDS Element "&lt;group&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlgroup">&lt;-</a>
 <th>Attribute </th><th>Description </th><th>Valid Values </th><th>Default Value </th></tr>
 <tr>
 <td><b>name</b> </td><td>Statistics group to set. </td><td><b><code>"default"</code></b> - Sets interval for those statistics groups which are not explicity set by other &lt;<code>group</code>&gt; elements. <br />
-<b><code>"malloc-info-ivl"</code></b> - Sets interval for message type <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSUserGuide/api.tag:../API/" href="../API/structumdsd__dstat__mallinfo__msg__stct.html">umdsd_dstat_mallinfo_msg_stct</a>. <br />
-<b><code>"worker-details-ivl"</code></b> - Sets interval for worker detail reports, which consists of a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a05d17b0015ff4406be7361c6f792d318">UMDS_DSTATTYPE_WORKER</a> messages, one per worker, and a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#aec46f9778e83d9398fe33cd3a7210cd8">UMDS_DSTATTYPE_CLIENTPERMS</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#ae8f6615472c85d2d8a584bae4513dacb">UMDS_DSTATTYPE_PERTOPIC</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a660095d673eb48218f7c7d00f05f0829">UMDS_DSTATTYPE_TOPICTOTALS</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#ae3bdfca877a2baf5e416c6e5e8cbbd9e">UMDS_DSTATTYPE_RECEIVER</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#adf17a6e98f4156026c4b2061071d7c74">UMDS_DSTATTYPE_SOURCE</a>, and <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#af2c8bb07e730d106bea7f648785172c2">UMDS_DSTATTYPE_CLIENTATTRS</a> messages. <br />
-<b><code>"worker-summary-ivl"</code></b> - Sets interval for worker summery reports, which consists of a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a05d17b0015ff4406be7361c6f792d318">UMDS_DSTATTYPE_WORKER</a> messages, one per worker, and a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.12_RC1/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#af3fd28d20645288353b466947be89897">UMDS_DSTATTYPE_CONNSUMMARY</a> messages, one for each connection. </td><td>(no default; must be specified) </td></tr>
+<b><code>"malloc-info-ivl"</code></b> - Sets interval for message type <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/structumdsd__dstat__mallinfo__msg__stct.html">umdsd_dstat_mallinfo_msg_stct</a>. <br />
+<b><code>"worker-details-ivl"</code></b> - Sets interval for worker detail reports, which consists of a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a05d17b0015ff4406be7361c6f792d318">UMDS_DSTATTYPE_WORKER</a> messages, one per worker, and a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#aec46f9778e83d9398fe33cd3a7210cd8">UMDS_DSTATTYPE_CLIENTPERMS</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#ae8f6615472c85d2d8a584bae4513dacb">UMDS_DSTATTYPE_PERTOPIC</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a660095d673eb48218f7c7d00f05f0829">UMDS_DSTATTYPE_TOPICTOTALS</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#ae3bdfca877a2baf5e416c6e5e8cbbd9e">UMDS_DSTATTYPE_RECEIVER</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#adf17a6e98f4156026c4b2061071d7c74">UMDS_DSTATTYPE_SOURCE</a>, and <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#af2c8bb07e730d106bea7f648785172c2">UMDS_DSTATTYPE_CLIENTATTRS</a> messages. <br />
+<b><code>"worker-summary-ivl"</code></b> - Sets interval for worker summery reports, which consists of a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a05d17b0015ff4406be7361c6f792d318">UMDS_DSTATTYPE_WORKER</a> messages, one per worker, and a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#af3fd28d20645288353b466947be89897">UMDS_DSTATTYPE_CONNSUMMARY</a> messages, one for each connection. </td><td>(no default; must be specified) </td></tr>
 <tr>
 <td><b>ivl</b> </td><td>Time, in seconds, between publishing the statistics group. </td><td>string </td><td>(no default; must be specified) </td></tr>
 </table>
@@ -1218,7 +1301,7 @@ UMDS Element "&lt;server-list&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserverlist
  </p>
 <h2><a class="anchor" id="umdsxmlserver"></a>
 UMDS Element "&lt;server&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserver">&lt;-</a></small></h2>
-<p>Configure the operating parameters UMDS server with the attributes supplied.</p>
+<p>Configure the operating parameters of the UMDS server with the attributes supplied.</p>
 <p>Required.</p>
 <ul>
 <li>
@@ -1235,6 +1318,10 @@ UMDS Element "&lt;server&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserver">&lt;-</
 <td><b>msg-age-limit</b> </td><td>Maximum age in milliseconds before umdsd deletes the oldest messages when it reaches this limit. To remove this limit, set this attribute to zero. </td><td>string </td><td><b><code>"1000"</code></b> (1 sec) </td></tr>
 <tr>
 <td><b>msg-q-size-limit</b> </td><td>Maximum size in bytes of message queue. Umdsd deletes the oldest messages when it reaches this limit. To remove the limit, set this attribute to zero. </td><td>string </td><td><b><code>"1048576"</code></b> </td></tr>
+<tr>
+<td><b>message-cache-type</b> </td><td><p class="starttd">Sets the UMDS server's usage of the internal message caches. Value <code>"normal"</code> is for UM streaming (non-persistent) sources. Value <code>"source-session-id"</code> is for UM persistent sources, and instructs the UMDS server to potentially create multiple message caches for the same topic, keyed by the persistent source's session ID. See <a class="el" href="umdsclient.html#umdspersistenceusessessionids">UMDS Persistence uses Session IDs</a></p>
+<p class="endtd">The full server instance must either use persistence or non-persistence. See <a class="el" href="umdsclient.html#usingumdspersistence">Using UMDS Persistence</a>. </p>
+</td><td>string </td><td><b><code>"normal"</code></b> (streaming) </td></tr>
 <tr>
 <td><b>allow-shutdown-via-webmon</b> </td><td>Control if the UMDS web monitor offers a "Quit Server" button in the main page, and a "Disconnect this Client" button in the Client Details page. Value <code>"0"</code> disables the buttons. Value <code>"1"</code> enables the buttons. </td><td>string </td><td><b><code>"0"</code></b> (disable) </td></tr>
 <tr>
@@ -1385,20 +1472,18 @@ UMDS Element "&lt;log&gt;"&nbsp;&nbsp;<small><a href="#umdsxmllog">&lt;-</a></sm
     ...
   &lt;/daemon&gt;
 &lt;/umds-daemon&gt;
-</pre><p><br />
+</pre><p><a class="anchor" id="umdstopicoptions"></a><br />
  </p>
-<h2><a class="anchor" id="umdstopicoptions"></a>
-UMDS Topic Options&nbsp;&nbsp;<small><a href="#umdstopicoptions">&lt;-</a></small></h2>
-<p>The UMDS server's configuration file can contain one or more <a class="el" href="umdsserverconfiguration.html#umdsxmloption">UMDS Element "&lt;option&gt;"</a> elements to allow the user to have topic-specific configurations.</p>
-<dl class="section note"><dt>Note</dt><dd>Although <code>"umds-source"</code> is a valid <code>type</code> attribute for the <a class="el" href="umdsserverconfiguration.html#umdsxmloption">UMDS Element "&lt;option&gt;"</a>, there are currently no supported "umds-source" options available. The "umds-source" type is defined in the DTD for future expansion.</dd></dl>
-<p><b>Available options for type "umds-receiver":</b></p>
+<h2><a class="anchor" id="umdsreceivertopicoptions"></a>
+UMDS Receiver Topic Options&nbsp;&nbsp;<small><a href="#umdsreceivertopicoptions">&lt;-</a></small></h2>
+<p>Available options for <a class="el" href="umdsserverconfiguration.html#umdsxmloption">UMDS Element "&lt;option&gt;"</a>, type "umds-receiver":</p>
 <table class="doxtable">
 <tr>
 <th>Option </th><th>Description </th><th><p class="starttd">Default Value</p>
 <p class="endtd"></p>
 </th></tr>
 <tr>
-<td><code>receiver-queue-type</code> </td><td><code>topic</code> or <code>default</code>. The value <code>topic</code> creates a queue for the topic. The value <code>default</code> places messages for the topic in the client's default queue. </td><td><p class="starttd"><code>topic</code></p>
+<td><code>receiver-queue-type</code> </td><td><code>topic</code> or <code>default</code>. The value <code>topic</code> creates a queue for the topic. The value <code>default</code> places messages for the topic in the client's default queue. </td><td><p class="starttd"><code>default</code></p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
@@ -1406,18 +1491,28 @@ UMDS Topic Options&nbsp;&nbsp;<small><a href="#umdstopicoptions">&lt;-</a></smal
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td><code>use-late-join</code> </td><td><p class="starttd">Controls whether UMDS receivers use Late Join for this topic.</p>
+<td><code>use-late-join</code> </td><td><p class="starttd">Controls whether UMDS receivers use Late Join for this topic. This should be done for normal Late Join functionality (see <a class="el" href="umdsclient.html#usingumdslatejoin">Using UMDS Late Join</a>) and for UMDS persistence (see <a class="el" href="umdsclient.html#usingumdspersistence">Using UMDS Persistence</a>).</p>
 <p class="endtd">To disable Late Join for UMDS receivers, set this option to <code>0</code> (Off). </p>
 </td><td><p class="starttd"><code>1</code> (On)</p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td><code>message-cache-size</code> </td><td>Specifies the size, in number of messages, of the Late Join message cache for this topic. </td><td><p class="starttd"><code>1</code></p>
+<td><code>message-cache-size</code> </td><td>Specifies the size, in number of messages, of the Late Join message cache for this topic. This applies to both Late Join and Persistence functions. See <a class="el" href="umdsclient.html#usingumdslatejoin">Using UMDS Late Join</a> and <a class="el" href="umdsclient.html#usingumdspersistence">Using UMDS Persistence</a> for more information. </td><td><p class="starttd"><code>1</code></p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
+<td><code>message-cache-deletion-delay</code> </td><td>Indicates a period of time (in milliseconds) that a message cache is maintained for a topic after the last client receiver for that topic is deleted. This applies to both Late Join and Persistence functions. The default value of <code>0</code> (zero) deletes the message cache immediately upon deletion of the last client receiver for the topic. See <a class="el" href="umdsclient.html#usingumdslatejoin">Using UMDS Late Join</a> and <a class="el" href="umdsclient.html#usingumdspersistence">Using UMDS Persistence</a> for more information. </td><td><p class="starttd"><code>0</code> (immediate)</p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
 <td><code>ignore-unique-receiver-attributes</code> </td><td>Indicates which set of <code>lbm-receiver</code> options a UMDS Client application uses when it discovers a source/topic that matches a wildcard receiver pattern. Both the wildcard pattern and the individual topic might have <code>lbm-receiver</code> options. The default value of <code>1</code> ignores the <code>lbm-receiver</code> individual topic options, and instead uses the options configured for the wildcard pattern. This value can provide more efficient control over options for all receivers. Setting this option to <code>0</code> (zero) instructs the UMDS Client application to use <code>lbm-receiver</code> options configured for the individual topic. </td><td><code>1</code> (Ignore) </td></tr>
 </table>
+<p><br />
+ </p>
+<h2><a class="anchor" id="umdssourcetopicoptions"></a>
+UMDS Source Topic Options&nbsp;&nbsp;<small><a href="#umdssourcetopicoptions">&lt;-</a></small></h2>
+<p>Available options for <a class="el" href="umdsserverconfiguration.html#umdsxmloption">UMDS Element "&lt;option&gt;"</a>, type "umds-source":</p>
+<p>At this time, there are no source-specific UMDS topic options defined. The option type "umds-source" is defined for future expansion.</p>
 <p><br />
  </p>
 <h1><a class="anchor" id="umlicensefile"></a>
@@ -1507,7 +1602,7 @@ UMDS Configuration DTD&nbsp;&nbsp;<small><a href="#umdsconfigurationdtd">&lt;-</
 &lt;!ATTLIST umds-daemon
           version (1.0) #REQUIRED
 &gt;
-&lt;!ELEMENT daemon (log?, uid?, gid?, pidfile?, lbm-license-file?, lbm-config?, server, client, permissions?, authentication, web-monitor?, daemon-monitor?, monitor?, topics?)&gt;
+&lt;!ELEMENT daemon (log?, uid?, gid?, pidfile?, lbm-license-file?, lbm-config?, server, client, permissions?, authentication, web-monitor?, daemon-monitor?, monitor?, topics?, tls?)&gt;
 &lt;!ELEMENT log ( #PCDATA )&gt;
 &lt;!ATTLIST log
           type (file | syslog | console) "console"
@@ -1533,6 +1628,7 @@ UMDS Configuration DTD&nbsp;&nbsp;<small><a href="#umdsconfigurationdtd">&lt;-</
           num-workers CDATA "3"
           msg-age-limit CDATA "1000"
           msg-q-size-limit CDATA "(1024*1024)"
+          message-cache-type CDATA "normal"
           allow-shutdown-via-webmon CDATA "0"
           request-timeout CDATA "10000"
 &gt;
@@ -1650,7 +1746,13 @@ UMDS Configuration DTD&nbsp;&nbsp;<small><a href="#umdsconfigurationdtd">&lt;-</
 &lt;!ELEMENT remote-snapshot-request EMPTY&gt;
 &lt;!ATTLIST remote-snapshot-request allow (0 | 1) "0"&gt;
 &lt;!ELEMENT remote-config-changes-request EMPTY&gt;
-&lt;!ATTLIST remote-config-changes-request allow (0 | 1) "0"&gt;</pre><p><br />
+&lt;!ATTLIST remote-config-changes-request allow (0 | 1) "0"&gt;
+&lt;!ELEMENT tls (certificate, certificate-key, certificate-key-password?, trusted-certificates?, cipher-suites? )&gt;
+&lt;!ELEMENT cipher-suites ( #PCDATA )&gt;
+&lt;!ELEMENT certificate ( #PCDATA )&gt;
+&lt;!ELEMENT certificate-key ( #PCDATA )&gt;
+&lt;!ELEMENT certificate-key-password ( #PCDATA )&gt;
+&lt;!ELEMENT trusted-certificates ( #PCDATA )&gt;</pre><p><br />
  </p>
 <h1><a class="anchor" id="exampleumdsconfigurationfiles"></a>
 Example UMDS Configuration Files&nbsp;&nbsp;<small><a href="#exampleumdsconfigurationfiles">&lt;-</a></small></h1>

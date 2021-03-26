@@ -65,12 +65,36 @@ Java Example Applications&nbsp;&nbsp;<small><a href="#javaexampleapplications">&
 umdsreceive.java&nbsp;&nbsp;<small><a href="#umdsreceivejava">&lt;-</a></small></h2>
 <p>Receive messages on a single topic.</p>
 <pre>
+Usage: umdsreceive [options] -S address[:port] topic
+  -S address[:port] = Server address/name and optionally port
+                    A comma separated list of multiple servers may be provided
+Available options:
+  -A Suppress sending the application name to the server on login<br />
+ "
+  -c filename = read config file filename
+  -h = help
+  -M num_msgs = End after num_msgs received
+  -N num_topics = Number of topics (receivers)
+  -s num_secs = print statistics every num_secs along with bandwidth
+  -S address:port = Server address and port
+  -U username = set the user name and prompt for password
+  -T tls = use encrypted communication
+  -t truststore = truststore file path
+  -p truststore-password = truststore password
+  -v = be verbose about each message
+  -W = Wildcard topic
+</pre><p><br />
+ </p>
+<h2><a class="anchor" id="umdssendjava"></a>
+umdssend.java&nbsp;&nbsp;<small><a href="#umdssendjava">&lt;-</a></small></h2>
+<p>Send messages on a single topic.</p>
+<pre>
 Usage: umdssend [options] -S address[:port] topic
   -S address[:port] = Server address/name and optionally port
                     A comma separated list of multiple servers may be provided
 Available options:
   -A Suppress sending the application name to the server on login
-   -c filename = read config parameters from filename
+  -c filename = read config parameters from filename
   -I Immediate Mode
   -h = help
   -l len = send messages of len bytes
@@ -81,27 +105,10 @@ Available options:
   -P msec = pause after each send msec milliseconds
   -s num_secs = Print statistics every num_secs
   -U username = set the user name and prompt for password
-  -v = be verbose in reporting to the console
-</pre><p><br />
- </p>
-<h2><a class="anchor" id="umdssendjava"></a>
-umdssend.java&nbsp;&nbsp;<small><a href="#umdssendjava">&lt;-</a></small></h2>
-<p>Send messages on a single topic.</p>
-<pre>
-Usage: umdsreceive [options] -S address[:port] topic
-  -S address[:port] = Server address/name and optionally port
-                    A comma separated list of multiple servers may be provided
-Available options:
-  -A Suppress sending the application name to the server on login
-   -c filename = read config file filename
-  -h = help
-  -M num_msgs = End after num_msgs received
-  -N num_topics = Number of topics (receivers)
-  -s num_secs = print statistics every num_secs along with bandwidth
-  -S address:port = Server address and port
-  -U username = set the user name and prompt for password
-  -v = be verbose about each message
-  -W = Wildcard topic
+  -T tls = use encrypted communication
+  -t truststore = truststore file path
+  -p truststore-password = truststore password
+  -v be verbose
 </pre><p><br />
  </p>
 <h2><a class="anchor" id="umdsresponsejava"></a>
@@ -113,7 +120,7 @@ Usage: umdsresponse [options] -S address[:port] topic
                     A comma separated list of multiple servers may be provided
 Available options:
   -A Suppress sending the application name to the server on login
-   -c filename = read config file filename
+  -c filename = read config file filename
   -h = help
   -M num_msgs = End after num_msgs received
   -N num_topics = Number of topics (receivers)
@@ -129,11 +136,12 @@ Available options:
 umdsrequest.java&nbsp;&nbsp;<small><a href="#umdsrequestjava">&lt;-</a></small></h2>
 <p>Send requests and messages on a single topic.</p>
 <pre>
+Usage: umdsrequest [options] -S address[:port] topic
   -S address[:port] = Server address/name and optionally port
                     A comma separated list of multiple servers may be provided
 Available options:
   -A Suppress sending the application name to the server on login
-   -c filename = read config parameters from filename
+  -c filename = read config parameters from filename
   -I Immediate Mode
   -h = help
   -l len = send messages of len bytes
@@ -146,6 +154,30 @@ Available options:
   -s num_secs = Print statistics every num_secs
   -U username = set the user name and prompt for password
   -v = be verbose in reporting to the console
+</pre><p><br />
+ </p>
+<h2><a class="anchor" id="umdspersistentreceive"></a>
+umdspersistentreceive.java&nbsp;&nbsp;<small><a href="#umdspersistentreceive">&lt;-</a></small></h2>
+<p>Receive persisted messages on a single topic.</p>
+<pre>
+Usage: umdspersistentreceive [options] -S address[:port] topic
+  -S address[:port] = Server address/name and optionally port
+                    A comma separated list of multiple servers may be provided
+Available options:
+  -A Suppress sending the application name to the server on login
+  -c filename = read config file filename
+  -h = help
+  -n Set Starting seq number to Starting
+  -M num_msgs = End after num_msgs received
+  -N num_topics = Number of topics (receivers)
+  -s num_secs = print statistics every num_secs along with bandwidth
+  -S address:port = Server address and port
+  -U username = set the user name and prompt for password
+  -T tls = use encrypted communication
+  -t truststore = truststore file path
+  -p truststore-password = truststore password
+  -v = be verbose about each message
+  -W = Wildcard topic
 </pre><p><br />
  </p>
 <h1><a class="anchor" id="netexampleapplications"></a>

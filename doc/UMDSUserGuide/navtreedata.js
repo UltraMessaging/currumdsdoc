@@ -8,6 +8,9 @@ var NAVTREE =
     [ "UMDS Client", "umdsclient.html", [
       [ "UMDS API", "umdsclient.html#umdsapi", null ],
       [ "Server Connection", "umdsclient.html#serverconnection", [
+        [ "UMDS Server List", "umdsclient.html#umdsserverlist", null ],
+        [ "Connecting to Multiple Servers", "umdsclient.html#connectingtomultipleservers", null ],
+        [ "Client Configuration Properties", "umdsclient.html#clientconfigurationproperties", null ],
         [ "Authenticating Applications and Users", "umdsclient.html#authenticatingapplicationsandusers", null ],
         [ "Assigning Different Client Settings to Your Application", "umdsclient.html#assigningdifferentclientsettingstoyourapplication", null ],
         [ "Application Name", "umdsclient.html#applicationname", null ]
@@ -16,7 +19,20 @@ var NAVTREE =
       [ "Sending", "umdsclient.html#sending", null ],
       [ "Request and Response Capability", "umdsclient.html#requestandresponsecapability", null ],
       [ "Using UMDS Late Join", "umdsclient.html#usingumdslatejoin", [
+        [ "UMDS Late Join Differences", "umdsclient.html#umdslatejoindifferences", null ],
         [ "Late Join UMDS Sources", "umdsclient.html#latejoinumdssources", null ]
+      ] ],
+      [ "Using UMDS Persistence", "umdsclient.html#usingumdspersistence", [
+        [ "UMDS Persistence uses Session IDs", "umdsclient.html#umdspersistenceusessessionids", null ],
+        [ "Configuring UMDS Server for Persistence", "umdsclient.html#configuringumdsserverforpersistence", null ],
+        [ "Transient Receivers", "umdsclient.html#transientreceivers", null ],
+        [ "Persistence and Server Failover", "umdsclient.html#persistenceandserverfailover", null ],
+        [ "UMDS Persistence Differences", "umdsclient.html#umdspersistencedifferences", null ]
+      ] ],
+      [ "Using UMDS Client Encryption", "umdsclient.html#usingumdsclientencryption", [
+        [ "UMDS TLS Authentication", "umdsclient.html#umdstlsauthentication", null ],
+        [ "Configuring Encryption on Client", "umdsclient.html#configuringencryptiononclient", null ],
+        [ "Configuring Encryption on Server", "umdsclient.html#configuringencryptiononserver", null ]
       ] ]
     ] ],
     [ "UMDS Example Client Applications", "umdsexampleclientapplications.html", [
@@ -24,7 +40,8 @@ var NAVTREE =
         [ "umdsreceive.java", "umdsexampleclientapplications.html#umdsreceivejava", null ],
         [ "umdssend.java", "umdsexampleclientapplications.html#umdssendjava", null ],
         [ "umdsresponse.java", "umdsexampleclientapplications.html#umdsresponsejava", null ],
-        [ "umdsrequest.java", "umdsexampleclientapplications.html#umdsrequestjava", null ]
+        [ "umdsrequest.java", "umdsexampleclientapplications.html#umdsrequestjava", null ],
+        [ "umdspersistentreceive.java", "umdsexampleclientapplications.html#umdspersistentreceive", null ]
       ] ],
       [ ".NET Example Applications", "umdsexampleclientapplications.html#netexampleapplications", [
         [ "umdssend.cs", "umdsexampleclientapplications.html#umdssendcs", null ],
@@ -75,6 +92,12 @@ var NAVTREE =
       [ "umdsd Configuration File", "umdsserverconfiguration.html#umdsdconfigurationfile", [
         [ "UMDS Element \"<umds-daemon>\"", "umdsserverconfiguration.html#umdsxmlumdsdaemon", null ],
         [ "UMDS Element \"<daemon>\"", "umdsserverconfiguration.html#umdsxmldaemon", null ],
+        [ "UMDS Element \"<tls>\"", "umdsserverconfiguration.html#umdsxmltls", null ],
+        [ "UMDS Element \"<cipher-suites>\"", "umdsserverconfiguration.html#umdsxmlciphersuites", null ],
+        [ "UMDS Element \"<trusted-certificates>\"", "umdsserverconfiguration.html#umdsxmltrustedcertificates", null ],
+        [ "UMDS Element \"<certificate-key-password>\"", "umdsserverconfiguration.html#umdsxmlcertificatekeypassword", null ],
+        [ "UMDS Element \"<certificate-key>\"", "umdsserverconfiguration.html#umdsxmlcertificatekey", null ],
+        [ "UMDS Element \"<certificate>\"", "umdsserverconfiguration.html#umdsxmlcertificate", null ],
         [ "UMDS Element \"<topics>\"", "umdsserverconfiguration.html#umdsxmltopics", null ],
         [ "UMDS Element \"<topic>\"", "umdsserverconfiguration.html#umdsxmltopic", null ],
         [ "UMDS Element \"<umds-attributes>\"", "umdsserverconfiguration.html#umdsxmlumdsattributes", null ],
@@ -116,7 +139,8 @@ var NAVTREE =
         [ "UMDS Element \"<gid>\"", "umdsserverconfiguration.html#umdsxmlgid", null ],
         [ "UMDS Element \"<uid>\"", "umdsserverconfiguration.html#umdsxmluid", null ],
         [ "UMDS Element \"<log>\"", "umdsserverconfiguration.html#umdsxmllog", null ],
-        [ "UMDS Topic Options", "umdsserverconfiguration.html#umdstopicoptions", null ]
+        [ "UMDS Receiver Topic Options", "umdsserverconfiguration.html#umdsreceivertopicoptions", null ],
+        [ "UMDS Source Topic Options", "umdsserverconfiguration.html#umdssourcetopicoptions", null ]
       ] ],
       [ "UM License File", "umdsserverconfiguration.html#umlicensefile", null ],
       [ "UM Configuration File", "umdsserverconfiguration.html#umconfigurationfile", null ],
