@@ -7,7 +7,7 @@ using UMDSBadStateException = com.latencybusters.umds.UMDS.UMDSBadStateException
 using UMDSAuthenticationException = com.latencybusters.umds.UMDS.UMDSAuthenticationException;
 using LOG_LEVEL = com.latencybusters.umds.UMDS.LOG_LEVEL;
 /*
-Copyright (c) 2005-2019 Informatica Corporation  Permission is granted to licensees to use
+(C) Copyright 2005,2024 Informatica Inc.  Permission is granted to licensees to use
 or alter this software for any purpose, including commercial applications,
 according to the terms laid out in the Software License Agreement.
 
@@ -120,7 +120,7 @@ class umdsresponse:UMDSServerConnection
 					{
 						response_length = Convert.ToInt32(args[argnum]);
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid response length:" + args[argnum]);
 					}
@@ -132,7 +132,7 @@ class umdsresponse:UMDSServerConnection
 					{
 						end_msgs = Convert.ToInt32(args[argnum]);
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid number of messages:" + args[argnum]);
 					}
@@ -144,7 +144,7 @@ class umdsresponse:UMDSServerConnection
 					{
 						numtopics = Convert.ToInt32(args[argnum]);
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid number of receivers:" + args[argnum]);
 					}
@@ -156,7 +156,7 @@ class umdsresponse:UMDSServerConnection
 					{
 						stats_ms = Convert.ToInt32(args[argnum]) * 1000;
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid number of seconds for statistics:" + args[argnum]);
 					}
@@ -213,7 +213,7 @@ class umdsresponse:UMDSServerConnection
 		}
 		catch (System.IO.IOException e)
 		{
-			System.Console.Error.WriteLine("Error reading password");
+			System.Console.Error.WriteLine("Error reading password: " + e.Message);
 		}
 	}
 	
@@ -234,7 +234,7 @@ class umdsresponse:UMDSServerConnection
 			//UPGRADE_TODO: Constructor 'java.io.FileInputStream.FileInputStream' was converted to 'System.IO.FileStream.FileStream' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileInputStreamFileInputStream_javalangString'"
 			linein = new System.IO.StreamReader(new System.IO.StreamReader(new System.IO.FileStream(filename, System.IO.FileMode.Open, System.IO.FileAccess.Read), System.Text.Encoding.Default).BaseStream, new System.IO.StreamReader(new System.IO.FileStream(filename, System.IO.FileMode.Open, System.IO.FileAccess.Read), System.Text.Encoding.Default).CurrentEncoding);
 		}
-		catch (System.IO.FileNotFoundException e)
+		catch (System.IO.FileNotFoundException)
 		{
 			System.Console.Error.WriteLine("File " + filename + " not found.");
 			return false;
@@ -249,7 +249,7 @@ class umdsresponse:UMDSServerConnection
 			}
 			catch (System.IO.IOException e)
 			{
-				System.Console.Error.WriteLine("Error reading config file " + filename);
+				System.Console.Error.WriteLine("Error reading config file " + filename + ": " + e.Message);
 				return false;
 			}
 			if (line == null)
@@ -430,7 +430,7 @@ class umdsresponse:UMDSServerConnection
 		{
 			svrconn.start();
 		}
-		catch (UMDSAuthenticationException e)
+		catch (UMDSAuthenticationException)
 		{
 			System.Console.Error.WriteLine("Authentication failed - check user name/password requirements of the server");
 			System.Environment.Exit(1);
@@ -449,7 +449,7 @@ class umdsresponse:UMDSServerConnection
 				//UPGRADE_TODO: Method 'java.lang.Thread.sleep' was converted to 'System.Threading.Thread.Sleep' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangThreadsleep_long'"
 				System.Threading.Thread.Sleep( 100 );
 			}
-			catch (System.Threading.ThreadInterruptedException e)
+			catch (System.Threading.ThreadInterruptedException)
 			{
 			}
 		}
@@ -539,7 +539,7 @@ class umdsresponse:UMDSServerConnection
 				// Sleep the interval or 1 second.
 				System.Threading.Thread.Sleep( ((stats_ms > 0) ? stats_ms : 1000 ) );
 			}
-			catch (System.Threading.ThreadInterruptedException e)
+			catch (System.Threading.ThreadInterruptedException)
 			{
 			}
 			
@@ -817,7 +817,7 @@ class umdsresponse:UMDSServerConnection
 						System.String res = res_temp.Substring( 0, breakAt );
 						System.Console.Out.WriteLine( "Response len [" + response_msg.Length + "] RES Data <" + res + ">" );
 */
-					} catch( System.Exception e ) {
+					} catch( System.Exception) {
 						
 					}
 					msg.respond(  response_msg );

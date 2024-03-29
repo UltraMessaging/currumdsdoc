@@ -62,21 +62,21 @@ Windows Java Example&nbsp;&nbsp;<small><a href="#windowsjavaexample">&lt;-</a></
 <p>To run UMDS example Java applications on a Microsoft Windows machine, perform the following procedure.</p>
 <ol>
 <li>
-<p class="startli">Save the openmdx-kernel jar file to UMDS <code>[installdir]</code>.</p>
+<p class="startli">Save the openmdx-kernel jar file to UMDS <code>[umdsinstalldir]</code>.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">Locate the UMDS client jar file in <code>[installdir]</code>. It was placed there by the <a class="el" href="umdsquickoverview.html#umdsclientinstallation">UMDS Client Installation</a>.</p>
+<p class="startli">Locate the UMDS client jar file in <code>[umdsinstalldir]</code>. It was placed there by the <a class="el" href="umdsquickoverview.html#umdsclientinstallation">UMDS Client Installation</a>.</p>
 <p class="endli"></p>
 </li>
 <li>
 <p class="startli">Open a Command Prompt and start a UMDS receiver connection to the server. Substitute the UMDS Server's IP address and port number for <code>ip:port</code>. </p><pre>
-java -cp [installdir]\[umdsjarfile];[installdir]\openmdx-kernel.jar umdsreceive -S ip:port mytopic
+java -cp [umdsinstalldir]\[umdsjarfile];[umdsinstalldir]\openmdx-kernel.jar umdsreceive -S ip:port mytopic
 </pre><p class="endli"></p>
 </li>
 <li>
 Open a second Command Prompt and Start a UMDS source connection to the server for the same topic. Substitute the UMDS Server's IP address and port number for <code>ip:port</code>. <pre>
-java -cp [installdir]\[umdsjarfile];[installdir]\openmdx-kernel.jar umdssend -S ip:port mytopic
+java -cp [umdsinstalldir]\[umdsjarfile];[umdsinstalldir]\openmdx-kernel.jar umdssend -S ip:port mytopic
 </pre> </li>
 </ol>
 <p>If there are problems, first check version compatibility by issuing the following command: </p><pre>

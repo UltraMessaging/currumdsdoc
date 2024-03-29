@@ -8,7 +8,7 @@ using UMDSAuthenticationException = com.latencybusters.umds.UMDS.UMDSAuthenticat
 using LOG_LEVEL = com.latencybusters.umds.UMDS.LOG_LEVEL;
 
 /*
-Copyright (c) 2005-2019 Informatica Corporation  Permission is granted to licensees to use
+(C) Copyright 2005,2024 Informatica Inc.  Permission is granted to licensees to use
 or alter this software for any purpose, including commercial applications,
 according to the terms laid out in the Software License Agreement.
 
@@ -85,7 +85,7 @@ class appRequest:UMDSSource
 */
 						System.Console.Out.WriteLine( "Received Response to request <" + msg.requestID + "> len [" + msg.appdata.Length + "]" );
 					} catch( System.Exception e ) {
-						
+						System.Console.Out.WriteLine("Exception caught: " + e.Message);	
 					}
 				}
 			Responses++;
@@ -212,7 +212,7 @@ class umdsrequest:UMDSServerConnection
 					{
 						msglen = Convert.ToInt32(args[argnum]);
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid message length:" + args[argnum]);
 					}
@@ -224,7 +224,7 @@ class umdsrequest:UMDSServerConnection
 					{
 						linger = Convert.ToInt32(args[argnum]);
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid Linger time:" + args[argnum]);
 					}
@@ -236,7 +236,7 @@ class umdsrequest:UMDSServerConnection
 					{
 						msgs = Convert.ToInt32(args[argnum]);
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid number of messages:" + args[argnum]);
 					}
@@ -248,7 +248,7 @@ class umdsrequest:UMDSServerConnection
 					{
 						num_topics = Convert.ToInt32(args[argnum]);
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid number of topics:" + args[argnum]);
 					}
@@ -259,7 +259,7 @@ class umdsrequest:UMDSServerConnection
 					{
 						pause = Convert.ToInt32(args[argnum]);
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid pause time:" + args[argnum]);
 					}
@@ -270,7 +270,7 @@ class umdsrequest:UMDSServerConnection
 					{
 						reqlen = Convert.ToInt32(args[argnum]);
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid request length:" + args[argnum]);
 					}
@@ -282,7 +282,7 @@ class umdsrequest:UMDSServerConnection
 					{
 						stats_ms = Convert.ToInt32(args[argnum]) * 1000;
 					}
-					catch (System.Exception e)
+					catch (System.Exception)
 					{
 						throw new System.Exception("Invalid number of seconds for statistics:" + args[argnum]);
 					}
@@ -334,7 +334,7 @@ class umdsrequest:UMDSServerConnection
 		}
 		catch (System.IO.IOException e)
 		{
-			System.Console.Error.WriteLine("Error reading password");
+			System.Console.Error.WriteLine("Error reading password: " + e.Message);
 		}
 	}
 	
@@ -354,7 +354,7 @@ class umdsrequest:UMDSServerConnection
 			//UPGRADE_TODO: Constructor 'java.io.FileInputStream.FileInputStream' was converted to 'System.IO.FileStream.FileStream' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioFileInputStreamFileInputStream_javalangString'"
 			linein = new System.IO.StreamReader(new System.IO.StreamReader(new System.IO.FileStream(filename, System.IO.FileMode.Open, System.IO.FileAccess.Read), System.Text.Encoding.Default).BaseStream, new System.IO.StreamReader(new System.IO.FileStream(filename, System.IO.FileMode.Open, System.IO.FileAccess.Read), System.Text.Encoding.Default).CurrentEncoding);
 		}
-		catch (System.IO.FileNotFoundException e)
+		catch (System.IO.FileNotFoundException)
 		{
 			System.Console.Error.WriteLine("File " + filename + " not found.");
 			return false;
@@ -367,7 +367,7 @@ class umdsrequest:UMDSServerConnection
 			{
 				line = linein.ReadLine();
 			}
-			catch (System.IO.IOException e)
+			catch (System.IO.IOException)
 			{
 				System.Console.Error.WriteLine("Error reading config file " + filename);
 				return false;
@@ -544,7 +544,7 @@ class umdsrequest:UMDSServerConnection
 		{
 			ServerReconnect = svrconn.getProperty("server-reconnect");
 		}
-		catch (UMDSException e)
+		catch (UMDSException)
 		{
 			ServerReconnect = "1";
 		}
@@ -554,7 +554,7 @@ class umdsrequest:UMDSServerConnection
 		{
 			svrconn.start();
 		}
-		catch (UMDSAuthenticationException e)
+		catch (UMDSAuthenticationException)
 		{
 			System.Console.Error.WriteLine("Authentication failed - check user name/password requirements of the server");
 			System.Environment.Exit(1);
@@ -574,7 +574,7 @@ class umdsrequest:UMDSServerConnection
 				//UPGRADE_TODO: Method 'java.lang.Thread.sleep' was converted to 'System.Threading.Thread.Sleep' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangThreadsleep_long'"
 				System.Threading.Thread.Sleep( 100 );
 			}
-			catch (System.Threading.ThreadInterruptedException e)
+			catch (System.Threading.ThreadInterruptedException)
 			{
 			}
 		}
@@ -669,14 +669,6 @@ class umdsrequest:UMDSServerConnection
 			System.Environment.Exit(1);
 		}
 		
-		if ( false ) {
-			while( createCount < Creates ) {
-				System.Threading.Thread.Sleep( 10 );
-				System.Console.Error.WriteLine("Sources Created: " + createCount );
-			}
-			System.Console.Error.WriteLine("Sources Created: " + createCount );
-		}
-
 		/* Data used in sending */
 		int req_counter = 0;
 		bool	req_sent;
@@ -769,7 +761,7 @@ class umdsrequest:UMDSServerConnection
 							seq_sent = true;
 						}
 					}
-					catch (UMDSAuthenticationException ex)
+					catch (UMDSAuthenticationException)
 					{
 						/* This can occur while auto-reconnecting */
 						try
@@ -778,7 +770,7 @@ class umdsrequest:UMDSServerConnection
 							//UPGRADE_TODO: Method 'java.lang.Thread.sleep' was converted to 'System.Threading.Thread.Sleep' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangThreadsleep_long'"
 							System.Threading.Thread.Sleep( 100 );
 						}
-						catch (System.Threading.ThreadInterruptedException e)
+						catch (System.Threading.ThreadInterruptedException)
 						{
 						}
 					}
@@ -791,11 +783,11 @@ class umdsrequest:UMDSServerConnection
 							//UPGRADE_TODO: Method 'java.lang.Thread.sleep' was converted to 'System.Threading.Thread.Sleep' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangThreadsleep_long'"
 							System.Threading.Thread.Sleep( 100 );
 						}
-						catch (System.Threading.ThreadInterruptedException e)
+						catch (System.Threading.ThreadInterruptedException)
 						{
 						}
 					}
-					catch (UMDSDisconnectException ex)
+					catch (UMDSDisconnectException)
 					{
 						try
 						{
@@ -803,7 +795,7 @@ class umdsrequest:UMDSServerConnection
 							//UPGRADE_TODO: Method 'java.lang.Thread.sleep' was converted to 'System.Threading.Thread.Sleep' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangThreadsleep_long'"
 							System.Threading.Thread.Sleep( 100 );
 						}
-						catch (System.Threading.ThreadInterruptedException e)
+						catch (System.Threading.ThreadInterruptedException)
 						{
 						}
 					}
@@ -841,12 +833,12 @@ class umdsrequest:UMDSServerConnection
 							// Comes from running the server under valgrind.
 							System.Threading.Thread.Sleep( 100 );
 						}
-						catch (System.Threading.ThreadInterruptedException e)
+						catch (System.Threading.ThreadInterruptedException)
 						{
 						}
 					}
 				}
-				catch (UMDSAuthenticationException ex)
+				catch (UMDSAuthenticationException)
 				{
 					/* This can occur while auto-reconnecting */
 					try
@@ -855,7 +847,7 @@ class umdsrequest:UMDSServerConnection
 						//UPGRADE_TODO: Method 'java.lang.Thread.sleep' was converted to 'System.Threading.Thread.Sleep' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangThreadsleep_long'"
 						System.Threading.Thread.Sleep( 100 );
 					}
-					catch (System.Threading.ThreadInterruptedException e)
+					catch (System.Threading.ThreadInterruptedException)
 					{
 					}
 				}
@@ -868,11 +860,11 @@ class umdsrequest:UMDSServerConnection
 						//UPGRADE_TODO: Method 'java.lang.Thread.sleep' was converted to 'System.Threading.Thread.Sleep' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangThreadsleep_long'"
 						System.Threading.Thread.Sleep( 100 );
 					}
-					catch (System.Threading.ThreadInterruptedException e)
+					catch (System.Threading.ThreadInterruptedException)
 					{
 					}
 				}
-				catch (UMDSDisconnectException ex)
+				catch (UMDSDisconnectException)
 				{
 					try
 					{
@@ -880,7 +872,7 @@ class umdsrequest:UMDSServerConnection
 						//UPGRADE_TODO: Method 'java.lang.Thread.sleep' was converted to 'System.Threading.Thread.Sleep' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangThreadsleep_long'"
 						System.Threading.Thread.Sleep( 100 );
 					}
-					catch (System.Threading.ThreadInterruptedException e)
+					catch (System.Threading.ThreadInterruptedException)
 					{
 					}
 				}
@@ -914,7 +906,7 @@ class umdsrequest:UMDSServerConnection
 						//UPGRADE_TODO: Method 'java.lang.Thread.sleep' was converted to 'System.Threading.Thread.Sleep' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangThreadsleep_long'"
 						System.Threading.Thread.Sleep( 500 );
 					}
-					catch (System.Threading.ThreadInterruptedException e)
+					catch (System.Threading.ThreadInterruptedException)
 					{
 					}
 				}
@@ -931,7 +923,7 @@ class umdsrequest:UMDSServerConnection
 					//UPGRADE_TODO: Method 'java.lang.Thread.sleep' was converted to 'System.Threading.Thread.Sleep' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javalangThreadsleep_long'"
 					System.Threading.Thread.Sleep( iter_time );
 				}
-				catch (System.Threading.ThreadInterruptedException e)
+				catch (System.Threading.ThreadInterruptedException)
 				{
 				}
 			}
@@ -975,7 +967,7 @@ class umdsrequest:UMDSServerConnection
 				try {
 					System.Threading.Thread.Sleep( 100 );
 					CloseCount++;
-				} catch (System.Threading.ThreadInterruptedException e) {
+				} catch (System.Threading.ThreadInterruptedException) {
 				}
 
 				if ( 100 < CloseCount ) {		// This gives us a maximum wait of 10 seconds; the default request timeout.

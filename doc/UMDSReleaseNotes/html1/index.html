@@ -56,7 +56,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="contents">
 <div class="textblock"><p> 
 <img src="infa_logo.png" width="400" height="138" alt="Informatica"/><br/><br/>
-<big><b>UMDS</b></big> <small>(Version 6.13.1)</small><br/>
+<big><b>UMDS</b></big> <small>(Version 6.14)</small><br/>
 <br/><br/><br/>
 <center class="mytitle">UMDS Release Notes</center>
 <br/><br/><br/>
@@ -68,7 +68,7 @@ Introduction&nbsp;&nbsp;<small><a href="#firstsect">&lt;-</a></small></h1>
 <p>This document describes the important changes made to the UMDS product. This document is cumulative from UMDS version 6.0 till now.</p>
 <p>For policies and procedures related to Ultra Messaging Technical Support, see <a href="https://ultramessaging.github.io/UM_Support.html">UM Support</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>The UMDS product is based on the Ultra Messaging (UM) product. Users of UMDS are assumed to have familiarity with the UM product line. See the <a href="https://ultramessaging.github.io/currdoc/">Ultra Messaging Documentation Set</a>. In particular, review the <a href="https://ultramessaging.github.io/currdoc/doc/ChangeLog/index.html">UM Release Notes</a> documentation for the UM version you are using.</dd></dl>
-<p><b>&copy; Copyright Informatica LLC 2004-2019.</b></p>
+<p><b>(C) Copyright 2004,2024 Informatica Inc. All Rights Reserved.</b></p>
 <p>This software and documentation are provided only under a separate license agreement containing restrictions on use and disclosure. No part of this document may be reproduced or transmitted in any form, by any means (electronic, photocopying, recording or otherwise) without prior consent of Informatica LLC.</p>
 <p>A current list of Informatica trademarks is available on the web at <a href="https://www.informatica.com/trademarks.html">https://www.informatica.com/trademarks.html</a>.</p>
 <p>Portions of this software and/or documentation are subject to copyright held by third parties. Required third party notices are included with the product.</p>
@@ -77,7 +77,100 @@ Introduction&nbsp;&nbsp;<small><a href="#firstsect">&lt;-</a></small></h1>
 <p>Informatica products are warranted according to the terms and conditions of the agreements under which they are provided. <br />
 INFORMATICA LLC PROVIDES THE INFORMATION IN THIS DOCUMENT "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND ANY WARRANTY OR CONDITION OF NON-INFRINGEMENT.</p>
 <p><br />
+ </p><hr/>
+<h1><a class="anchor" id="umdsversion6_14"></a>
+UMDS Version 6.14&nbsp;&nbsp;<small><a href="#umdsversion6_14">&lt;-</a></small></h1>
+<p>The most-significant update to UMDS version 6.14 is the introduction of compression for the client/server connection.</p>
+<dl class="section attention"><dt>Attention</dt><dd>Please see <a class="el" href="index.html#specialupgradeinstructionsfor6_14">Special Upgrade Instructions for 6.14</a> for a change in UMDS server log file behavior.</dd></dl>
+<p>UMDS version 6.14 should be run on UM version 6.14 or beyond.</p>
+<p><br />
  </p>
+<h2><a class="anchor" id="enhancementsforumds6_14"></a>
+Enhancements for UMDS 6.14&nbsp;&nbsp;<small><a href="#enhancementsforumds6_14">&lt;-</a></small></h2>
+<p>The following new features and enhancements apply to the UMDS product.</p>
+<ul>
+<li>
+<p class="startli"><b>Compression.</b> The TCP connection between the UMDS server and client can now be compressed to reduce the bandwidth requirement. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#clientcompression">Client Compression</a>.</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><b>Log file rolling.</b> The UMDS server now supports the automatic splitting of its log file into separate files based on time and/or file size ("rolling"). See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#loghandling">Log Handling</a>.</p>
+<p class="endli"></p>
+</li>
+<li>
+<p class="startli"><b>Total Queue Size Limit.</b> In earlier versions, users wanting to use <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsserver.html#pertopicmessagequeues">Per-Topic Message Queues</a> with large numbers of topics risked very large memory consumption by the UMDS Server. Starting with UMDS version 6.14, a total queue size limit can be configured. See the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsserverconfiguration.html#umdsxmlserver">UMDS Element "&lt;server&gt;"</a> attribute <code>"total-q-size-limit"</code>.</p>
+<p class="endli"></p>
+</li>
+<li>
+<b>.NET Version.</b> UMDS .NET client library is now built with .NET Core 6, making it compatible with Windows and Linux. </li>
+</ul>
+<p><br />
+ </p>
+<h2><a class="anchor" id="fixedlimitationsforumds6_14"></a>
+Fixed Limitations for UMDS 6.14&nbsp;&nbsp;<small><a href="#fixedlimitationsforumds6_14">&lt;-</a></small></h2>
+<p>The following bug fixes apply to the UMDS product.</p>
+<table class="doxtable">
+<tr>
+<th>Change Request </th><th>Description <a class="anchor" id="bug11414"></a></th></tr>
+<tr>
+<td>11414 </td><td><p class="starttd"><b>FIXED:</b> <em>Illegal memory access by UMDS Server with <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#usingumdslatejoin">Late Join</a> enabled.</em></p>
+<p class="endtd"><a class="anchor" id="bug11406"></a></p>
+</td></tr>
+<tr>
+<td>11406 </td><td><p class="starttd"><b>FIXED:</b> <em>UMDS Server crash with segmentation fault when monitoring is enabled and large numbers of topics are subscribed and published.</em></p>
+<p class="endtd"><a class="anchor" id="bug11401"></a></p>
+</td></tr>
+<tr>
+<td>11401 </td><td><p class="starttd"><b>FIXED:</b> <em>UMDS Server can experience unbound memory growth in <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsserver.html#pertopicmessagequeues">Per-Topic Message Queues</a> if the incoming message rate consistently exceeds the client's ability to keep up.</em></p>
+<p class="endtd"><a class="anchor" id="bug11265"></a></p>
+</td></tr>
+<tr>
+<td>11265, 11363 </td><td><p class="starttd"><b>FIXED:</b> <em>The UMDS .NET client library can take multiple seconds to connect to a server due to a DNS timeout even though the servers is specified with numeric IP addresses.</em></p>
+<p class="endtd"><a class="anchor" id="bug11361"></a></p>
+</td></tr>
+<tr>
+<td>11361 </td><td><p class="starttd"><b>FIXED:</b> <em>The Windows installer for UMDS adds an empty directory to the PATH variable.</em></p>
+<p class="endtd"><a class="anchor" id="bug10886"></a></p>
+</td></tr>
+<tr>
+<td>11355, 10886 </td><td><p class="starttd"><b>FIXED:</b> <em>When the UMDS server is restarted, it deletes the contents of the previous log file. This risks losing valuable diagnostic information. "Append" is preferred.</em></p>
+<p>Starting with UMDS version 6.14, the server will open its log file with "append" behavior after a restart. See <a class="el" href="index.html#unboundedlogfilegrowth">Unbounded Log File Growth</a> and <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#loghandling">Log Handling</a>.</p>
+<p class="endtd"><a class="anchor" id="bug11324"></a></p>
+</td></tr>
+<tr>
+<td>11324, 10003 </td><td><p class="starttd"><b>FIXED:</b> <em>Certain coding errors in client applications can cause the UMDS server to crash with a segmentation fault.</em></p>
+<p>While the root cause is user error, we made the UMDS Server more robust in the face of client coding errors.</p>
+<p class="endtd"><a class="anchor" id="bug11054"></a></p>
+</td></tr>
+<tr>
+<td>11054 </td><td><b>FIXED:</b> <em>If <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a> is being used and a large message is sent, the server can log <code>"lbm_openssl_socket_write: sock fd 41 SSL_write failed"</code> and disconnect the client.</em> </td></tr>
+</table>
+<p><br />
+ </p>
+<h2><a class="anchor" id="specialupgradeinstructionsfor6_14"></a>
+Special Upgrade Instructions for 6.14&nbsp;&nbsp;<small><a href="#specialupgradeinstructionsfor6_14">&lt;-</a></small></h2>
+<p><br />
+ </p>
+<h3><a class="anchor" id="unboundedlogfilegrowth"></a>
+Unbounded Log File Growth&nbsp;&nbsp;<small><a href="#unboundedlogfilegrowth">&lt;-</a></small></h3>
+<p>When a pre-6.14 version of the UMDS server restarts, it clears an existing log file and starts it from zero.</p>
+<p>Due to fixing <a class="el" href="index.html#bug10886">bug 10886</a> in UMDS version 6.14, restarting the server will re-open an existing log file in "append" mode and write new logs to the end of the file. Thus, over time, the log file grows without bound.</p>
+<p>Users wishing to retain the older "start from zero" behavior will need to rename or delete the log file themselves immediately before starting the server.</p>
+<p>Alternatively, UMDS 6.14 now supports automatic log file rolling based on time and/or file size.</p>
+<p>See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#loghandling">Log Handling</a>.</p>
+<p><br />
+ </p>
+<h3><a class="anchor" id="serverxmlconfigurationfileversion"></a>
+Server XML Configuration File Version&nbsp;&nbsp;<small><a href="#serverxmlconfigurationfileversion">&lt;-</a></small></h3>
+<p>The UMDS server's XML configuration file version has increased to version 1.1.</p>
+<p>It is not required that existing version 1.0 configuration files be modified. Only if you desire the new functionality available in UMDS version 6.14 do you need to increase the version number to 1.1.</p>
+<p>For example: </p><pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;umds-daemon version="1.1"&gt;
+...
+</pre><p>Note that it is not the XML version that changed, it is the umds-daemon version.</p>
+<p><br />
+ </p><hr/>
 <h1><a class="anchor" id="umdsversion6_13_1"></a>
 UMDS Version 6.13.1&nbsp;&nbsp;<small><a href="#umdsversion6_13_1">&lt;-</a></small></h1>
 <p>The most-significant updates to UMDS version 6.13.1 is the introduction of persistence and client/server encryption (TLS).</p>
@@ -88,11 +181,11 @@ Enhancements for UMDS 6.13.1&nbsp;&nbsp;<small><a href="#enhancementsforumds6_13
 <p>The following new features and enhancements apply to the UMDS product.</p>
 <ul>
 <li>
-<p class="startli"><b>Persistence.</b> UMDS now supports receiving Ultra Messaging persisted messages. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#usingumdspersistence">Using UMDS Persistence</a></p>
+<p class="startli"><b>Persistence.</b> UMDS now supports receiving Ultra Messaging persisted messages. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#usingumdspersistence">Using UMDS Persistence</a></p>
 <p class="endli"></p>
 </li>
 <li>
-<b>Client Encryption.</b> UMDS now supports TLS encryption between clients and the UMDS server. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a>. </li>
+<b>Client Encryption.</b> UMDS now supports TLS encryption between clients and the UMDS server. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a>. </li>
 </ul>
 <p><br />
  </p>
@@ -105,10 +198,10 @@ Fixed Limitations for UMDS 6.13.1&nbsp;&nbsp;<small><a href="#fixedlimitationsfo
 <p class="endtd"></p>
 </th></tr>
 <tr>
-<td>11040 </td><td><b>FIXED:</b> <em>The <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/daemonstatistics.html">Daemon Statistics</a> feature has a slow memory leak.</em> </td></tr>
+<td>11040 </td><td><b>FIXED:</b> <em>The <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/daemonstatistics.html">Daemon Statistics</a> feature has a slow memory leak.</em> </td></tr>
 </table>
 <p><br />
- </p>
+ </p><hr/>
 <h1><a class="anchor" id="umdsversion6_12"></a>
 UMDS Version 6.12&nbsp;&nbsp;<small><a href="#umdsversion6_12">&lt;-</a></small></h1>
 <p>The most-significant update to UMDS version 6.12 is the introduction of Daemon Statistics to the UMDS server.</p>
@@ -119,7 +212,7 @@ Enhancements for UMDS 6.12&nbsp;&nbsp;<small><a href="#enhancementsforumds6_12">
 <p>The following new features and enhancements apply to the UMDS product.</p>
 <ul>
 <li>
-<b>UMDS Daemon Stats.</b> A new method of monitoring the UMDS server. The same information which is currently available on the server' web monitor can now be published on a normal UM topic. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/daemonstatistics.html">Daemon Statistics</a>. </li>
+<b>UMDS Daemon Stats.</b> A new method of monitoring the UMDS server. The same information which is currently available on the server' web monitor can now be published on a normal UM topic. See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/daemonstatistics.html">Daemon Statistics</a>. </li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>The Windows .NET client package is not offered in UMDS 6.12. This is because no changes were made to the client for version 6.12. <b>Users are directed to continue using the UMDS version 6.0 .NET client.</b> Be aware that although the Java client files are included in the UMDS 6.12 Linux package, no changes were made to the Java client as well. The files are included to have a consistent package.</dd></dl>
 <p><br />
@@ -148,7 +241,7 @@ failed assertion "worker_conn==umdsd_src-&gt;worker_conn"
 <td>9935 </td><td><b>FIXED:</b> <em>Server can fail with a segmentation fault in <code>umdsd_stats_queue_process_cmds</code>.</em> </td></tr>
 </table>
 <p><br />
- </p>
+ </p><hr/>
 <h1><a class="anchor" id="umdsversion6_0"></a>
 UMDS Version 6.0&nbsp;&nbsp;<small><a href="#umdsversion6_0">&lt;-</a></small></h1>
 <p>UMDS version 6.0 includes all functionality and fixed limitations of version 6.0.200. Version 6.0 should be considered the <em>next</em> version after 6.0.200. Think of the ".200" version number as being like a negative number; 6.0.200 is less than 6.0.</p>
@@ -315,7 +408,7 @@ WARNING :Invalid state CLOSING for message 71
 </pre> </td></tr>
 </table>
 <p><br />
- </p>
+ </p><hr/>
 <h1><a class="anchor" id="umdsversion6_0_200"></a>
 UMSD Version 6.0.200&nbsp;&nbsp;<small><a href="#umdsversion6_0_200">&lt;-</a></small></h1>
 <p>UMDS 6.0.200 is a "Limited Availability" (LA) release which was made <em>prior</em> to version 6.0 "General Availability" (GA), and does not include the enhancements and fixed limitations of 6.0. Think of the ".200" version number as being like a negative number; 6.0.200 is less than 6.0.</p>
@@ -400,7 +493,7 @@ object...
 </pre> </td></tr>
 </table>
 <p><br />
- </p>
+ </p><hr/>
 <h1><a class="anchor" id="knownlimitationsforumds"></a>
 Known Problems and Limitations for UMDS&nbsp;&nbsp;<small><a href="#knownlimitationsforumds">&lt;-</a></small></h1>
 <p>The following open limitations applies to the UMDS product.</p>
@@ -411,6 +504,11 @@ Known Problems and Limitations for UMDS&nbsp;&nbsp;<small><a href="#knownlimitat
 <p class="endtd"></p>
 </th></tr>
 <tr>
+<td>11400 </td><td><p class="starttd">UMDS server <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/daemonstatistics.html">Daemon Statistics</a> do not work unless the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsuser.tag:../../UMDSUserGuide/" href="../../UMDSUserGuide/umdswebmonitor.html">UMDS Web Monitor</a> is also enabled.</p>
+<p>WORKAROUND: To use UMDS daemon stats, also enable the web monitor.</p>
+<p class="endtd"></p>
+</td></tr>
+<tr>
 <td>8411 </td><td><p class="starttd">License keys including the UMSM product option are not recognized as valid when running a version of Ultra Messaging earlier than 6.5. The UMSM license is only required to run the System Monitoring components. Enabling monitoring of applications and other products does not require a license containing UMSM.</p>
 <p class="endtd"></p>
 </td></tr>
@@ -420,7 +518,7 @@ Known Problems and Limitations for UMDS&nbsp;&nbsp;<small><a href="#knownlimitat
 </td></tr>
 <tr>
 <td>8581 </td><td><p class="starttd">Sending request messages on a topic subscribed by a pre-6.0 UMDS client causes the client to disconnect from the UMDS server with the following log message: </p><pre>
-WARNING :Error reading parameter 49:<a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSReleaseNotes/umdsjavaapi.tag:../../UMDSJavaAPI/" href="../../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDS.html">com.latencybusters.umds.UMDS</a>+UMDSException:
+WARNING :Error reading parameter 49:<a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSReleaseNotes/umdsjavaapi.tag:../../UMDSJavaAPI/" href="../../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDS.html">com.latencybusters.umds.UMDS</a>+UMDSException:
 Bad data hdrid in UMDSMessageFormatter.parse()
 </pre><p class="endtd"></p>
 </td></tr>

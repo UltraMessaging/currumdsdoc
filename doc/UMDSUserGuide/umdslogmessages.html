@@ -244,6 +244,22 @@ is recommended.
 <tr>
 <td>Umds-11008-25: umdsd_rcv_create_func_cb&ndash;Source Session ID caching is enabled; topic config for this topic expected (s).</td><td>Source Session ID caching is enabled but there is no required topic configuration for the topic given.</td><td>Make sure there is topic configuration for all topics when using Source Session ID caching. </td></tr>
 <tr>
+<td>Umds-11340-1: The total-q-size-limit (d) is less than the msg-q-size-limit (d)</td><td>The configuration has set the total-q-size-limit less than the msg-q-size-limit.</td><td>Check the configuration since this configuration might not produce the desired behavior. </td></tr>
+<tr>
+<td>Umds-11384-01: Server could not decompress client message size (d) orig size (d)...dropping</td><td>Failure was detected decompressing message from client. Message is dropped.</td><td>Make sure the correct version of client code is used for compressing data. </td></tr>
+<tr>
+<td>Umds-11384-02: Server could not decompress client response message size (d) orig size (d)...dropping</td><td>Failure was detected decompressing message from client. Message is dropped.</td><td>Make sure the correct version of client code is used for compressing data. </td></tr>
+<tr>
+<td>Umds-11384-03: Server could not decompress client request message size (d) orig size (d)...dropping</td><td>Failure was detected decompressing message from client. Message is dropped.</td><td>Make sure the correct version of client code is used for compressing data. </td></tr>
+<tr>
+<td>Umds-11384-04: Client connected to Server configured for compression but client is not compression capable.</td><td>The UMDS client did not indicate it is compression capable and cannot connect to server configured for compression.</td><td>Check client version to make sure it is compression capable. </td></tr>
+<tr>
+<td>Umds-11384-05: Server could not decompress due to lack of original size information (d)...dropping</td><td>Compression is configured but the original message size was not supplied by the client. Message is dropped.</td><td>Make sure the correct version of client code is used for compressing data. </td></tr>
+<tr>
+<td>Umds-11384-06: Server received compressed header from client but compression is not enabled...dropping</td><td>Compression is not configured but a compression header was received on the message from the client. Message is dropped.</td><td>Make sure the correct version of client code is used for compressing data. </td></tr>
+<tr>
+<td>Umds-11384-20: Server could not compress the outgoing message size (d)...dropping</td><td>Failure was detected compressing outbound message.</td><td>This is a compression failure. </td></tr>
+<tr>
 <td>Umds-4892-1: Attempt to set use_late_join failed for attrs p err(d)</td><td>ERROR: Attempt to turn use_late_join ON in the rcvr attrs failed.</td><td></td></tr>
 <tr>
 <td>Umds-4892-2: Attempt to set ume_use_store failed for attrs p err(d)</td><td>ERROR: Attempt to turn ume_use_store ON in the rcvr attrs failed.</td><td></td></tr>
@@ -269,6 +285,10 @@ is recommended.
 <td>Umds-6033-656: umdsd_worker_cont_sending_cntl: sendb header error (s)</td><td>Sending a UMDS Control message to the client resulted in an UM error.</td><td>A description of the UM error is included in the message text. </td></tr>
 <tr>
 <td>Umds-6033-657: umdsd_worker_cont_sending_data: sendb data error (s)</td><td>Sending on the client socket encountered an error.</td><td>Included in the message text is a description of the particular error encountered. </td></tr>
+<tr>
+<td>Umds-6033-659: End Of Stream (EOS) on topic s from s",(msg-&amp;gt;topic_name!=NULL ? msg-&amp;gt;topic_name : "</td><td>Informational message indicating that an EOS has been received on the given topic and source.</td><td>No action required. </td></tr>
+<tr>
+<td>Umds-6033-662: Beginning Of Stream (BOS) on topic s from s",(msg-&amp;gt;topic_name!=NULL ? msg-&amp;gt;topic_name : "</td><td>Informational message indicating that a BOS has been received on the given topic and source.</td><td>No action required. </td></tr>
 <tr>
 <td>Umds-6033-664: umdsd_webmon_api_create: failed to init web server (ip=s, port=s)</td><td>The web monitor subsystem failed to start.</td><td>The web server library will have reported additional details to the console. </td></tr>
 <tr>

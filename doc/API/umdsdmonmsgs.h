@@ -4,14 +4,14 @@
 	For general information on Daemon Statistics, see \ref daemonstatistics.
 
   All of the documentation and software included in this and any
-  other Informatica Corporation Ultra Messaging Releases
-  Copyright (C) Informatica Corporation. All rights reserved.
+  other Informatica Inc. Ultra Messaging Releases
+  Copyright (C) Informatica Inc. All rights reserved.
   
   Redistribution and use in source and binary forms, with or without
   modification, are permitted only as covered by the terms of a
-  valid software license agreement with Informatica Corporation.
+  valid software license agreement with Informatica Inc.
 
-  Copyright (C) 2004-2019, Informatica Corporation. All Rights Reserved.
+  (C) Copyright 2004,2024 Informatica Inc. All Rights Reserved.
 
   THE SOFTWARE IS PROVIDED "AS IS" AND INFORMATICA DISCLAIMS ALL WARRANTIES 
   EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF 
@@ -222,7 +222,7 @@ typedef struct umdsd_dstat_worker_msg_stct {
 *	the name will be truncated.
 */
 #define	UMDS_DSTAT_MAX_ATTR_NAME_SZ 32
-#define	UMDS_DSTAT_NUM_CLIENT_ATTRS 12			// = UMDS_NUM_CLIENT_ATTRS
+#define	UMDS_DSTAT_NUM_CLIENT_ATTRS 13			// = UMDS_NUM_CLIENT_ATTRS
 #define	UMDS_DSTAT_NUM_CLIENT_PERMS 3			// = UMDS_NUM_CLIENT_PERMS
 #define UMDS_DSTAT_DAEMON_INFO_STRLEN 256		// = DAEMON_INFO_STRLEN
 #endif
@@ -351,6 +351,17 @@ typedef struct umdsd_dstat_connection_summary_record_stct {
 	*	running.
 	*/
 	char					net_ip[ 20 ];
+
+	/*! \brief Message bytes dropped by the UMDS server because the total of all
+	 * message queues reached the limit set by the `total-q-size-limit` attribute
+	 * of the \ref umdsxmlserver.
+	 */
+	lbm_uint64_t				user_bytes_tossed_for_total_size;
+	/*! \brief Messages dropped by the UMDS server because the message queue
+	*	has reached the limit set by the `msg-q-size-limit` attribute of the
+	*	\ref umdsxmlserver.
+	*/
+	lbm_uint64_t				user_msgs_tossed_for_total_size;
 } umdsd_dstat_connection_summary_record_t;
 
 /*! \brief Message containing Connection Summary information.

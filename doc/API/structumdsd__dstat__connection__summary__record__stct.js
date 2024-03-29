@@ -24,7 +24,9 @@ var structumdsd__dstat__connection__summary__record__stct =
     [ "total_bytes_sent", "structumdsd__dstat__connection__summary__record__stct.html#ac41b8849e41c6416eafca30ec7338b80", null ],
     [ "total_msgs_rcvd", "structumdsd__dstat__connection__summary__record__stct.html#a3a83c4c0d5682099cfc7aa086258e6a6", null ],
     [ "total_msgs_sent", "structumdsd__dstat__connection__summary__record__stct.html#a9a64b6bbefdc438a66005d64f075f075", null ],
+    [ "user_bytes_tossed_for_total_size", "structumdsd__dstat__connection__summary__record__stct.html#a1d585c0ac301482bcae769ceb72a249c", null ],
     [ "user_msgs_tossed_for_age", "structumdsd__dstat__connection__summary__record__stct.html#aa7a77eb754e276b7a9b47edb97cf5ef5", null ],
     [ "user_msgs_tossed_for_size", "structumdsd__dstat__connection__summary__record__stct.html#a0b1d2a19afc8f1be83d2fc823fca8988", null ],
+    [ "user_msgs_tossed_for_total_size", "structumdsd__dstat__connection__summary__record__stct.html#a97c93621541a4d39d1bef0ccdc4770a8", null ],
     [ "user_name", "structumdsd__dstat__connection__summary__record__stct.html#a8310f3ff813b0a0ba9dc1c24ac65866a", null ]
 ];

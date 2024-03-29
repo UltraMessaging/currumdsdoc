@@ -56,15 +56,57 @@ $(document).ready(function(){initNavTree('umdsdmanpage.html','');});
 <div class="contents">
 <div class="textblock"><p><code>umdsd</code> <em>options</em> <em>configfile</em></p>
 <p><b>Description</b></p>
-<p><code>umdsd</code> runs the UMDS Server and requires a <code>umdsd</code> configuration file.</p>
+<p><code>umdsd</code> runs the UMDS Server and requires a <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a>.</p>
 <p><b>Options</b></p>
-<p><code>-d</code> or <code>&ndash;dump-dtd</code> - option dumps the DTD file used to validate the umdsd configuration file to standard output. After dumping the DTD, <code>umdsd</code> exits instead of initiating the UMDS Server.</p>
-<p><code>-v</code> or <code>&ndash;validate</code> - option validates the <code>umdsd</code> configuration file against the DTD. After attempting validation, <code>umdsd</code> exits instead of initiating the UMDS Server. The exit status will be 0 for a configuration file validated by the DTD and non-zero otherwise.</p>
-<p><code>-f</code> or <code>&ndash;detach</code> option forks <code>umdsd</code>, detaches the child from the controlling terminal and the parent exits immediately. The <code>umdsd</code> normally remains attached to the controlling terminal and runs until interrupted.</p>
+<p><code>-d</code> or <code>&ndash;dump-dtd</code> - option dumps the DTD file used to validate the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a> to standard output. After dumping the DTD, <code>umdsd</code> exits instead of initiating the UMDS Server.</p>
+<p><code>-v</code> or <code>&ndash;validate</code> - option validates the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a> against the DTD. After attempting validation, <code>umdsd</code> exits instead of initiating the UMDS Server. The exit status will be 0 for a configuration file validated by the DTD and non-zero otherwise.</p>
+<p><code>-f</code> or <code>&ndash;detach</code> option forks <code>umdsd</code>, detaches the child from the controlling terminal and the parent exits immediately. The UMDS Server normally remains attached to the controlling terminal and runs until interrupted.</p>
 <p><code>-h</code> or <code>&ndash;help</code> - option provides command line help.</p>
 <dl class="section note"><dt>Note</dt><dd>The UMDS Server may, under some conditions, return an error message similar to <code>error, not enough file descriptors</code>. This may be caused by exceeding the default limit of 1024 file descriptors per process. To override this limit, edit <code>/etc/security/limits.conf</code> and add a line for the user name that starts the UMDS Server and increase it to 2048 or higher. This enables use of the <code>ulimit -n</code> command (or <code>limit openfiles</code> on some systems). Use <code>ulimit -n</code> just before starting the UMDS Server to activate the new limit.</dd></dl>
 <p><b>Exit Status</b></p>
-<p>The exit status from <code>umdsd</code> is 0 for success and some non-zero value for failure. </p>
+<p>The exit status from <code>umdsd</code> is 0 for success and some non-zero value for failure.</p>
+<p><br />
+<br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

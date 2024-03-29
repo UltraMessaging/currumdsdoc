@@ -73,14 +73,14 @@ $(document).ready(function(){initNavTree('umdsserver.html','');});
 <p class="endli"></p>
 </li>
 <li>
-<b>Configuration Options</b> - When the umdsd UMDS Server starts, it reads configuration options from a umdsd configuration file. </li>
+<b>Configuration Options</b> - When the umdsd UMDS Server starts, it reads configuration options from a <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a>. </li>
 </ul>
 <p><br />
  </p>
 <h1><a class="anchor" id="userauthentication"></a>
 User Authentication&nbsp;&nbsp;<small><a href="#userauthentication">&lt;-</a></small></h1>
 <p>You can assign a user or application name, or both, and a password, to authenticate your client applications or individual desktop users. Authentication occurs when a user or application requests a server connection.</p>
-<p>You assign user passwords in the <a class="el" href="umdsserverconfiguration.html#umdsuserelement">UMDS user Element</a> in the <a class="el" href="umdsserverconfiguration.html#basicauthenticationfile">Basic Authentication File</a>, which you specify in the <a class="el" href="umdsserverconfiguration.html#umdsxmlauthentication">UMDS Element "&lt;authentication&gt;"</a> in the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">umdsd Configuration File</a>. You can specify an application or user name in the <a class="el" href="umdsserverconfiguration.html#umdsuserelement">UMDS user Element</a>. If you specify <a class="el" href="umdsserverconfiguration.html#umdsxmlnone">&lt;none&gt;</a> for the <a class="el" href="umdsserverconfiguration.html#umdsxmlauthentication">UMDS Element "&lt;authentication&gt;"</a> in the umdsd configuration file, the UMDS Server authenticates all applications and users.</p>
+<p>You assign user passwords in the <a class="el" href="umdsserverconfiguration.html#umdsuserelement">UMDS user Element</a> in the <a class="el" href="umdsserverconfiguration.html#basicauthenticationfile">Basic Authentication File</a>, which you specify in the <a class="el" href="umdsserverconfiguration.html#umdsxmlauthentication">UMDS Element "&lt;authentication&gt;"</a> in the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a>. You can specify an application or user name in the <a class="el" href="umdsserverconfiguration.html#umdsuserelement">UMDS user Element</a>. If you specify <a class="el" href="umdsserverconfiguration.html#umdsxmlnone">&lt;none&gt;</a> for the <a class="el" href="umdsserverconfiguration.html#umdsxmlauthentication">UMDS Element "&lt;authentication&gt;"</a> in the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a>, the UMDS Server authenticates all applications and users.</p>
 <p><br />
  </p>
 <h1><a class="anchor" id="clientapplicationparameters"></a>
@@ -96,28 +96,28 @@ Client Application Parameters&nbsp;&nbsp;<small><a href="#clientapplicationparam
 <p class="endtd"></p>
 </th></tr>
 <tr>
-<td>1 </td><td><b>Factorydefaults.</b> Requires no action by either application programmers or UMDS Server administrator. </td><td>Yes </td><td><p class="starttd">No</p>
+<td>1 </td><td><b>Factory defaults.</b> Requires no action by either application programmers or UMDS Server administrator. </td><td>Yes </td><td><p class="starttd">No</p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>2 </td><td><b>umdsdconfiguration file <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">UMDS Element "&lt;client&gt;"</a> settings.</b> Overrides factory defaults. You can apply different settings to different UMDS Servers across the enterprise. </td><td>Yes </td><td><p class="starttd">No</p>
+<td>2 </td><td><b>UMDS Server configuration file <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">UMDS Element "&lt;client&gt;"</a> settings.</b> Overrides factory defaults. You can apply different settings to different UMDS Servers across the enterprise. </td><td>Yes </td><td><p class="starttd">No</p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>3 </td><td><b>BasicAuthentication File <code>&lt;application&gt;</code>settings.</b> Overrides umdsd configuration file. These settings indicate one or more client applications that require different settings from the server settings in the umdsd configuration file. </td><td>Yes </td><td><p class="starttd">No</p>
+<td>3 </td><td><b>Basic Authentication File <code>&lt;application&gt;</code>settings.</b> Overrides <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a>. These settings indicate one or more client applications that require different settings from the server settings in the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a>. </td><td>Yes </td><td><p class="starttd">No</p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
 <td><p class="starttd">4</p>
 <p class="endtd"></p>
-</td><td><b>BasicAuthentication File <code>&lt;user&gt;</code>settings.</b> Override Basic Authentication File <code>&lt;application&gt;</code>. These settings indicate one or more users that require either authentication or different operating parameters or both. </td><td>Yes </td><td><p class="starttd">Yes</p>
+</td><td><b>Basic Authentication File <code>&lt;user&gt;</code>settings.</b> Override Basic Authentication File <code>&lt;application&gt;</code>. These settings indicate one or more users that require either authentication or different operating parameters or both. </td><td>Yes </td><td><p class="starttd">Yes</p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>5 </td><td><b>Clientapplication requests of certain settings.</b> umdsd configuration file and Basic Authentication File settings can deny the client application requests with the <code>client-write</code>attribute for any operation parameter. </td><td>Yes </td><td>No </td></tr>
+<td>5 </td><td><b>Client application requests of certain settings.</b> <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a> and <a class="el" href="umdsserverconfiguration.html#basicauthenticationfile">Basic Authentication File</a> settings can deny the client application requests with the <code>client-write</code>attribute for any operation parameter. </td><td>Yes </td><td>No </td></tr>
 </table>
 <p>The UMDS Server sends the resulting settings to the client application as the final phase of the initial connection handshake.</p>
-<dl class="section note"><dt>Note</dt><dd>For Steps 3 and 4, if you specify no Basic Authentication File and the client application does not provide a password, the UMDS Server permits the connection. However, the UMDS Server does not apply any <code>&lt;application&gt;</code>or <code>&lt;user&gt;</code>settings requested by the client application.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For Steps 3 and 4, if you specify no <a class="el" href="umdsserverconfiguration.html#basicauthenticationfile">Basic Authentication File</a> and the client application does not provide a password, the UMDS Server permits the connection. However, the UMDS Server does not apply any <code>&lt;application&gt;</code>or <code>&lt;user&gt;</code>settings requested by the client application.</dd></dl>
 <p><br />
  </p>
 <h1><a class="anchor" id="keepalivetimersduringidleperiods"></a>
@@ -151,26 +151,35 @@ If the server receives no messages from the client, it disconnects the client wh
 <p><br />
  </p>
 <h1><a class="anchor" id="messagequeue"></a>
-Message Queue&nbsp;&nbsp;<small><a href="#messagequeue">&lt;-</a></small></h1>
-<p>The UMDS Server maintains a default message queue for the messages that it forwards to UMDS Client receiving applications. Because connections to UMDS Client applications use receiver-paced TCP, the UMDS Server queues these messages to prevent loss from fast senders.</p>
-<p>In the UMDS Server configuration file, you can configure the queue's age limit and size limit with the <b>"msg-age-limit"</b> and <b>"msg-q-size-limit"</b> attributes of the <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">UMDS Element "&lt;server&gt;"</a>. The UMDS Server deletes messages that stay in the queue longer than the age limit. If the queue reaches the configured size limit, the UMDS Server deletes the oldest messages in the queue to make room for new messages.</p>
+Message Queues&nbsp;&nbsp;<small><a href="#messagequeue">&lt;-</a></small></h1>
+<p>The UMDS Server maintains a message queue for the messages that it forwards to each UMDS Client. This is called the "default" message queue. Because connections to UMDS Client applications use receiver-paced TCP, the UMDS Server queues these messages to prevent loss from fast senders.</p>
+<p>In the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a>, you can configure the default queue's age limit and size limit with the <b>"msg-age-limit"</b> and <b>"msg-q-size-limit"</b> attributes of the <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">UMDS Element "&lt;server&gt;"</a>. The UMDS Server deletes messages that stay in the queue longer than the age limit. If the queue reaches the configured size limit, the UMDS Server deletes the oldest messages in the queue to make room for new messages.</p>
 <dl class="section note"><dt>Note</dt><dd>When considering memory usage, be aware that when the UMDS Server creates sources and receivers, it also creates other buffers and caches. Examples include the topic Late Join message cache, and buffers created using the standard Ultra Messaging configuration options. Note also that when UMDS configuration files do not specify standard Ultra Messaging configuration options, these options use default values.</dd></dl>
 <p><br />
  </p>
 <h2><a class="anchor" id="pertopicmessagequeues"></a>
 Per-Topic Message Queues&nbsp;&nbsp;<small><a href="#pertopicmessagequeues">&lt;-</a></small></h2>
-<p>When the default queue reaches its size limit and a new message arrives, the UMDS Server deletes the oldest message. This might be undesirable if the oldest message is for a different topic than the newest message. The UMDS Server can also maintain per-topic message queues to address the possibility of message loss across topics when using the single default message queue. You can configure topics in the UMDS Server configuration file to use their own message queue or the default queue with the <a class="el" href="umdsserverconfiguration.html#umdsxmltopic">UMDS Element "&lt;topic&gt;"</a>. You can configure topics by pattern matching or explicit names. Each queue maintains its own statistics, which you can view in the Web Monitor Client Details page.</p>
+<p>In addition to the default queue, the UMDS Server can be configured for one or more "per-topic queues". See the <a class="el" href="umdsserverconfiguration.html#umdsxmltopic">UMDS Element "&lt;topic&gt;"</a>.</p>
+<p>Each per-topic queue has its own size limit, independent from the default queue. See <a class="el" href="umdsserverconfiguration.html#umdsreceivertopicoptions">UMDS Receiver Topic Options</a>, option <code>"topic-queue-size-limit"</code>. Note that per-topic queues do not have a message age limit.</p>
+<p>When per-topic queues are not used, all messages flow through the default queue. When the default queue reaches its size limit and a new message arrives, the UMDS Server deletes the oldest message. This can be undesirable if the oldest message is for a different topic than the newest message. For example, suppose you have a price topic that has a high message rate, and a trade topic that has a much lower message rate. It is very important that every trade message be delivered, and less important for every price message to be delivered. If the price topic bursts at too high a rate and the default queue fills, it is undesirable for UMDS to drop trade messages.</p>
+<p>By configuring a per-topic queue for the trade topic, trade messages will not be discarded when the default queue fills with price messages. Only old price messages will be discarded.</p>
+<p>Note that when per-topic queues are enabled, message are still delivered to the client in the order that they arrived at the server. I.e. messages in the per-topic queues do not have a higher delivery priority, they must still wait until it is their turn to be sent to the client.</p>
+<p>Also note that messages in the per-topic queues are still subject to being dropped. In the above example, if the price topic bursts to a higher rate than the UMDS client can consume, that topic's queue can grow to its limit, at which point messages can be dropped.</p>
+<p>You can configure topics by pattern matching or explicit names (see "type" attribute of <a class="el" href="umdsserverconfiguration.html#umdsxmltopic">UMDS Element "&lt;topic&gt;"</a>).</p>
+<p>Each queue maintains its own statistics, which you can view in the Web Monitor <a class="el" href="umdswebmonitor.html#connectiondetails">Client Details</a> page.</p>
+<p>Note that if a large number of topics are assigned their own queues, and each queue fills to its maximum size, this can result in undesirably large memory consumption. The <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">UMDS Element "&lt;server&gt;"</a> attribute <code>"msg-q-size-limit"</code> can be used to control memory growth.</p>
 <p><br />
  </p>
 <h2><a class="anchor" id="configuringmessagequeuesize"></a>
 Configuring Message Queue Size&nbsp;&nbsp;<small><a href="#configuringmessagequeuesize">&lt;-</a></small></h2>
-<p>Use the following information and examples to determine the optimum settings for the <code>msg-q-size-limit</code> parameter, and to properly size the physical memory contained in the UMDS Server host machine.</p>
+<p>Use the following information and examples to determine the optimum settings for the queue size configurations, and to properly size the physical memory contained in the UMDS Server host machine.</p>
 <p><br />
  </p>
 <h2><a class="anchor" id="approximatingperqueuememoryuse"></a>
 Approximating Per-Queue Memory Use&nbsp;&nbsp;<small><a href="#approximatingperqueuememoryuse">&lt;-</a></small></h2>
-<p>The <code>msg-q-size-limit</code> parameter sets the maximum number of message payload bytes that the UMDS Server allows before deleting older messages to make room for new messages. This limit does not include the Ultra Messaging overhead of approximately 900 bytes per message.</p>
+<p>The <code>msg-q-size-limit</code> parameter sets the maximum number of message payload bytes that the UMDS Server allows in each client's "default" queue before deleting older messages to make room for new messages. The <code>topic-queue-size-limit</code> parameter does the same thing for per-topic queues. These limits do not include the Ultra Messaging overhead of approximately 900 bytes per message.</p>
 <p>For example, if a message queue contains 2,000 25-byte messages, this total of 50,000 payload bytes does not exceed the <code>msg-q-size-limit</code> parameter default size of 1,048,576 bytes. However, with the overhead of 900 bytes, the queue actually uses 925 x 2,000 = 1,850,000 bytes.</p>
+<p>Note that if per-topic queues are in use, the same calculations apply using the</p>
 <p><br />
  </p>
 <h2><a class="anchor" id="approximatingthenumberofmessagesperqueue"></a>
@@ -265,6 +274,48 @@ Workers Versus Client Load&nbsp;&nbsp;<small><a href="#workersversusclientload">
 <li>
 UMDS assigns new clients to workers in a round-robin fashion without regard to the current load. If, for example, a number of clients are evenly distributed across the workers and then all the clients assigned to a single worker disconnect, the UMDS Server does not move any clients to the idle worker. In addition, new connections continue to be assigned in a round-robin fashion. </li>
 </ul>
+<p><br />
+<br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

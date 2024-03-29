@@ -56,7 +56,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="contents">
 <div class="textblock"><p> 
 <img src="infa_logo.png" width="400" height="138" alt="Informatica"/><br/><br/>
-<big><b>UMDS</b></big> <small>(Version 6.13.1)</small><br/>
+<big><b>UMDS</b></big> <small>(Version 6.14)</small><br/>
 <br/><br/><br/>
 <center class="mytitle">UMDS Quick Start</center>
 <br/><br/><br/>
@@ -65,7 +65,7 @@ $(document).ready(function(){initNavTree('index.html','');});
  </p>
 <h1><a class="anchor" id="firstsect"></a>
 Introduction&nbsp;&nbsp;<small><a href="#firstsect">&lt;-</a></small></h1>
-<p><b>&copy; Copyright Informatica LLC 2004-2019.</b></p>
+<p><b>(C) Copyright 2004,2024 Informatica Inc. All Rights Reserved.</b></p>
 <p>This guide helps first-time users initially configure and start the UMDS Server and run some of the example applications. It is written for technical staff who install the UMDS package and who develop UMDS client applications.</p>
 <p>The reader is assumed to be familiar with Ultra Messaging concepts.</p>
 <p>This software and documentation are provided only under a separate license agreement containing restrictions on use and disclosure. No part of this document may be reproduced or transmitted in any form, by any means (electronic, photocopying, recording or otherwise) without prior consent of Informatica LLC.</p>
@@ -76,21 +76,22 @@ Introduction&nbsp;&nbsp;<small><a href="#firstsect">&lt;-</a></small></h1>
 <p>Informatica products are warranted according to the terms and conditions of the agreements under which they are provided. <br />
 INFORMATICA LLC PROVIDES THE INFORMATION IN THIS DOCUMENT "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND ANY WARRANTY OR CONDITION OF NON-INFRINGEMENT.</p>
 <p><br />
- </p>
+ </p><hr/>
 <h1><a class="anchor" id="umdsquickoverview"></a>
 UMDS Quick Overview&nbsp;&nbsp;<small><a href="#umdsquickoverview">&lt;-</a></small></h1>
 <p>UMDS requires different types of installations for the UMDS Server and the UMDS Client.</p>
-<p>When you install the UMDS Server and UMDS Client, the installer or installation procedure places files in an <code>[installdir]</code> directory.</p>
-<p>On a Linux machine, <code>[installdir]</code> is typically the following: <br />
-<code>/home/</code><em>user-id</em><code>/UMDS_6.13.1/Linux-glibc-2.5-x86_64</code> <br />
+<p>When you install the UMDS Server and UMDS Client, the installer or installation procedure places files in a <code>[umdsinstalldir]</code> directory.</p>
+<p>On a Linux machine, <code>[umdsinstalldir]</code> is typically the following: <br />
+<code>/home/</code><em>user-id</em><code>/UMDS_6.14/Linux-glibc-2.5-x86_64</code> <br />
 (the glibc version is subject to change)</p>
-<p>For a client on a Microsoft Windows machine, <code>[installdir]</code> is typically the following: <br />
-<code>C:\Program Files\Informatica\UMDS_6.13.1_client\Win2k-x86_64&lt;/filepath&gt;</code></p>
+<p>For a client on a Microsoft Windows machine, <code>[umdsinstalldir]</code> is typically the following: <br />
+<code>C:\Program Files\Informatica\UMDS_6.14_client\Win2k-x86_64</code></p>
+<p>NOTE: to reduce clutter, the rest of this document will use "/" as the directory separator. Windows users should use "\" instead.</p>
 <p><br />
  </p>
 <h2><a class="anchor" id="umdsserverinstallation"></a>
 UMDS Server Installation&nbsp;&nbsp;<small><a href="#umdsserverinstallation">&lt;-</a></small></h2>
-<p>You must install the UMDS Server on a Linux machine that also has UMS, UMP, or UMQ of version 6.0 or beyond.</p>
+<p>You must install the UMDS Server on a Linux machine that also has UMS, UMP, or UMQ of version 6.14 or beyond.</p>
 <p>To install the UMDS Server, perform the following procedure:</p>
 <ol>
 <li>
@@ -103,13 +104,13 @@ UMDS Server Installation&nbsp;&nbsp;<small><a href="#umdsserverinstallation">&lt
 </li>
 <li>
 <p class="startli">Install UMDS Server by entering the commands: </p><pre>
-cd [installdir]
-./UMDS_6.13.1_Linux-glibc-2.17-x86_64.sh
+cd
+./UMDS_6.14_Linux-glibc-2.17-x86_64.sh
 </pre><p> (the glibc version is subject to change)</p>
 <p class="endli"></p>
 </li>
 <li>
-Save the UMDS license file to <code>[installdir]</code>. Note the path and filename for later use with the UMDS configuration file. </li>
+Save the UMDS license file to <code>[umdsinstalldir]/license.txt</code>. Note the path and filename for later use with the UMDS configuration file. </li>
 </ol>
 <p><br />
  </p>
@@ -122,69 +123,73 @@ UMDS Client Installation&nbsp;&nbsp;<small><a href="#umdsclientinstallation">&lt
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">Run the UMDS client installation appropriate for your client platform. For Windows, run <code>UMDS_6.13.1_client-install.exe</code>. For UNIX, follow the server installation instructions.</p>
+<p class="startli">Run the UMDS client installation appropriate for your client platform. For Windows, run <code>UMDS_6.14_client-install.exe</code>. For UNIX, follow the server installation instructions.</p>
 <p class="endli"></p>
 </li>
 <li>
 If you want to run the example applications, download <code>openmdx-kernel.jar</code> and <code>log4j-1.2.9.jar</code> files, or locate the same files in the UMS, UMP, or UMQ installation. </li>
 </ol>
-<dl class="section note"><dt>Note</dt><dd>The example applications install under the <code>[installdir]</code> in the <code>dotnet_client/bin</code> and <code>java_client/bin&lt;</code> directories.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The example applications install under the <code>[umdsinstalldir]</code> in the <code>dotnet_client/bin</code> and <code>java_client/bin</code> directories.</dd></dl>
 <p><br />
- </p>
+ </p><hr/>
 <h1><a class="anchor" id="configuringtheumdsserver"></a>
 Configuring the UMDS Server&nbsp;&nbsp;<small><a href="#configuringtheumdsserver">&lt;-</a></small></h1>
-<p>Before starting the UMDS Server, perform the following adjustments to the UMDS Server configuration file. When editing, do not change the order of the elements in <code>cfg.xml</code>.</p>
-<ol>
+<p>Before starting the UMDS Server, create a file <code>[umdsinstalldir]/umds_config.xml</code> with the following content (replacing "[umdsinstalldir]" as necessary): </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;umds-daemon version="1.1"&gt;
+&lt;daemon&gt;
+    &lt;!--   [Optional] If not supplied here, must be supplied via environment. --&gt;
+    &lt;lbm-license-file&gt;[umdsinstalldir]/license.txt&lt;/lbm-license-file&gt;
+
+    &lt;!--   [Optional] Add lbm config file here. --&gt;
+    &lt;lbm-config&gt;[umdsinstalldir]/um_config.txt&lt;/lbm-config&gt;
+
+    &lt;!--   Port for clients to connect to. --&gt;
+    &lt;server bind-addr="*:14701" /&gt;
+
+    &lt;!--   Need a client section which can be empty (all defaults). --&gt;
+    &lt;client/&gt;
+
+    &lt;!--   Default authentication is "none". --&gt;
+    &lt;authentication/&gt;
+
+    &lt;!--   [Optional] Web monitoring can be a valuable feature. --&gt;
+    &lt;web-monitor&gt;*:8080&lt;/web-monitor&gt;
+&lt;/daemon&gt;
+&lt;/umds-daemon&gt;
+</pre><ul>
 <li>
-<p class="startli">Open <code>[installdir]/doc/UMDS/QuickStart/cfg.xml</code> in a text editor.</p>
+<p class="startli">Create the UM license file <code>[umdsinstalldir]/license.txt</code>. Alternatively you can omit the license line and supply the license key via the environment.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">Add the UMDS license file name to the <code>&lt;lbm-license-file&gt;</code> element.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">Specify a null UM configuration file with <code>&lt;lbm-config&gt;&lt;/lbm-config&gt;</code> or specify a valid UMS configuration file. Note that the UMDS Server ignores some parameters.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">The default server connection port is 14701. If this is unavailable, edit the <code>&lt;server ...&gt;</code> element to use a different port, for example: <code>&lt;server bind-addr="*:14733"/&gt;</code>. Note this server's IP address and the new port number for later use.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">If using the UMDS Web Monitor, ensure that the Web Monitor port number does not conflict with other UMDS Servers or other applications.</p>
-<p class="endli"></p>
-</li>
-<li>
-Save the updated <code>cfg.xml</code> configuration file in <code>[installdir]</code>. </li>
-</ol>
+Create the UM configuration file <code>[umdsinstalldir]um_config.txt</code> to enable the server to communicate with other UM components. (If you omit this, UM will just use all defaults.) </li>
+</ul>
 <p><br />
- </p>
+ </p><hr/>
 <h1><a class="anchor" id="startingtheumdsserver"></a>
 Starting the UMDS Server&nbsp;&nbsp;<small><a href="#startingtheumdsserver">&lt;-</a></small></h1>
 <p>To start the UMDS Server, perform the following procedure:</p>
 <ol>
 <li>
 <p class="startli">Open a terminal window and navigate to the server bin directory. </p><pre>
-$ cd  [installdir]/bin
+$ cd  [umdsinstalldir]/bin
 </pre><p class="endli"></p>
 </li>
 <li>
 <p class="startli">Update <code>LD_LIBRARY_PATH</code> with both UMDS and Ultra Messaging library paths. </p><pre>
-$ LD_LIBRARY_PATH="/usr/lib:[LBMinstalldir]/lib:[UMinstalldir]/lib"
-export LD_LIBRARY_PATH
+$ export LD_LIBRARY_PATH="/usr/lib:[umdsinstalldir]/lib:[lbminstalldir]/lib"
 </pre><p class="endli"></p>
 </li>
 <li>
 Issue the following command: <pre>
-$ ./umdsd ../cfg.xml
+$ ./umdsd ../umds_config.xml
 </pre> </li>
 </ol>
 <p>You see output similar to the following: </p><pre>
-Ultra Messaging Desktop Services Version 6.13.1 Build: ...</pre><pre>Purpose: UMDS daemon</pre><pre>authentication: Warning: no authentication methods specified, 'none' assumed
+Ultra Messaging Desktop Services Version 6.14 Build: ...</pre><pre>Purpose: UMDS daemon</pre><pre>authentication: Warning: no authentication methods specified, 'none' assumed
 </pre><p>Open a Web browser to the web monitor IP address and port noted in <a class="el" href="index.html#configuringtheumdsserver">Configuring the UMDS Server</a>. E.g. <code><a href="http://172.16.254.1:8080">http://172.16.254.1:8080</a></code></p>
 <p><br />
- </p>
+ </p><hr/>
 <h1><a class="anchor" id="runningumdsexampleapplications"></a>
 Running UMDS Example Applications&nbsp;&nbsp;<small><a href="#runningumdsexampleapplications">&lt;-</a></small></h1>
 <p>To run UMDS client example applications, perform the following platform and source language procedure.</p>
@@ -195,21 +200,21 @@ Windows Java Example&nbsp;&nbsp;<small><a href="#windowsjavaexample">&lt;-</a></
 <p>To run UMDS example Java applications on a Microsoft Windows machine, perform the following procedure.</p>
 <ol>
 <li>
-<p class="startli">Save the openmdx-kernel jar file to UMDS <code>[installdir]</code>.</p>
+<p class="startli">Save the openmdx-kernel jar file to UMDS <code>[umdsinstalldir]</code>.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">Locate the UMDS client jar file in <code>[installdir]</code>. It was placed there by the <a class="el" href="index.html#umdsclientinstallation">UMDS Client Installation</a>.</p>
+<p class="startli">Locate the UMDS client jar file in <code>[umdsinstalldir]</code>. It was placed there by the <a class="el" href="index.html#umdsclientinstallation">UMDS Client Installation</a>.</p>
 <p class="endli"></p>
 </li>
 <li>
 <p class="startli">Open a Command Prompt and start a UMDS receiver connection to the server. Substitute the UMDS Server's IP address and port number for <code>ip:port</code>. </p><pre>
-java -cp [installdir]\[umdsjarfile];[installdir]\openmdx-kernel.jar umdsreceive -S ip:port mytopic
+java -cp [umdsinstalldir]\[umdsjarfile];[umdsinstalldir]\openmdx-kernel.jar umdsreceive -S ip:port mytopic
 </pre><p class="endli"></p>
 </li>
 <li>
 Open a second Command Prompt and Start a UMDS source connection to the server for the same topic. Substitute the UMDS Server's IP address and port number for <code>ip:port</code>. <pre>
-java -cp [installdir]\[umdsjarfile];[installdir]\openmdx-kernel.jar umdssend -S ip:port mytopic
+java -cp [umdsinstalldir]\[umdsjarfile];[umdsinstalldir]\openmdx-kernel.jar umdssend -S ip:port mytopic
 </pre> </li>
 </ol>
 <p>If there are problems, first check version compatibility by issuing the following command: </p><pre>

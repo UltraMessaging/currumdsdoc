@@ -1,13 +1,13 @@
 /*
   All of the documentation and software included in this and any
-  other Informatica Corporation Ultra Messaging Releases
-  Copyright (C) Informatica Corporation. All rights reserved.
+  other Informatica Inc. Ultra Messaging Releases
+  Copyright (C) Informatica Inc. All rights reserved.
 
   Redistribution and use in source and binary forms, with or without
   modification, are permitted only as covered by the terms of a
-  valid software license agreement with Informatica Corporation.
+  valid software license agreement with Informatica Inc.
 
-  Copyright (C) 2004-2019, Informatica Corporation. All Rights Reserved.
+  (C) Copyright 2004,2024 Informatica Inc. All Rights Reserved.
 
   THE SOFTWARE IS PROVIDED "AS IS" AND INFORMATICA DISCLAIMS ALL WARRANTIES
   EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF

@@ -1,9 +1,15 @@
 var classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection =
 [
+    [ "COMPR_TYPE", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a4cb243a75576056cc5146181a0a0bf45", [
+      [ "NONE", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a4cb243a75576056cc5146181a0a0bf45ab50339a10e1de285ac99d4c3990b8693", null ],
+      [ "LZ4", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a4cb243a75576056cc5146181a0a0bf45aca0c64c0de8f56bc573828ea6d764594", null ]
+    ] ],
     [ "UMDSServerConnection", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a31f9a4a3709018a77cffcb1c81477f46", null ],
     [ "UMDSServerConnection", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a8baf8173ccdc73bcffd9c2fe97485375", null ],
     [ "addCapability", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a8f573cd5246ad08305cdf75dd92200eb", null ],
     [ "close", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a81477a4a00edcf441b4d3b6479584157", null ],
+    [ "compressBuffer", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a261d5ca602837d7f847f1048f9f44099", null ],
+    [ "decompressMsg", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ae621e5018f3876ce4af52d8c516b1de0", null ],
     [ "getProperty", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#afb350223c80712be773d1cfbb143beae", null ],
     [ "getUMDS", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#acc4a817ccdaa4bfd7575afb13fc6f051", null ],
     [ "isAuthenticated", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a607bbf94f9d393c4eebb0aae209f268d", null ],
@@ -17,6 +23,7 @@ var classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection =
     [ "setProperty", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a47fbf2723c0997ff6207be27e685cea0", null ],
     [ "start", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a13d21960a531f3391e6aa634fd57a248", null ],
     [ "CAPABILITIES_REQUEST_RESPONSE", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a338f3966de67e77d213e8f0401830abf", null ],
+    [ "compressionType", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a9585fc2ac5e8511f96b08cdcf530aee1", null ],
     [ "Authenticated", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ac04796d780f108c6d0872b28dadd0333", null ],
     [ "Error", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a4c8c6d75f4b167962636bf46177b6ae5", null ],
     [ "ErrorStr", "classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a562eb53de09fdb6ce77467529ce6a933", null ],

@@ -2,6 +2,14 @@ var NAVTREE =
 [
   [ "UMDS Release Notes", "index.html", [
     [ "Introduction", "index.html", null ],
+    [ "UMDS Version 6.14", "umdsversion6_14.html", [
+      [ "Enhancements for UMDS 6.14", "umdsversion6_14.html#enhancementsforumds6_14", null ],
+      [ "Fixed Limitations for UMDS 6.14", "umdsversion6_14.html#fixedlimitationsforumds6_14", null ],
+      [ "Special Upgrade Instructions for 6.14", "umdsversion6_14.html#specialupgradeinstructionsfor6_14", [
+        [ "Unbounded Log File Growth", "umdsversion6_14.html#unboundedlogfilegrowth", null ],
+        [ "Server XML Configuration File Version", "umdsversion6_14.html#serverxmlconfigurationfileversion", null ]
+      ] ]
+    ] ],
     [ "UMDS Version 6.13.1", "umdsversion6_13_1.html", [
       [ "Enhancements for UMDS 6.13.1", "umdsversion6_13_1.html#enhancementsforumds6_13_1", null ],
       [ "Fixed Limitations for UMDS 6.13.1", "umdsversion6_13_1.html#fixedlimitationsforumds6_13_1", null ]

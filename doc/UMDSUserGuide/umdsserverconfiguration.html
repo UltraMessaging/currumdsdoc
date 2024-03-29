@@ -57,28 +57,28 @@ $(document).ready(function(){initNavTree('umdsserverconfiguration.html','');});
 <div class="textblock"><p>You configure the UMDS Server with four files:</p>
 <ol>
 <li>
-<p class="startli">The <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">umdsd Configuration File</a> (in xml format). Required and typically specified on the UMDS Server program command line.</p>
+<p class="startli">The <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a> (in xml format). Required and typically specified on the UMDS Server program command line.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">The <a class="el" href="umdsserverconfiguration.html#umlicensefile">UM License File</a> (in Ultra Messaging license format). Optional and specified in the UMDS server configuration file.</p>
+<p class="startli">The <a class="el" href="umdsserverconfiguration.html#umlicensefile">UM License File</a> (in Ultra Messaging license format). Optional and specified in the UMDS Server configuration file.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">The <a class="el" href="umdsserverconfiguration.html#umconfigurationfile">UM Configuration File</a> that affects the Ultra Messaging Context running on the same host as the UMDS Server. Does not directly affect the activity between UMDS Server and Client Applications. See the Ultra Messaging Configuration Guide. Optional and specified in the UMDS server configuration file.</p>
+<p class="startli">The <a class="el" href="umdsserverconfiguration.html#umconfigurationfile">UM Configuration File</a> that affects the Ultra Messaging Context running on the same host as the UMDS Server. Does not directly affect the activity between UMDS Server and Client Applications. See the Ultra Messaging Configuration Guide. Optional and specified in the UMDS Server configuration file.</p>
 <p class="endli"></p>
 </li>
 <li>
-The <a class="el" href="umdsserverconfiguration.html#basicauthenticationfile">Basic Authentication File</a> (in xml format). Optional and specified in the UMDS server configuration file. </li>
+The <a class="el" href="umdsserverconfiguration.html#basicauthenticationfile">Basic Authentication File</a> (in xml format). Optional and specified in the UMDS Server configuration file. </li>
 </ol>
 <p><br />
  </p>
 <h1><a class="anchor" id="umdsdconfigurationfile"></a>
-umdsd Configuration File&nbsp;&nbsp;<small><a href="#umdsdconfigurationfile">&lt;-</a></small></h1>
+UMDS Server Configuration File&nbsp;&nbsp;<small><a href="#umdsdconfigurationfile">&lt;-</a></small></h1>
 <p>The following example shows the element structure of the xml configuration file that you use for the umdsd UMDS Server daemon.</p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
   &lt;log type="file" xml:space="preserve"&gt;umdsd.log&lt;/log&gt;
   &lt;uid&gt;12345&lt;/uid&gt;
@@ -138,7 +138,7 @@ umdsd Configuration File&nbsp;&nbsp;<small><a href="#umdsdconfigurationfile">&lt
  </p>
 <h2><a class="anchor" id="umdsxmlumdsdaemon"></a>
 UMDS Element "&lt;umds-daemon&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlumdsdaemon">&lt;-</a></small></h2>
-<p>Container element which holds the UMDS server's configuration. Also defines the version of the configuration format used by the file.</p>
+<p>Container element which holds the UMDS Server's configuration. Also defines the version of the configuration format used by the file.</p>
 <p>Required.</p>
 <ul>
 <li>
@@ -148,10 +148,10 @@ UMDS Element "&lt;umds-daemon&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlumdsdaemon
 <tr>
 <th>Attribute </th><th>Description </th><th>Valid Values </th><th>Default Value </th></tr>
 <tr>
-<td><b>version</b> </td><td>Version number of user's configuration file. </td><td><b><code>"1.0"</code></b> - Initial version </td><td><b><code>"1.0"</code></b> </td></tr>
+<td><b>version</b> </td><td>Version number of user's configuration file. </td><td><b><code>"1.1"</code></b> - Initial version </td><td><b><code>"1.0"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   ...
 &lt;/umds-daemon&gt;
 </pre><hr/>
@@ -159,7 +159,7 @@ UMDS Element "&lt;umds-daemon&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlumdsdaemon
  </p>
 <h2><a class="anchor" id="umdsxmldaemon"></a>
 UMDS Element "&lt;daemon&gt;"&nbsp;&nbsp;<small><a href="#umdsxmldaemon">&lt;-</a></small></h2>
-<p>Container element which holds the UMDS server's configuration.</p>
+<p>Container element which holds the UMDS Server's configuration.</p>
 <p>Required.</p>
 <ul>
 <li>
@@ -170,7 +170,7 @@ UMDS Element "&lt;daemon&gt;"&nbsp;&nbsp;<small><a href="#umdsxmldaemon">&lt;-</
 <b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmllog">&lt;log&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmluid">&lt;uid&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlgid">&lt;gid&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlpidfile">&lt;pidfile&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmllbmlicensefile">&lt;lbm-license-file&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmllbmconfig">&lt;lbm-config&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">&lt;server&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">&lt;client&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlpermissions">&lt;permissions&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlauthentication">&lt;authentication&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlwebmonitor">&lt;web-monitor&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmldaemonmonitor">&lt;daemon-monitor&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlmonitor">&lt;monitor&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmltopics">&lt;topics&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     ...
   &lt;/daemon&gt;
@@ -190,12 +190,12 @@ UMDS Element "&lt;tls&gt;"&nbsp;&nbsp;<small><a href="#umdsxmltls">&lt;-</a></sm
 <li>
 <b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlcertificate">&lt;certificate&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlcertificatekey">&lt;certificate-key&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlcertificatekeypassword">&lt;certificate-key-password&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmltrustedcertificates">&lt;trusted-certificates&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlciphersuites">&lt;cipher-suites&gt;</a> </li>
 </ul>
-<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate&gt;test.crt&lt;certificate&gt;</div><div class="line">      &lt;certificate-key&gt;test.key&lt;certificate-key&gt;</div><div class="line">      &lt;certificate-key-password&gt;</div><div class="line">        CorrectHorseBatteryStaple</div><div class="line">      &lt;/certificate-key-password&gt;</div><div class="line">      &lt;trusted-certificates&gt;peers.crt&lt;trusted-certificates&gt;</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.1&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate&gt;test.crt&lt;certificate&gt;</div><div class="line">      &lt;certificate-key&gt;test.key&lt;certificate-key&gt;</div><div class="line">      &lt;certificate-key-password&gt;</div><div class="line">        CorrectHorseBatteryStaple</div><div class="line">      &lt;/certificate-key-password&gt;</div><div class="line">      &lt;trusted-certificates&gt;peers.crt&lt;trusted-certificates&gt;</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
 <p> <br />
  </p>
 <h2><a class="anchor" id="umdsxmlciphersuites"></a>
 UMDS Element "&lt;cipher-suites&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlciphersuites">&lt;-</a></small></h2>
-<p>Defines the list of one or more (comma separated) names of cipher suites that the UMDS server will accept. See OpenSSL's <a href="https://www.openssl.org/docs/manmaster/man1/openssl-ciphers.html#CIPHER-SUITE-NAMES">Cipher Suite Names</a> for the full list of suite names. When configuring UM, use the OpenSSL names (with dashes), <b>not</b> the IANA names (with underscores).</p>
+<p>Defines the list of one or more (comma separated) names of cipher suites that the UMDS Server will accept. See OpenSSL's <a href="https://www.openssl.org/docs/manmaster/man1/openssl-ciphers.html#CIPHER-SUITE-NAMES">Cipher Suite Names</a> for the full list of suite names. When configuring UM, use the OpenSSL names (with dashes), <b>not</b> the IANA names (with underscores).</p>
 <p>If more than one suite name is supplied, they should be in descending order of preference. When a client negotiates encrypted TCP, the two sides must find a cipher suite in common, otherwise the connection will be canceled.</p>
 <p>The default is highly secure and is recommended.</p>
 <p>For more information, see <a class="el" href="umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a>.</p>
@@ -205,7 +205,7 @@ UMDS Element "&lt;cipher-suites&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlciphersu
 <li>
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
 </ul>
-<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;cipher-suites&gt;TLS_DHE_RSA_WITH_AES_256_GCM_SHA384&lt;cipher-suites&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.1&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;cipher-suites&gt;TLS_DHE_RSA_WITH_AES_256_GCM_SHA384&lt;cipher-suites&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
 <p> <br />
  </p>
 <h2><a class="anchor" id="umdsxmltrustedcertificates"></a>
@@ -219,7 +219,7 @@ UMDS Element "&lt;trusted-certificates&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlt
 <li>
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
 </ul>
-<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;trusted-certificates&gt;peers.crt&lt;trusted-certificates&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.1&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;trusted-certificates&gt;peers.crt&lt;trusted-certificates&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
 <p> <br />
  </p>
 <h2><a class="anchor" id="umdsxmlcertificatekeypassword"></a>
@@ -232,7 +232,7 @@ UMDS Element "&lt;certificate-key-password&gt;"&nbsp;&nbsp;<small><a href="#umds
 <li>
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
 </ul>
-<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate-key-password&gt;</div><div class="line">        CorrectHorseBatteryStaple</div><div class="line">      &lt;/certificate-key-password&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.1&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate-key-password&gt;</div><div class="line">        CorrectHorseBatteryStaple</div><div class="line">      &lt;/certificate-key-password&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
 <p> <br />
  </p>
 <h2><a class="anchor" id="umdsxmlcertificatekey"></a>
@@ -243,7 +243,7 @@ UMDS Element "&lt;certificate-key&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlcertif
 <li>
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
 </ul>
-<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate-key&gt;test.key&lt;certificate-key&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.1&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate-key&gt;test.key&lt;certificate-key&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
 <p> <br />
  </p>
 <h2><a class="anchor" id="umdsxmlcertificate"></a>
@@ -254,12 +254,12 @@ UMDS Element "&lt;certificate&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlcertificat
 <li>
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltls">&lt;tls&gt;</a> </li>
 </ul>
-<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.0&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate&gt;test.crt&lt;certificate&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">&lt;?xml version=<span class="stringliteral">&quot;1.0&quot;</span> encoding=<span class="stringliteral">&quot;UTF-8&quot;</span> ?&gt;</div><div class="line">&lt;umds-daemon version=<span class="stringliteral">&quot;1.1&quot;</span>&gt;</div><div class="line">  &lt;daemon&gt;</div><div class="line">    &lt;tls&gt;</div><div class="line">      &lt;certificate&gt;test.crt&lt;certificate&gt;</div><div class="line">      ...</div><div class="line">    &lt;/tls&gt;</div><div class="line">    ...</div><div class="line">  &lt;/daemon&gt;</div><div class="line">&lt;/umds-daemon&gt;</div></div><!-- fragment --><hr/>
 <p> <br />
  </p>
 <h2><a class="anchor" id="umdsxmltopics"></a>
 UMDS Element "&lt;topics&gt;"&nbsp;&nbsp;<small><a href="#umdsxmltopics">&lt;-</a></small></h2>
-<p>Container element for topics that the UMDS server forwards to UMDS client applications. Use this element to apply UMS Configuration Options to individual topics or topic patterns. You can also configure topics and topic patterns to have individual message queues, which can mitigate possible message loss.</p>
+<p>Container element for topics that the UMDS Server forwards to UMDS client applications. Use this element to apply UMS Configuration Options to individual topics or topic patterns. You can also configure topics and topic patterns to have individual message queues, which can mitigate possible message loss.</p>
 <p>Optional. If omitted, topics use the UMDS Server default message queue, and these topics do not use specific UMS configuration options.</p>
 <ul>
 <li>
@@ -270,7 +270,7 @@ UMDS Element "&lt;topics&gt;"&nbsp;&nbsp;<small><a href="#umdsxmltopics">&lt;-</
 <b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltopic">&lt;topic&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;topics&gt;
       ...
@@ -285,7 +285,7 @@ UMDS Element "&lt;topics&gt;"&nbsp;&nbsp;<small><a href="#umdsxmltopics">&lt;-</
 UMDS Element "&lt;topic&gt;"&nbsp;&nbsp;<small><a href="#umdsxmltopic">&lt;-</a></small></h2>
 <p>Holds the configuration for a specific set of topics.</p>
 <p>Required, if <a class="el" href="umdsserverconfiguration.html#umdsxmltopics">UMDS Element "&lt;topics&gt;"</a> is present.</p>
-<p>Note: if type <code>"direct"</code> is used, the pattern must exactly match the entire topic string. For example, <code>pattern="x.y" type="direct"</code> will only match the topic <code>"x.y"</code>. Topcis <code>"x.yz"</code> and <code>"zx.y"</code> and will be excluded. However, if the type is a regular expression, no assumption is made regarding the start or end of the topic name. The user is expected to make use of anchor metacharacters "`^`" and "`$`" if needed. For example, <code>pattern="x" type="PCRE"</code> will match topics <code>"x"</code>, <code>"xyz"</code>, <code>"zyx"</code>, and <code>"axe"</code>. If it is desired to match only topics that start with "x", use <code>pattern="^x" type="PCRE"</code>. That will match <code>"x"</code> and <code>"xyz"</code>, but exclude <code>"zyx"</code> and <code>"axe"</code>. Also remember that a period (<code>"."</code>) is a metacharacter which matches any character, and must be escaped if an actual period is desired. For example, <code>pattern="^NASD\\." type="PCRE"</code> will match topics "NASD.a", "NASD.a.b", and "NASD\.", but will exclude "NASDa.b" and "XNASD.a".</p>
+<p>Note: if type <code>"direct"</code> is used, the pattern must exactly match the entire topic string. For example, <code>pattern="x.y" type="direct"</code> will only match the topic <code>"x.y"</code>. Topcis <code>"x.yz"</code> and <code>"zx.y"</code> and will be excluded. However, if the type is a regular expression, no assumption is made regarding the start or end of the topic name. The user is expected to make use of anchor metacharacters "&lt;/tt&gt;^&lt;tt&gt;" and "&lt;/tt&gt;$&lt;tt&gt;" if needed. For example, <code>pattern="x" type="PCRE"</code> will match topics <code>"x"</code>, <code>"xyz"</code>, <code>"zyx"</code>, and <code>"axe"</code>. If it is desired to match only topics that start with "x", use <code>pattern="^x" type="PCRE"</code>. That will match <code>"x"</code> and <code>"xyz"</code>, but exclude <code>"zyx"</code> and <code>"axe"</code>. Also remember that a period (<code>"."</code>) is a metacharacter which matches any character, and must be escaped if an actual period is desired. For example, <code>pattern="^NASD\." type="PCRE"</code> will match topics "NASD.a", "NASD.a.b", and "NASD.", but will exclude "NASDa.b" and "XNASD.a".</p>
 <ul>
 <li>
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmltopics">&lt;topics&gt;</a> </li>
@@ -303,7 +303,7 @@ UMDS Element "&lt;topic&gt;"&nbsp;&nbsp;<small><a href="#umdsxmltopic">&lt;-</a>
 <b><code>"regexp"</code></b> - (Not recommended.) Regular expression match using POSIX extended regular expressions syntax. </td><td><b><code>"direct"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;topics&gt;
       &lt;topic pattern="^NASD\..*" type="PCRE"&gt;
@@ -330,7 +330,7 @@ UMDS Element "&lt;umds-attributes&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlumdsat
 <b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmloption">&lt;option&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;topics&gt;
       &lt;topic pattern="^NASD\..*" type="PCRE"&gt;
@@ -380,7 +380,7 @@ Type <b>"umds-source"</b> is used to specify UMDS-specific receiver configuratio
 <p><b>Example:</b> </p>
 <p>In this example, the server will configure its wildcard receiver for topics such as "NASD.X" and "NASD.Y" to not stop topic resolution queries using the UM configuration option resolver_query_minimum_duration_wildcard (receiver).</p>
 <pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;topics&gt;
       &lt;topic pattern="^NASD\..*" type="PCRE"&gt;
@@ -400,7 +400,7 @@ Type <b>"umds-source"</b> is used to specify UMDS-specific receiver configuratio
  </p>
 <h2><a class="anchor" id="umdsxmlmonitor"></a>
 UMDS Element "&lt;monitor&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlmonitor">&lt;-</a></small></h2>
-<p>Enables and configures the UM transport statistics monitoring function. Multiple instances of this element are typically supplied to enable monitoring of the different types of UM objects created by the UMDS server during its operation.</p>
+<p>Enables and configures the UM transport statistics monitoring function. Multiple instances of this element are typically supplied to enable monitoring of the different types of UM objects created by the UMDS Server during its operation.</p>
 <p>Opional. If omitted, no monitoring takes place.</p>
 <ul>
 <li>
@@ -421,7 +421,7 @@ UMDS Element "&lt;monitor&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlmonitor">&lt;-
 <td><b>interval</b> </td><td>The time, in seconds, that monitoring statistics are sampled and published. </td><td>string </td><td><b><code>"5"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;monitor object="context" interval="60"&gt;
       ...
@@ -437,7 +437,7 @@ UMDS Element "&lt;monitor&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlmonitor">&lt;-
  </p>
 <h2><a class="anchor" id="umdsxmlapplicationid"></a>
 UMDS Element "&lt;application-id&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlapplicationid">&lt;-</a></small></h2>
-<p>Identification string, used by monitoring applications to identify the application (where the UMDS server itself is the application in this case).</p>
+<p>Identification string, used by monitoring applications to identify the application (where the UMDS Server itself is the application in this case).</p>
 <p>Optional. If omitted, application ID is not used.</p>
 <ul>
 <li>
@@ -451,11 +451,11 @@ UMDS Element "&lt;application-id&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlapplica
 <b><code>"preserve"</code></b> - Retains whitespace as entered. </td><td><b><code>"default"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;monitor object="context" interval="60"&gt;
       &lt;application-id&gt;
-        UMDS server 123
+        UMDS Server 123
       &lt;/application-id&gt;
       ...
     &lt;/monitor&gt;
@@ -483,7 +483,7 @@ UMDS Element "&lt;format&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlformat">&lt;-</
 <td><b>options</b> </td><td>Options string to be passed to the formatting module. </td><td>string </td><td>(null string) </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;monitor object="context" interval="60"&gt;
       &lt;format module="csv"/&gt;
@@ -513,7 +513,7 @@ UMDS Element "&lt;transport&gt;"&nbsp;&nbsp;<small><a href="#umdsxmltransport">&
 <td><b>options</b> </td><td>Options string to be passed to the transport module. </td><td>string </td><td>(null string) </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;monitor object="context" interval="60"&gt;
       &lt;transport module="lbm"/&gt;
@@ -544,7 +544,7 @@ UMDS Element "&lt;daemon-monitor&gt;"&nbsp;&nbsp;<small><a href="#umdsxmldaemonm
 <td><b>topic</b> </td><td>Topic name to use for publishing Daemon Statistics. </td><td>string </td><td><b><code>"umdsd.monitor"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;daemon-monitor&gt;
       ...
@@ -572,7 +572,7 @@ UMDS Element "&lt;lbm-config&gt;"&nbsp;&nbsp;<small><a href="#umdsxmllbmconfig">
 <b><code>"preserve"</code></b> - Retains whitespace as entered. </td><td><b><code>"default"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;daemon-monitor&gt;
       &lt;lbm-config&gt;
@@ -588,7 +588,7 @@ UMDS Element "&lt;lbm-config&gt;"&nbsp;&nbsp;<small><a href="#umdsxmllbmconfig">
  </p>
 <h2><a class="anchor" id="umdsxmlremoteconfigchangesrequest"></a>
 UMDS Element "&lt;remote-config-changes-request&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlremoteconfigchangesrequest">&lt;-</a></small></h2>
-<p>Configures whether the UMDS server will respond to monitoring apps requests to change the rate at which Daemon Statistics messages are published.</p>
+<p>Configures whether the UMDS Server will respond to monitoring apps requests to change the rate at which Daemon Statistics messages are published.</p>
 <p>Optional. If omitted, change requests will be ignored.</p>
 <p>See <a class="el" href="daemonstatistics.html">Daemon Statistics</a> for information on Daemon Statistics.</p>
 <ul>
@@ -605,7 +605,7 @@ UMDS Element "&lt;remote-config-changes-request&gt;"&nbsp;&nbsp;<small><a href="
 <b><code>"1"</code></b> - UMDS will respond to change requests. </td><td><b><code>"0"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;daemon-monitor&gt;
       &lt;remote-config-changes-request allow="1"/&gt;
@@ -619,7 +619,7 @@ UMDS Element "&lt;remote-config-changes-request&gt;"&nbsp;&nbsp;<small><a href="
  </p>
 <h2><a class="anchor" id="umdsxmlremotesnapshotrequest"></a>
 UMDS Element "&lt;remote-snapshot-request&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlremotesnapshotrequest">&lt;-</a></small></h2>
-<p>Configures whether the UMDS server will respond to monitoring apps requests to send on-demand snapshots of daemon statistics.</p>
+<p>Configures whether the UMDS Server will respond to monitoring apps requests to send on-demand snapshots of daemon statistics.</p>
 <p>Optional. If omitted, snapshot requests will be ignored.</p>
 <p>See <a class="el" href="daemonstatistics.html">Daemon Statistics</a> for information on Daemon Statistics.</p>
 <ul>
@@ -636,7 +636,7 @@ UMDS Element "&lt;remote-snapshot-request&gt;"&nbsp;&nbsp;<small><a href="#umdsx
 <b><code>"1"</code></b> - UMDS will respond to snapshot requests. </td><td><b><code>"0"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;daemon-monitor&gt;
       &lt;remote-snapshot-request allow="1"/&gt;
@@ -662,7 +662,7 @@ UMDS Element "&lt;publishing-interval&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlpu
 <b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlgroup">&lt;group&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;daemon-monitor&gt;
       &lt;publishing-interval&gt;
@@ -689,15 +689,15 @@ UMDS Element "&lt;group&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlgroup">&lt;-</a>
 <tr>
 <th>Attribute </th><th>Description </th><th>Valid Values </th><th>Default Value </th></tr>
 <tr>
-<td><b>name</b> </td><td>Statistics group to set. </td><td><b><code>"default"</code></b> - Sets interval for those statistics groups which are not explicity set by other &lt;<code>group</code>&gt; elements. <br />
-<b><code>"malloc-info-ivl"</code></b> - Sets interval for message type <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/structumdsd__dstat__mallinfo__msg__stct.html">umdsd_dstat_mallinfo_msg_stct</a>. <br />
-<b><code>"worker-details-ivl"</code></b> - Sets interval for worker detail reports, which consists of a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a05d17b0015ff4406be7361c6f792d318">UMDS_DSTATTYPE_WORKER</a> messages, one per worker, and a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#aec46f9778e83d9398fe33cd3a7210cd8">UMDS_DSTATTYPE_CLIENTPERMS</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#ae8f6615472c85d2d8a584bae4513dacb">UMDS_DSTATTYPE_PERTOPIC</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a660095d673eb48218f7c7d00f05f0829">UMDS_DSTATTYPE_TOPICTOTALS</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#ae3bdfca877a2baf5e416c6e5e8cbbd9e">UMDS_DSTATTYPE_RECEIVER</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#adf17a6e98f4156026c4b2061071d7c74">UMDS_DSTATTYPE_SOURCE</a>, and <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#af2c8bb07e730d106bea7f648785172c2">UMDS_DSTATTYPE_CLIENTATTRS</a> messages. <br />
-<b><code>"worker-summary-ivl"</code></b> - Sets interval for worker summery reports, which consists of a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a05d17b0015ff4406be7361c6f792d318">UMDS_DSTATTYPE_WORKER</a> messages, one per worker, and a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#af3fd28d20645288353b466947be89897">UMDS_DSTATTYPE_CONNSUMMARY</a> messages, one for each connection. </td><td>(no default; must be specified) </td></tr>
+<td><b>name</b> </td><td>Statistics group to set. </td><td><b><code>"default"</code></b> - Sets interval for those statistics groups which are not explicity set by other <code>&lt;group&gt;</code> elements. <br />
+<b><code>"malloc-info-ivl"</code></b> - Sets interval for message type <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/api.tag:../API/" href="../API/structumdsd__dstat__mallinfo__msg__stct.html">umdsd_dstat_mallinfo_msg_stct</a>. <br />
+<b><code>"worker-details-ivl"</code></b> - Sets interval for worker detail reports, which consists of a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a05d17b0015ff4406be7361c6f792d318">UMDS_DSTATTYPE_WORKER</a> messages, one per worker, and a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#aec46f9778e83d9398fe33cd3a7210cd8">UMDS_DSTATTYPE_CLIENTPERMS</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#ae8f6615472c85d2d8a584bae4513dacb">UMDS_DSTATTYPE_PERTOPIC</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a660095d673eb48218f7c7d00f05f0829">UMDS_DSTATTYPE_TOPICTOTALS</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#ae3bdfca877a2baf5e416c6e5e8cbbd9e">UMDS_DSTATTYPE_RECEIVER</a>, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#adf17a6e98f4156026c4b2061071d7c74">UMDS_DSTATTYPE_SOURCE</a>, and <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#af2c8bb07e730d106bea7f648785172c2">UMDS_DSTATTYPE_CLIENTATTRS</a> messages. <br />
+<b><code>"worker-summary-ivl"</code></b> - Sets interval for worker summery reports, which consists of a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#a05d17b0015ff4406be7361c6f792d318">UMDS_DSTATTYPE_WORKER</a> messages, one per worker, and a set of <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/api.tag:../API/" href="../API/umdsdmonmsgs_8h.html#af3fd28d20645288353b466947be89897">UMDS_DSTATTYPE_CONNSUMMARY</a> messages, one for each connection. </td><td>(no default; must be specified) </td></tr>
 <tr>
 <td><b>ivl</b> </td><td>Time, in seconds, between publishing the statistics group. </td><td>string </td><td>(no default; must be specified) </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;daemon-monitor&gt;
       &lt;publishing-interval&gt;
@@ -724,7 +724,7 @@ UMDS Element "&lt;web-monitor&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlwebmonitor
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmldaemon">&lt;daemon&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;web-monitor&gt;
       172.16.254.1:8080
@@ -737,7 +737,7 @@ UMDS Element "&lt;web-monitor&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlwebmonitor
  </p>
 <h2><a class="anchor" id="umdsxmlauthentication"></a>
 UMDS Element "&lt;authentication&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlauthentication">&lt;-</a></small></h2>
-<p>Determines if UMDS clients use authentication. If empty (&lt;<code>authentication/</code>&amp;gt&gt;), no authentication occurs.</p>
+<p>Determines if UMDS clients use authentication. If empty (<code>&lt;authentication&gt;</code>), no authentication occurs.</p>
 <p>Required.</p>
 <ul>
 <li>
@@ -746,7 +746,7 @@ UMDS Element "&lt;authentication&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlauthent
 <b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlnone">&lt;none&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlbasic">&lt;basic&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;authentication&gt;
       ...
@@ -775,7 +775,7 @@ UMDS Element "&lt;basic&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlbasic">&lt;-</a>
 <b><code>"preserve"</code></b> - Retains whitespace as entered. </td><td><b><code>"default"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;authentication&gt;
       &lt;basic&gt;
@@ -799,7 +799,7 @@ UMDS Element "&lt;none&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlnone">&lt;-</a></
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlauthentication">&lt;authentication&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;authentication&gt;
       &lt;none/&gt;
@@ -873,12 +873,46 @@ UMDS Element "&lt;client&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlclient">&lt;-</
 <li>
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmldaemon">&lt;daemon&gt;</a> </li>
 <li>
-<b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlserverlist">&lt;server-list&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserverkainterval">&lt;server-ka-interval&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclientkathreshold">&lt;client-ka-threshold&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclientkainterval">&lt;client-ka-interval&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserverkathreshold">&lt;server-ka-threshold&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserverrcvbuf">&lt;server-rcvbuf&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserversndbuf">&lt;server-sndbuf&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlservernodelay">&lt;server-nodelay&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclientrcvbuf">&lt;client-rcvbuf&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclientsndbuf">&lt;client-sndbuf&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclientnodelay">&lt;client-nodelay&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserverreconnect">&lt;server-reconnect&gt;</a> </li>
+<b>Children:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlserverlist">&lt;server-list&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserverkainterval">&lt;server-ka-interval&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclientkathreshold">&lt;client-ka-threshold&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclientkainterval">&lt;client-ka-interval&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserverkathreshold">&lt;server-ka-threshold&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserverrcvbuf">&lt;server-rcvbuf&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserversndbuf">&lt;server-sndbuf&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlservernodelay">&lt;server-nodelay&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclientrcvbuf">&lt;client-rcvbuf&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclientsndbuf">&lt;client-sndbuf&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlclientnodelay">&lt;client-nodelay&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlserverreconnect">&lt;server-reconnect&gt;</a>, <a class="el" href="umdsserverconfiguration.html#umdsxmlcompression">&lt;compression&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
+      ...
+    &lt;/client&gt;
+    ...
+  &lt;/daemon&gt;
+&lt;/umds-daemon&gt;
+</pre><hr/>
+<p> <br />
+ </p>
+<h2><a class="anchor" id="umdsxmlcompression"></a>
+UMDS Element "&lt;compression&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlcompression">&lt;-</a></small></h2>
+<p>Enable compression between the UMDS Server and its clients. Valid values are </p><ul>
+<li>
+none </li>
+<li>
+lz4 </li>
+</ul>
+<p>See <a class="el" href="umdsclient.html#clientcompression">Client Compression</a> for more information.</p>
+<ul>
+<li>
+<b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">&lt;client&gt;</a> </li>
+</ul>
+<p><b>XML</b> <b>Attributes:</b> </p><table class="doxtable">
+<tr>
+<th>Attribute </th><th>Description </th><th>Valid Values </th><th>Default Value </th></tr>
+<tr>
+<td><b>client-write</b> </td><td>Specify if the client application is allowed to override the server setting for this element. <b>As of UMDS version 6.14, this attribute cannot be set to "yes".</b> </td><td><b><code>"no"</code></b> - Client is not allowed to override. </td><td><b><code>"no"</code></b> </td></tr>
+</table>
+<p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;umds-daemon version="1.1"&gt;
+  &lt;daemon&gt;
+    &lt;client&gt;
+      &lt;compression&gt;
+        lz4
+      &lt;/compression&gt;
       ...
     &lt;/client&gt;
     ...
@@ -904,7 +938,7 @@ UMDS Element "&lt;server-reconnect&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserve
 <b><code>"no"</code></b> - Client is not allowed to override. </td><td><b><code>"yes"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;server-reconnect client-write="no"&gt;
@@ -935,7 +969,7 @@ UMDS Element "&lt;client-nodelay&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlclientn
 <b><code>"no"</code></b> - Client is not allowed to override. </td><td><b><code>"yes"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;client-nodelay client-write="yes"&gt;
@@ -971,7 +1005,7 @@ UMDS Element "&lt;client-sndbuf&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlclientsn
 <td><b>max</b> </td><td>Client's override must be no more than this value. </td><td>string </td><td><b><code>"2147483648"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;client-sndbuf client-write="yes"&gt;
@@ -1007,7 +1041,7 @@ UMDS Element "&lt;client-rcvbuf&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlclientrc
 <td><b>max</b> </td><td>Client's override must be no more than this value. </td><td>string </td><td><b><code>"2147483648"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;client-rcvbuf client-write="yes"&gt;
@@ -1023,7 +1057,7 @@ UMDS Element "&lt;client-rcvbuf&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlclientrc
  </p>
 <h2><a class="anchor" id="umdsxmlservernodelay"></a>
 UMDS Element "&lt;server-nodelay&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlservernodelay">&lt;-</a></small></h2>
-<p>Specify if the UMDS server's TCP connection to the client should set the TCP_NODELAY socket option, which disables Nagle's algorithm.</p>
+<p>Specify if the UMDS Server's TCP connection to the client should set the TCP_NODELAY socket option, which disables Nagle's algorithm.</p>
 <p>Optional. If omitted, TCP_NODELAY is not set (Nagle's algorithm is retained).</p>
 <p>This option should be set if the lowest-possible latency is desired. Leaving it unset permits more-efficient use of network resources.</p>
 <ul>
@@ -1038,7 +1072,7 @@ UMDS Element "&lt;server-nodelay&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlservern
 <b><code>"no"</code></b> - Client is not allowed to override. </td><td><b><code>"yes"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;server-nodelay client-write="yes"&gt;
@@ -1054,7 +1088,7 @@ UMDS Element "&lt;server-nodelay&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlservern
  </p>
 <h2><a class="anchor" id="umdsxmlserversndbuf"></a>
 UMDS Element "&lt;server-sndbuf&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserversndbuf">&lt;-</a></small></h2>
-<p>Specify the UMDS server's TCP's SO_SNDBUF (send-side socket buffer size) in its connection to the client.</p>
+<p>Specify the UMDS Server's TCP's SO_SNDBUF (send-side socket buffer size) in its connection to the client.</p>
 <p>Optional. If omitted, server's operating system sets it.</p>
 <p>It is usually recommended not to set this option.</p>
 <ul>
@@ -1074,7 +1108,7 @@ UMDS Element "&lt;server-sndbuf&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserversn
 <td><b>max</b> </td><td>Client's override must be no more than this value. </td><td>string </td><td><b><code>"2147483648"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;server-sndbuf client-write="yes"&gt;
@@ -1090,7 +1124,7 @@ UMDS Element "&lt;server-sndbuf&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserversn
  </p>
 <h2><a class="anchor" id="umdsxmlserverrcvbuf"></a>
 UMDS Element "&lt;server-rcvbuf&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserverrcvbuf">&lt;-</a></small></h2>
-<p>Specify the UMDS server's TCP's SO_RCVBUF (receive-side socket buffer size) in its connection to the client.</p>
+<p>Specify the UMDS Server's TCP's SO_RCVBUF (receive-side socket buffer size) in its connection to the client.</p>
 <p>Optional. If omitted, server's operating system sets it.</p>
 <p>It is usually recommended not to set this option.</p>
 <ul>
@@ -1110,7 +1144,7 @@ UMDS Element "&lt;server-rcvbuf&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserverrc
 <td><b>max</b> </td><td>Client's override must be no more than this value. </td><td>string </td><td><b><code>"2147483648"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;server-rcvbuf client-write="yes"&gt;
@@ -1146,7 +1180,7 @@ UMDS Element "&lt;server-ka-threshold&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlse
 <td><b>max</b> </td><td>Client's override must be no more than this value. </td><td>string </td><td><b><code>"2147483648"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;server-ka-threshold client-write="yes"&gt;
@@ -1182,7 +1216,7 @@ UMDS Element "&lt;client-ka-interval&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlcli
 <td><b>max</b> </td><td>Client's override must be no more than this value. </td><td>string </td><td><b><code>"2147483648"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;client-ka-interval client-write="yes"&gt;
@@ -1218,7 +1252,7 @@ UMDS Element "&lt;client-ka-threshold&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlcl
 <td><b>max</b> </td><td>Client's override must be no more than this value. </td><td>string </td><td><b><code>"2147483648"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;client-ka-threshold client-write="yes"&gt;
@@ -1254,7 +1288,7 @@ UMDS Element "&lt;server-ka-interval&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlser
 <td><b>max</b> </td><td>Client's override must be no more than this value. </td><td>string </td><td><b><code>"2147483648"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;server-ka-interval client-write="yes"&gt;
@@ -1270,9 +1304,9 @@ UMDS Element "&lt;server-ka-interval&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlser
  </p>
 <h2><a class="anchor" id="umdsxmlserverlist"></a>
 UMDS Element "&lt;server-list&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserverlist">&lt;-</a></small></h2>
-<p>Comma-separated list of UMDS server addresses (IP:Port) that the client should use.</p>
+<p>Comma-separated list of UMDS Server addresses (IP:Port) that the client should use.</p>
 <p>Optional. If omitted, the client uses the server list in its own configuration.</p>
-<p>This allows a server to be used as a "redirection" service. I.e. a client can be initially configured to connect to UMDS server A, which re-directs the client to the production server.</p>
+<p>This allows a server to be used as a "redirection" service. I.e. a client can be initially configured to connect to UMDS Server A, which re-directs the client to the production server.</p>
 <ul>
 <li>
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">&lt;client&gt;</a> </li>
@@ -1285,7 +1319,7 @@ UMDS Element "&lt;server-list&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserverlist
 <b><code>"no"</code></b> - Client is not allowed to override. </td><td><b><code>"yes"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;client&gt;
       &lt;server-list client-write="no"&gt;
@@ -1301,7 +1335,7 @@ UMDS Element "&lt;server-list&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserverlist
  </p>
 <h2><a class="anchor" id="umdsxmlserver"></a>
 UMDS Element "&lt;server&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserver">&lt;-</a></small></h2>
-<p>Configure the operating parameters of the UMDS server with the attributes supplied.</p>
+<p>Configure the operating parameters of the UMDS Server with the attributes supplied.</p>
 <p>Required.</p>
 <ul>
 <li>
@@ -1311,15 +1345,17 @@ UMDS Element "&lt;server&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserver">&lt;-</
 <tr>
 <th>Attribute </th><th>Description </th><th>Valid Values </th><th>Default Value </th></tr>
 <tr>
-<td><b>bind-addr</b> </td><td>IP/Port that the UMDS server listens on for client connections. </td><td>string </td><td><b><code>"*:14701"</code></b> </td></tr>
+<td><b>bind-addr</b> </td><td>IP/Port that the UMDS Server listens on for client connections. </td><td>string </td><td><b><code>"*:14701"</code></b> </td></tr>
 <tr>
 <td><b>num-workers</b> </td><td>Number of workers to create to service clients. See <a class="el" href="umdsserver.html#workerconfigurationguidelines">Worker Configuration Guidelines</a>. </td><td>string </td><td><b><code>"3"</code></b> </td></tr>
 <tr>
 <td><b>msg-age-limit</b> </td><td>Maximum age in milliseconds before umdsd deletes the oldest messages when it reaches this limit. To remove this limit, set this attribute to zero. </td><td>string </td><td><b><code>"1000"</code></b> (1 sec) </td></tr>
 <tr>
-<td><b>msg-q-size-limit</b> </td><td>Maximum size in bytes of message queue. Umdsd deletes the oldest messages when it reaches this limit. To remove the limit, set this attribute to zero. </td><td>string </td><td><b><code>"1048576"</code></b> </td></tr>
+<td><b>msg-q-size-limit</b> </td><td>Maximum size in bytes of the <a class="el" href="umdsserver.html#messagequeue">default message queue</a> (does not apply to <a class="el" href="umdsserver.html#pertopicmessagequeues">per-topic queues</a>). Umdsd deletes the oldest messages when it reaches this limit. Zero is a special value which disables checking the default queue size. </td><td>string </td><td><b><code>"1048576"</code></b> </td></tr>
 <tr>
-<td><b>message-cache-type</b> </td><td><p class="starttd">Sets the UMDS server's usage of the internal message caches. Value <code>"normal"</code> is for UM streaming (non-persistent) sources. Value <code>"source-session-id"</code> is for UM persistent sources, and instructs the UMDS server to potentially create multiple message caches for the same topic, keyed by the persistent source's session ID. See <a class="el" href="umdsclient.html#umdspersistenceusessessionids">UMDS Persistence uses Session IDs</a></p>
+<td><b>total-q-size-limit</b> </td><td>Maximum size in bytes consumed by all message queues, including the default queue and all per-topic queues (if any). Zero is a special value which disables checking the total size. </td><td>string </td><td><b><code>"0"</code></b> </td></tr>
+<tr>
+<td><b>message-cache-type</b> </td><td><p class="starttd">Sets the UMDS Server's usage of the internal message caches. Value <code>"normal"</code> is for UM streaming (non-persistent) sources. Value <code>"source-session-id"</code> is for UM persistent sources, and instructs the UMDS Server to potentially create multiple message caches for the same topic, keyed by the persistent source's session ID. See <a class="el" href="umdsclient.html#umdspersistenceusessessionids">UMDS Persistence uses Session IDs</a></p>
 <p class="endtd">The full server instance must either use persistence or non-persistence. See <a class="el" href="umdsclient.html#usingumdspersistence">Using UMDS Persistence</a>. </p>
 </td><td>string </td><td><b><code>"normal"</code></b> (streaming) </td></tr>
 <tr>
@@ -1328,7 +1364,7 @@ UMDS Element "&lt;server&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlserver">&lt;-</
 <td><b>request-timeout</b> </td><td>Duration for each request to remain open (accepting responses). </td><td>string </td><td><b><code>"10,000"</code></b> (10 sec) </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;server bind-addr="*.14701"
         num-workers="3"
@@ -1361,7 +1397,7 @@ UMDS Element "&lt;lbm-license-file&gt;"&nbsp;&nbsp;<small><a href="#umdsxmllbmli
 <b><code>"preserve"</code></b> - Retains whitespace as entered. </td><td><b><code>"default"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;lbm-licnese-file&gt;/etc/umdsd.lic&lt;/lbm-licnese-file&gt;
     ...
@@ -1372,7 +1408,7 @@ UMDS Element "&lt;lbm-license-file&gt;"&nbsp;&nbsp;<small><a href="#umdsxmllbmli
  </p>
 <h2><a class="anchor" id="umdsxmlpidfile"></a>
 UMDS Element "&lt;pidfile&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlpidfile">&lt;-</a></small></h2>
-<p>Specifies the pathname where the UMDS server stores its Process ID (PID).</p>
+<p>Specifies the pathname where the UMDS Server stores its Process ID (PID).</p>
 <p>Optional. If omitted, the server does not store its PID in a file.</p>
 <ul>
 <li>
@@ -1388,7 +1424,7 @@ UMDS Element "&lt;pidfile&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlpidfile">&lt;-
 <b><code>"preserve"</code></b> - Retains whitespace as entered. </td><td><b><code>"default"</code></b> </td></tr>
 </table>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;pidfile&gt;/var/run/umdsd.pid&lt;/pidfile&gt;
     ...
@@ -1408,7 +1444,7 @@ UMDS Element "&lt;gid&gt;"&nbsp;&nbsp;<small><a href="#umdsxmlgid">&lt;-</a></sm
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmldaemon">&lt;daemon&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;gid&gt;5555&lt;/gid&gt;
     ...
@@ -1428,7 +1464,7 @@ UMDS Element "&lt;uid&gt;"&nbsp;&nbsp;<small><a href="#umdsxmluid">&lt;-</a></sm
 <b>Parent:</b> <a class="el" href="umdsserverconfiguration.html#umdsxmldaemon">&lt;daemon&gt;</a> </li>
 </ul>
 <p><b>Example:</b> </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;uid&gt;5555&lt;/uid&gt;
     ...
@@ -1439,8 +1475,9 @@ UMDS Element "&lt;uid&gt;"&nbsp;&nbsp;<small><a href="#umdsxmluid">&lt;-</a></sm
  </p>
 <h2><a class="anchor" id="umdsxmllog"></a>
 UMDS Element "&lt;log&gt;"&nbsp;&nbsp;<small><a href="#umdsxmllog">&lt;-</a></small></h2>
-<p>Configures UMDS server's logging behavior. The value contained within the <code>&lt;log&gt;...&lt;/log&gt;</code> is a file name, but is only used if the "type" attribute is set to "file".</p>
+<p>Configures UMDS Server's logging behavior. The value contained within the <code>&lt;log&gt;...&lt;/log&gt;</code> is a file name, but is only used if the <b>"type"</b> attribute is set to "file".</p>
 <p>Optional. If omitted, logs are written to Standard Out.</p>
+<p>The size of the log file can be controlled using the <b>"frequency"</b> and/or <b>"size"</b> attributes. See <a class="el" href="umdsclient.html#loghandling">Log Handling</a> for more information.</p>
 <ul>
 <li>
 <b>Cardinality:</b> 0 .. 1 </li>
@@ -1457,16 +1494,23 @@ UMDS Element "&lt;log&gt;"&nbsp;&nbsp;<small><a href="#umdsxmllog">&lt;-</a></sm
 <tr>
 <td><b>xml:space</b> </td><td>Controls how XML handles spaces in the value string. </td><td><b><code>"default"</code></b> - Trims most whitespace. <br />
 <b><code>"preserve"</code></b> - Retains whitespace as entered. </td><td><b><code>"default"</code></b> </td></tr>
+<tr>
+<td><b>frequency</b> </td><td>Period by which the current log file is closed and a new log file created (log file "rolling"). See <a class="el" href="umdsclient.html#loghandling">Log Handling</a>. </td><td><b><code>"disable"</code></b> - Do not roll log file. <br />
+<b><code>"daily"</code></b> - Roll log file when the UMDS Server has been running for a multiple of 24 hours since it was started. <br />
+<b><code>"hourly"</code></b> - Roll log file when the UMDS Server has been running for a multiple of 60 minutes since it was started. <br />
+<b><code>"test"</code></b> - For internal Informatica testing only. </td><td><b><code>"disable"</code></b> </td></tr>
+<tr>
+<td><b>size</b> </td><td>Roll log file at the given number of megabytes of file size. See <a class="el" href="umdsclient.html#loghandling">Log Handling</a>. </td><td>string </td><td><b><code>"0"</code></b> (disable) </td></tr>
 </table>
 <p><b>Example</b> <b>1</b>: (write log messages to Standard Out) </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;log type="console"/&gt;
     ...
   &lt;/daemon&gt;
 &lt;/umds-daemon&gt;
 </pre><p><b>Example</b> <b>2</b>: (write log messages to "umds.log" file) </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
   &lt;daemon&gt;
     &lt;log type="file" frequency="daily"&gt;umds.log&lt;/log&gt;
     ...
@@ -1517,12 +1561,12 @@ UMDS Source Topic Options&nbsp;&nbsp;<small><a href="#umdssourcetopicoptions">&l
  </p>
 <h1><a class="anchor" id="umlicensefile"></a>
 UM License File&nbsp;&nbsp;<small><a href="#umlicensefile">&lt;-</a></small></h1>
-<p>The Ultra Messaging license file contains the Ultra Messaging license key. The file name is specified with the <a class="el" href="umdsserverconfiguration.html#umdsxmllbmlicensefile">UMDS Element "&lt;lbm-license-file&gt;"</a>. If omitted from the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">umdsd Configuration File</a>, umdsd looks for the environment variables, LBM_LICENSE_INFO or LBM_LICENSE_FILENAME.</p>
+<p>The Ultra Messaging license file contains the Ultra Messaging license key. The file name is specified with the <a class="el" href="umdsserverconfiguration.html#umdsxmllbmlicensefile">UMDS Element "&lt;lbm-license-file&gt;"</a>. If omitted from the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a>, umdsd looks for the environment variables, LBM_LICENSE_INFO or LBM_LICENSE_FILENAME.</p>
 <p><br />
  </p>
 <h1><a class="anchor" id="umconfigurationfile"></a>
 UM Configuration File&nbsp;&nbsp;<small><a href="#umconfigurationfile">&lt;-</a></small></h1>
-<p>This file is optional. You specify this file in the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">umdsd Configuration File</a> with the <a class="el" href="umdsserverconfiguration.html#umdsxmllbmconfig">UMDS Element "&lt;lbm-config&gt;"</a>. The Ultra Messaging Configuration File contains configuration options for the UMDS Server's Ultra Messaging context. If omitted, Ultra Messaging uses the factory default values. See the Ultra Messaging Configuration Guide for complete details.</p>
+<p>This file is optional. You specify this file in the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a> with the <a class="el" href="umdsserverconfiguration.html#umdsxmllbmconfig">UMDS Element "&lt;lbm-config&gt;"</a>. The Ultra Messaging Configuration File contains configuration options for the UMDS Server's Ultra Messaging context. If omitted, Ultra Messaging uses the factory default values. See the Ultra Messaging Configuration Guide for complete details.</p>
 <p>Do not include the following options in the Ultra Messaging configuration file when you use it with the umdsd daemon. UMDS ignores these options if they appear in the file.</p>
 <ul>
 <li>
@@ -1546,7 +1590,7 @@ UM Configuration File&nbsp;&nbsp;<small><a href="#umconfigurationfile">&lt;-</a>
  </p>
 <h1><a class="anchor" id="basicauthenticationfile"></a>
 Basic Authentication File&nbsp;&nbsp;<small><a href="#basicauthenticationfile">&lt;-</a></small></h1>
-<p>The Basic Authentication File specifies user and application records which contain client operational parameters. You optionally specify this file in the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">umdsd Configuration File</a>. If the Basic Authentication File is omitted, umdsd does not perform Basic Authentication.</p>
+<p>The Basic Authentication File specifies user and application records which contain client operational parameters. You optionally specify this file in the <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a>. If the Basic Authentication File is omitted, umdsd does not perform Basic Authentication.</p>
 <p>The format of the Basic Authentication File is xml. The <code>&lt;client&gt;</code> child elements of both the Application and User elements are identical to those specified for the umdsd Configuration File. Values in a Basic Authentication File override those in the umdsd Configuration File. The following example shows a Basic Authentication File:</p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
@@ -1600,13 +1644,15 @@ UMDS Configuration DTD&nbsp;&nbsp;<small><a href="#umdsconfigurationdtd">&lt;-</
 <p>Here is the umdsd server's configuration DTD, used to validate the user's XML file:</p>
 <pre class="fragment">&lt;!ELEMENT umds-daemon (daemon?)&gt;
 &lt;!ATTLIST umds-daemon
-          version (1.0) #REQUIRED
+          version (1.1) #REQUIRED
 &gt;
 &lt;!ELEMENT daemon (log?, uid?, gid?, pidfile?, lbm-license-file?, lbm-config?, server, client, permissions?, authentication, web-monitor?, daemon-monitor?, monitor?, topics?, tls?)&gt;
 &lt;!ELEMENT log ( #PCDATA )&gt;
 &lt;!ATTLIST log
           type (file | syslog | console) "console"
-           xml:space (default | preserve) "default"
+          xml:space (default | preserve) "default"
+           frequency (disable | daily | hourly | test) "disable"
+           size CDATA "0"
 &gt;
 &lt;!ELEMENT uid ( #PCDATA )&gt;
 &lt;!ELEMENT gid ( #PCDATA )&gt;
@@ -1628,11 +1674,12 @@ UMDS Configuration DTD&nbsp;&nbsp;<small><a href="#umdsconfigurationdtd">&lt;-</
           num-workers CDATA "3"
           msg-age-limit CDATA "1000"
           msg-q-size-limit CDATA "(1024*1024)"
+          total-q-size-limit CDATA "(0)"
           message-cache-type CDATA "normal"
           allow-shutdown-via-webmon CDATA "0"
           request-timeout CDATA "10000"
 &gt;
-&lt;!ELEMENT client (server-list | server-ka-interval | client-ka-threshold | client-ka-interval | server-ka-threshold | server-rcvbuf | server-sndbuf | server-nodelay | client-rcvbuf | client-sndbuf | client-nodelay | server-reconnect )* &gt;
+&lt;!ELEMENT client (server-list | server-ka-interval | client-ka-threshold | client-ka-interval | server-ka-threshold | server-rcvbuf | server-sndbuf | server-nodelay | client-rcvbuf | client-sndbuf | client-nodelay | server-reconnect | compression)* &gt;
 &lt;!ELEMENT server-list ( #PCDATA ) &gt;
 &lt;!ATTLIST server-list
           client-write (yes | no) "yes"
@@ -1696,6 +1743,10 @@ UMDS Configuration DTD&nbsp;&nbsp;<small><a href="#umdsconfigurationdtd">&lt;-</
 &lt;!ELEMENT server-reconnect ( #PCDATA ) &gt;
 &lt;!ATTLIST server-reconnect
           client-write (yes | no) "yes"
+&gt;
+&lt;!ELEMENT compression ( #PCDATA ) &gt;
+&lt;!ATTLIST compression
+          client-write (no) "no"
 &gt;
 &lt;!ELEMENT permissions (can-send?, can-stream?, can-reqresp? ) &gt;
 &lt;!ELEMENT can-send ( #PCDATA ) &gt;
@@ -1761,10 +1812,10 @@ Example UMDS Configuration Files&nbsp;&nbsp;<small><a href="#exampleumdsconfigur
  </p>
 <h2><a class="anchor" id="minimumconfigurationfile"></a>
 Minimum Configuration File&nbsp;&nbsp;<small><a href="#minimumconfigurationfile">&lt;-</a></small></h2>
-<p>The following sample UMDS Server configuration file contains the minimum configuration information required to start the UMDS Server <code>umdsd</code> daemon. The daemon uses default values for the empty elements.</p>
+<p>The following sample <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a> contains the minimum configuration information required to start the UMDS Server <code>umdsd</code> daemon. The daemon uses default values for the empty elements.</p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
 &lt;daemon&gt;
   &lt;!-- This line is required. Defaults are: bind-addr="*:14701" num-workers="3" --&gt;
   &lt;!-- msg-age-limit= "1000" msg-q-size-limit="1048576" --&gt;
@@ -1780,7 +1831,7 @@ Typical Configuration File&nbsp;&nbsp;<small><a href="#typicalconfigurationfile"
 <p>The second example is a typical starting point for most users. It relies on <code>example.lic</code> (which contains the Ultra Messaging license information and is not shown), <a class="el" href="umdsserverconfiguration.html#sampleumconfigurationfile">Sample UM Configuration File</a>, and <a class="el" href="umdsserverconfiguration.html#sampleauthenticationfile">Sample Authentication File</a>. The UMDS Server generates the file named <code>example.log</code>.</p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
 &lt;daemon&gt;
   &lt;!-- Write log messages to a file --&gt;
   &lt;log type="file" xml:space="preserve"&gt;example.log&lt;/log&gt;</pre><pre>  &lt;!-- License contains your Informatica license key --&gt;
@@ -1815,10 +1866,10 @@ Typical Configuration File&nbsp;&nbsp;<small><a href="#typicalconfigurationfile"
  </p>
 <h2><a class="anchor" id="completeconfigurationfile"></a>
 Complete Configuration File&nbsp;&nbsp;<small><a href="#completeconfigurationfile">&lt;-</a></small></h2>
-<p>This sample UMDS Server configuration file contains values for all configuration elements.</p>
+<p>This sample <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a> contains values for all configuration elements.</p>
 <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;umds-daemon version="1.0"&gt;
+&lt;umds-daemon version="1.1"&gt;
 &lt;daemon&gt;
   &lt;!-- This line is optional. Default sends log information to the screen --&gt;
   &lt;log type="file" xml:space="preserve"&gt;example.log&lt;/log&gt;</pre><pre>  &lt;!-- These lines are optional. To set UID and GID, you need to be root --&gt;
@@ -1913,10 +1964,10 @@ Sample Authentication File&nbsp;&nbsp;<small><a href="#sampleauthenticationfile"
 &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;umds-authentication-basic version="1.0"&gt;</pre><pre>  &lt;application name="master_app"&gt;
     &lt;client&gt;
-      &lt;!&ndash; Allow application "master_app" to reconnect and give ability to override this setting &ndash;&gt;
+      &lt;!-- Allow application "master_app" to reconnect and give ability to override this setting --&gt;
       &lt;server-reconnect client-write="yes"&gt;0&lt;/server-reconnect&gt;
     &lt;/client&gt;
-  &lt;/application&gt;</pre><pre>  &lt;!&ndash; users allowed to only monitor prices...except when using master_app &ndash;&gt;
+  &lt;/application&gt;</pre><pre>  &lt;!-- users allowed to only monitor prices...except when using master_app --&gt;
   &lt;user name="john_doe" password="id1" /&gt;
   &lt;user name="jane_doe" password="id2" /&gt;
   &lt;user name="jim_doe" password="id3" /&gt;
@@ -1925,13 +1976,13 @@ Sample Authentication File&nbsp;&nbsp;<small><a href="#sampleauthenticationfile"
   &lt;user name="jane_smith" password="id6" /&gt;
   &lt;user name="jim_smith" password="id7" /&gt;
   &lt;user name="jackie_smith" password="id8" /&gt;
-  &lt;!&ndash; This list could be 1,000's of users &ndash;&gt;</pre><pre>  &lt;!&ndash; users allowed to monitor prices and post trades &ndash;&gt;
+  &lt;!-- This list could be 1,000's of users --&gt;</pre><pre>  &lt;!-- users allowed to monitor prices and post trades --&gt;
   &lt;user name="rob_smith" password="priv1"&gt; &lt;/user&gt;
   &lt;user name="rose_smith" password="priv2"&gt; &lt;/user&gt;
   &lt;user name="rod_smith" password="priv3"&gt; &lt;/user&gt;
-  &lt;!&ndash; This list could be 100's or even 1,000's of users &ndash;&gt;</pre><pre>  &lt;user name="patel" password="admin"&gt;
+  &lt;!-- This list could be 100's or even 1,000's of users --&gt;</pre><pre>  &lt;user name="patel" password="admin"&gt;
     &lt;client&gt;
-      &lt;!&ndash; allow this user to override any setting &ndash;&gt;
+      &lt;!-- allow this user to override any setting --&gt;
       &lt;server-ka-interval client-write="yes"&gt;5000&lt;/server-ka-interval&gt;
       &lt;client-ka-threshold client-write="yes"&gt;12000&lt;/client-ka-threshold&gt;
       &lt;client-ka-interval client-write="yes"&gt;9000&lt;/client-ka-interval&gt;
@@ -1944,8 +1995,50 @@ Sample Authentication File&nbsp;&nbsp;<small><a href="#sampleauthenticationfile"
       &lt;client-nodelay client-write="yes"&gt;0&lt;/client-nodelay&gt;
       &lt;server-reconnect client-write="yes"&gt;0&lt;/server-reconnect&gt;
     &lt;/client&gt;</pre><pre>  &lt;/user&gt;
-  &lt;!&ndash; This list would probably be limited &ndash;&gt;</pre><pre>&lt;/umds-authentication-basic&gt;
-</pre> </div></div><!-- contents -->
+  &lt;!-- This list would probably be limited --&gt;</pre><pre>&lt;/umds-authentication-basic&gt;
+</pre><p><br />
+<br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->
 </body>

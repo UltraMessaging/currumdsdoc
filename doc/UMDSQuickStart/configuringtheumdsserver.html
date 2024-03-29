@@ -54,31 +54,78 @@ $(document).ready(function(){initNavTree('configuringtheumdsserver.html','');});
 <div class="title">Configuring the UMDS Server </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Before starting the UMDS Server, perform the following adjustments to the UMDS Server configuration file. When editing, do not change the order of the elements in <code>cfg.xml</code>.</p>
-<ol>
+<div class="textblock"><p>Before starting the UMDS Server, create a file <code>[umdsinstalldir]/umds_config.xml</code> with the following content (replacing "[umdsinstalldir]" as necessary): </p><pre class="fragment">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;umds-daemon version="1.1"&gt;
+&lt;daemon&gt;
+    &lt;!--   [Optional] If not supplied here, must be supplied via environment. --&gt;
+    &lt;lbm-license-file&gt;[umdsinstalldir]/license.txt&lt;/lbm-license-file&gt;
+
+    &lt;!--   [Optional] Add lbm config file here. --&gt;
+    &lt;lbm-config&gt;[umdsinstalldir]/um_config.txt&lt;/lbm-config&gt;
+
+    &lt;!--   Port for clients to connect to. --&gt;
+    &lt;server bind-addr="*:14701" /&gt;
+
+    &lt;!--   Need a client section which can be empty (all defaults). --&gt;
+    &lt;client/&gt;
+
+    &lt;!--   Default authentication is "none". --&gt;
+    &lt;authentication/&gt;
+
+    &lt;!--   [Optional] Web monitoring can be a valuable feature. --&gt;
+    &lt;web-monitor&gt;*:8080&lt;/web-monitor&gt;
+&lt;/daemon&gt;
+&lt;/umds-daemon&gt;
+</pre><ul>
 <li>
-<p class="startli">Open <code>[installdir]/doc/UMDS/QuickStart/cfg.xml</code> in a text editor.</p>
+<p class="startli">Create the UM license file <code>[umdsinstalldir]/license.txt</code>. Alternatively you can omit the license line and supply the license key via the environment.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">Add the UMDS license file name to the <code>&lt;lbm-license-file&gt;</code> element.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">Specify a null UM configuration file with <code>&lt;lbm-config&gt;&lt;/lbm-config&gt;</code> or specify a valid UMS configuration file. Note that the UMDS Server ignores some parameters.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">The default server connection port is 14701. If this is unavailable, edit the <code>&lt;server ...&gt;</code> element to use a different port, for example: <code>&lt;server bind-addr="*:14733"/&gt;</code>. Note this server's IP address and the new port number for later use.</p>
-<p class="endli"></p>
-</li>
-<li>
-<p class="startli">If using the UMDS Web Monitor, ensure that the Web Monitor port number does not conflict with other UMDS Servers or other applications.</p>
-<p class="endli"></p>
-</li>
-<li>
-Save the updated <code>cfg.xml</code> configuration file in <code>[installdir]</code>. </li>
-</ol>
+Create the UM configuration file <code>[umdsinstalldir]um_config.txt</code> to enable the server to communicate with other UM components. (If you omit this, UM will just use all defaults.) </li>
+</ul>
+<p><br />
+<br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UMDS Java API
-   &#160;<span id="projectnumber">6.13.1</span>
+   &#160;<span id="projectnumber">6.14</span>
    </div>
   </td>
  </tr>
@@ -115,6 +115,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:ada1110a7d6d380ab0b36299369b7c656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac988c6cec23eb0ae214933b18e91064b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ac988c6cec23eb0ae214933b18e91064b">requestID</a></td></tr>
 <tr class="separator:ac988c6cec23eb0ae214933b18e91064b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab459b419006fdb31f0614a9783e31bc7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab459b419006fdb31f0614a9783e31bc7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>compress_orig_data_len</b></td></tr>
+<tr class="separator:ab459b419006fdb31f0614a9783e31bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac249dc904eecbd3eba53b9f06251de44"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ac249dc904eecbd3eba53b9f06251de44">response_data</a></td></tr>
 <tr class="separator:ac249dc904eecbd3eba53b9f06251de44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fe4f8b1105990f68a266029e0aab9c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0fe4f8b1105990f68a266029e0aab9c7"></a>
@@ -205,6 +208,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The application data </p>
+
+<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#aa581fb5d83d91527729796d76ce63e8a">com.latencybusters.umds.UMDSServerConnection.send()</a>.</p>
 
 </div>
 </div>
@@ -303,7 +308,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The sequence number of this message. This will be the high sequence number for messages fragmented in the LBM backbone </p>
 
-<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#adde8e19b196cf8beffbc6b39f422d589">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a937a293f36694470137c64a25f5b27c1">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#abf891cad9e5cfbc912b391a0e14eba48">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#aa581fb5d83d91527729796d76ce63e8a">com.latencybusters.umds.UMDSServerConnection.send()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a1eb1bf7e6cd7ee69d381a8be5029f5a2">com.latencybusters.umds.UMDSMessage.toString()</a>.</p>
+<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a937a293f36694470137c64a25f5b27c1">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#adde8e19b196cf8beffbc6b39f422d589">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#abf891cad9e5cfbc912b391a0e14eba48">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#aa581fb5d83d91527729796d76ce63e8a">com.latencybusters.umds.UMDSServerConnection.send()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a1eb1bf7e6cd7ee69d381a8be5029f5a2">com.latencybusters.umds.UMDSMessage.toString()</a>.</p>
 
 </div>
 </div>
@@ -331,7 +336,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html">UMDS</a> server index of the source </p>
 
-<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#adde8e19b196cf8beffbc6b39f422d589">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a937a293f36694470137c64a25f5b27c1">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#a685714a62800b2c09c85250daca8d0e5">com.latencybusters.umds.UMDSSource.onEvent()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#abf891cad9e5cfbc912b391a0e14eba48">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>.</p>
+<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a937a293f36694470137c64a25f5b27c1">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#adde8e19b196cf8beffbc6b39f422d589">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#a685714a62800b2c09c85250daca8d0e5">com.latencybusters.umds.UMDSSource.onEvent()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#abf891cad9e5cfbc912b391a0e14eba48">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>.</p>
 
 </div>
 </div>
@@ -346,7 +351,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>The server status relating to this message. Only used with DISCONNECT type messages </p>
 
-<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#adde8e19b196cf8beffbc6b39f422d589">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a937a293f36694470137c64a25f5b27c1">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#a685714a62800b2c09c85250daca8d0e5">com.latencybusters.umds.UMDSSource.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#abf891cad9e5cfbc912b391a0e14eba48">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#aa581fb5d83d91527729796d76ce63e8a">com.latencybusters.umds.UMDSServerConnection.send()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a1eb1bf7e6cd7ee69d381a8be5029f5a2">com.latencybusters.umds.UMDSMessage.toString()</a>.</p>
+<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a937a293f36694470137c64a25f5b27c1">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#adde8e19b196cf8beffbc6b39f422d589">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#a685714a62800b2c09c85250daca8d0e5">com.latencybusters.umds.UMDSSource.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#abf891cad9e5cfbc912b391a0e14eba48">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#aa581fb5d83d91527729796d76ce63e8a">com.latencybusters.umds.UMDSServerConnection.send()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a1eb1bf7e6cd7ee69d381a8be5029f5a2">com.latencybusters.umds.UMDSMessage.toString()</a>.</p>
 
 </div>
 </div>
@@ -362,7 +367,7 @@ Public Attributes</h2></td></tr>
 <p>The server status string</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#aca531d7f6308fff7f030e3d3523844f6">status</a> </dd></dl>
 
-<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#adde8e19b196cf8beffbc6b39f422d589">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a937a293f36694470137c64a25f5b27c1">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#a685714a62800b2c09c85250daca8d0e5">com.latencybusters.umds.UMDSSource.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#abf891cad9e5cfbc912b391a0e14eba48">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#aa581fb5d83d91527729796d76ce63e8a">com.latencybusters.umds.UMDSServerConnection.send()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a1eb1bf7e6cd7ee69d381a8be5029f5a2">com.latencybusters.umds.UMDSMessage.toString()</a>.</p>
+<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a937a293f36694470137c64a25f5b27c1">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#adde8e19b196cf8beffbc6b39f422d589">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#a685714a62800b2c09c85250daca8d0e5">com.latencybusters.umds.UMDSSource.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#abf891cad9e5cfbc912b391a0e14eba48">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#aa581fb5d83d91527729796d76ce63e8a">com.latencybusters.umds.UMDSServerConnection.send()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a1eb1bf7e6cd7ee69d381a8be5029f5a2">com.latencybusters.umds.UMDSMessage.toString()</a>.</p>
 
 </div>
 </div>
@@ -391,7 +396,7 @@ Public Attributes</h2></td></tr>
 <p>The type of data in this message</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage_1_1MSG__TYPE.html">MSG_TYPE</a> </dd></dl>
 
-<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#adde8e19b196cf8beffbc6b39f422d589">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a937a293f36694470137c64a25f5b27c1">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#a685714a62800b2c09c85250daca8d0e5">com.latencybusters.umds.UMDSSource.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#abf891cad9e5cfbc912b391a0e14eba48">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a1eb1bf7e6cd7ee69d381a8be5029f5a2">com.latencybusters.umds.UMDSMessage.toString()</a>.</p>
+<p>Referenced by <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a937a293f36694470137c64a25f5b27c1">com.latencybusters.umds.UMDSPersistentReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html#adde8e19b196cf8beffbc6b39f422d589">com.latencybusters.umds.UMDSReceiver.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#a685714a62800b2c09c85250daca8d0e5">com.latencybusters.umds.UMDSSource.onEvent()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#abf891cad9e5cfbc912b391a0e14eba48">com.latencybusters.umds.UMDSServerConnection.onEvent()</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a1eb1bf7e6cd7ee69d381a8be5029f5a2">com.latencybusters.umds.UMDSMessage.toString()</a>.</p>
 
 </div>
 </div>

@@ -7,7 +7,7 @@ using UMDSAuthenticationException = com.latencybusters.umds.UMDS.UMDSAuthenticat
 using LOG_LEVEL = com.latencybusters.umds.UMDS.LOG_LEVEL;
 
 /*
-Copyright (c) 2005-2019 Informatica Corporation  Permission is granted to licensees to use
+(C) Copyright 2005,2024 Informatica Inc.  Permission is granted to licensees to use
 or alter this software for any purpose, including commercial applications,
 according to the terms laid out in the Software License Agreement.
 
@@ -73,7 +73,7 @@ class umdssend:UMDSServerConnection
 	internal bool sendAppName = true;
     internal System.String trustStoreFile = null;
     internal System.String trustStorePassword = null;
-    internal bool useTls = true;
+    internal bool useTls = false;
 	
 	private void  process_cmdline(System.String[] args)
 	{
@@ -85,10 +85,10 @@ class umdssend:UMDSServerConnection
 		while (argnum <= args.Length - 1)
 		{
 			Char [] ca = new Char[1];
-			args[argnum].CopyTo(0, ca, 0, 1);
+            args[argnum].CopyTo(0, ca, 0, 1);
 			if(ca[0] != '-') break;
-			args[argnum++].CopyTo(1, ca, 0, 1);
-			switch (ca[0])
+            args[argnum++].CopyTo(1, ca, 0, 1);
+            switch (ca[0])
 			{
 				case 'A':
 				case 'h':
@@ -209,7 +209,7 @@ class umdssend:UMDSServerConnection
 					break;
 
                 case 'T':
-                    useTls = true;
+                    useTls = true;				
                     break;
 
                 case 't':

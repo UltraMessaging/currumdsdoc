@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UMDS .NET API
-   &#160;<span id="projectnumber">6.13.1</span>
+   &#160;<span id="projectnumber">6.14</span>
    </div>
   </td>
  </tr>
@@ -68,6 +68,7 @@ $(document).ready(function(){initNavTree('classcom_1_1latencybusters_1_1umds_1_1
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
@@ -111,6 +112,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Class UMDSSourceManager. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a4cb243a75576056cc5146181a0a0bf45"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4cb243a75576056cc5146181a0a0bf45"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>COMPR_TYPE</b> { <b>NONE</b>, 
+<b>LZ4</b>
+ }</td></tr>
+<tr class="separator:a4cb243a75576056cc5146181a0a0bf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a607bbf94f9d393c4eebb0aae209f268d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a607bbf94f9d393c4eebb0aae209f268d">isAuthenticated</a> ()</td></tr>
@@ -146,6 +154,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>addCapability</b> (in
 <tr class="memitem:aeae72334aaa55f43bbe3da527596e9e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#aeae72334aaa55f43bbe3da527596e9e9">send</a> (System.String TopicName, byte[] appdata)</td></tr>
 <tr class="memdesc:aeae72334aaa55f43bbe3da527596e9e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an application data buffer on a given topic.  <a href="#aeae72334aaa55f43bbe3da527596e9e9">More...</a><br /></td></tr>
 <tr class="separator:aeae72334aaa55f43bbe3da527596e9e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a261d5ca602837d7f847f1048f9f44099"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a261d5ca602837d7f847f1048f9f44099"></a>
+byte[]&#160;</td><td class="memItemRight" valign="bottom"><b>compressBuffer</b> (byte[] input)</td></tr>
+<tr class="separator:a261d5ca602837d7f847f1048f9f44099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae621e5018f3876ce4af52d8c516b1de0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae621e5018f3876ce4af52d8c516b1de0"></a>
+byte[]&#160;</td><td class="memItemRight" valign="bottom"><b>decompressMsg</b> (<a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html">UMDSMessage</a> input)</td></tr>
+<tr class="separator:ae621e5018f3876ce4af52d8c516b1de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab38287131c436134ae2a67de2f244c62"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ab38287131c436134ae2a67de2f244c62">onEvent</a> (<a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html">UMDSMessage</a> msg)</td></tr>
 <tr class="memdesc:ab38287131c436134ae2a67de2f244c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event Notification function. This function is called when non-data events occur, E.G. Disconnection reported by the server. Messages passed to this callback may used cached objects. Applications must copy the content if they require processing the data on other threads. This should be overridden by applications. Expected message Types: LOSS DISCONNECT LOGIN_DENIED SERVER_STOPPED SOURCE_CREATE RECEIVER_CREATE SOURCE_DELETE RECEIVER_DELETE CONNECT LOGIN_COMPLETE LOGOUT_COMPLETE.  <a href="#ab38287131c436134ae2a67de2f244c62">More...</a><br /></td></tr>
 <tr class="separator:ab38287131c436134ae2a67de2f244c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,6 +182,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a338f3966de67e77d213e8f0401830abf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a338f3966de67e77d213e8f0401830abf"></a>
 const int&#160;</td><td class="memItemRight" valign="bottom"><b>CAPABILITIES_REQUEST_RESPONSE</b> = 0x1</td></tr>
 <tr class="separator:a338f3966de67e77d213e8f0401830abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9585fc2ac5e8511f96b08cdcf530aee1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9585fc2ac5e8511f96b08cdcf530aee1"></a>
+COMPR_TYPE&#160;</td><td class="memItemRight" valign="bottom"><b>compressionType</b> = COMPR_TYPE.NONE</td></tr>
+<tr class="separator:a9585fc2ac5e8511f96b08cdcf530aee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -486,7 +503,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>References <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ada1110a7d6d380ab0b36299369b7c656">com.latencybusters.umds.UMDSMessage.appmeta_data</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage_1_1MSG__TYPE.html#a265bbe3d7aefad0ad43cb830fe91eada">com.latencybusters.umds.UMDSMessage.MSG_TYPE.DISCONNECT</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfo.html#aaca9bb2205d2550970c7cbdb593905b0">com.latencybusters.umds.UMDSReceiverRecoveryInfo.getHighSequenceNumber()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfo.html#ab44bff5f743a144e4598b2e37298fd38">com.latencybusters.umds.UMDSReceiverRecoveryInfo.getLowSequenceNumber()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfo.html#ae3c1c50c0056a399f355e88477ee07d8">com.latencybusters.umds.UMDSReceiverRecoveryInfo.getSrcSessionId()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfo.html#a3d61ae351d83abff8d63050278965ace">com.latencybusters.umds.UMDSReceiverRecoveryInfo.getTopic()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a276fec395da3e91fcc3c6e82c24c6738">com.latencybusters.umds.UMDSMessage.low_seqnum</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ab62ca003c72a5c0f1f48d9dbbb5ae7e6">com.latencybusters.umds.UMDSMessage.seqnum</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#aca531d7f6308fff7f030e3d3523844f6">com.latencybusters.umds.UMDSMessage.status</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#aac9ffe3c82b4146295c7a4b503bb5c8e">com.latencybusters.umds.UMDSMessage.status_str</a>.</p>
+<p>References <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#adbb8d6162e1554dd959afaa87318b5c8">com.latencybusters.umds.UMDSMessage.appdata</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ada1110a7d6d380ab0b36299369b7c656">com.latencybusters.umds.UMDSMessage.appmeta_data</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage_1_1MSG__TYPE.html#a265bbe3d7aefad0ad43cb830fe91eada">com.latencybusters.umds.UMDSMessage.MSG_TYPE.DISCONNECT</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfo.html#aaca9bb2205d2550970c7cbdb593905b0">com.latencybusters.umds.UMDSReceiverRecoveryInfo.getHighSequenceNumber()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfo.html#ab44bff5f743a144e4598b2e37298fd38">com.latencybusters.umds.UMDSReceiverRecoveryInfo.getLowSequenceNumber()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfo.html#ae3c1c50c0056a399f355e88477ee07d8">com.latencybusters.umds.UMDSReceiverRecoveryInfo.getSrcSessionId()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfo.html#a3d61ae351d83abff8d63050278965ace">com.latencybusters.umds.UMDSReceiverRecoveryInfo.getTopic()</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a276fec395da3e91fcc3c6e82c24c6738">com.latencybusters.umds.UMDSMessage.low_seqnum</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ab62ca003c72a5c0f1f48d9dbbb5ae7e6">com.latencybusters.umds.UMDSMessage.seqnum</a>, <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#aca531d7f6308fff7f030e3d3523844f6">com.latencybusters.umds.UMDSMessage.status</a>, and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#aac9ffe3c82b4146295c7a4b503bb5c8e">com.latencybusters.umds.UMDSMessage.status_str</a>.</p>
 
 </div>
 </div>
@@ -515,7 +532,7 @@ Properties</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set an individual configuration setting. </p>
-<p>See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSDotNetAPI/umdsuser.tag:../UMDSUserGuide/" href="../UMDSUserGuide/umdsclient.html#clientconfigurationproperties">Client Configuration Properties</a>.</p>
+<p>See <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSDotNetAPI/umdsuser.tag:../UMDSUserGuide/" href="../UMDSUserGuide/umdsclient.html#clientconfigurationproperties">Client Configuration Properties</a>.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">UMDSException</td><td>the <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDS.html" title="Base functionality for UMDS clients. ">UMDS</a> exception</td></tr>

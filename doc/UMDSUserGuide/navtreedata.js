@@ -33,6 +33,12 @@ var NAVTREE =
         [ "UMDS TLS Authentication", "umdsclient.html#umdstlsauthentication", null ],
         [ "Configuring Encryption on Client", "umdsclient.html#configuringencryptiononclient", null ],
         [ "Configuring Encryption on Server", "umdsclient.html#configuringencryptiononserver", null ]
+      ] ],
+      [ "Client Compression", "umdsclient.html#clientcompression", null ],
+      [ "Log Handling", "umdsclient.html#loghandling", [
+        [ "Size-Based Log Rolling", "umdsclient.html#sizebasedlogrolling", null ],
+        [ "Time-Based Log Rolling", "umdsclient.html#timebasedlogrolling", null ],
+        [ "Combined Log Rolling", "umdsclient.html#combinedlogrolling", null ]
       ] ]
     ] ],
     [ "UMDS Example Client Applications", "umdsexampleclientapplications.html", [
@@ -54,7 +60,7 @@ var NAVTREE =
       [ "User Authentication", "umdsserver.html#userauthentication", null ],
       [ "Client Application Parameters", "umdsserver.html#clientapplicationparameters", null ],
       [ "Keep Alive Timers During Idle Periods", "umdsserver.html#keepalivetimersduringidleperiods", null ],
-      [ "Message Queue", "umdsserver.html#messagequeue", [
+      [ "Message Queues", "umdsserver.html#messagequeue", [
         [ "Per-Topic Message Queues", "umdsserver.html#pertopicmessagequeues", null ],
         [ "Configuring Message Queue Size", "umdsserver.html#configuringmessagequeuesize", null ],
         [ "Approximating Per-Queue Memory Use", "umdsserver.html#approximatingperqueuememoryuse", null ],
@@ -83,13 +89,13 @@ var NAVTREE =
     [ "UMDS Web Monitor", "umdswebmonitor.html", [
       [ "Main Menu", "umdswebmonitor.html#mainmenu", null ],
       [ "List Current Connections", "umdswebmonitor.html#listcurrentconnections", null ],
-      [ "Connection Details", "umdswebmonitor.html#connectiondetails", null ],
+      [ "Client Details", "umdswebmonitor.html#connectiondetails", null ],
       [ "Current Server Configuration File", "umdswebmonitor.html#currentserverconfigurationfile", null ],
       [ "Dump Current Memory Allocation", "umdswebmonitor.html#dumpcurrentmemoryallocation", null ],
       [ "Quit Server", "umdswebmonitor.html#quitserver", null ]
     ] ],
     [ "UMDS Server Configuration", "umdsserverconfiguration.html", [
-      [ "umdsd Configuration File", "umdsserverconfiguration.html#umdsdconfigurationfile", [
+      [ "UMDS Server Configuration File", "umdsserverconfiguration.html#umdsdconfigurationfile", [
         [ "UMDS Element \"<umds-daemon>\"", "umdsserverconfiguration.html#umdsxmlumdsdaemon", null ],
         [ "UMDS Element \"<daemon>\"", "umdsserverconfiguration.html#umdsxmldaemon", null ],
         [ "UMDS Element \"<tls>\"", "umdsserverconfiguration.html#umdsxmltls", null ],
@@ -121,6 +127,7 @@ var NAVTREE =
         [ "UMDS Element \"<can-stream>\"", "umdsserverconfiguration.html#umdsxmlcanstream", null ],
         [ "UMDS Element \"<can-send>\"", "umdsserverconfiguration.html#umdsxmlcansend", null ],
         [ "UMDS Element \"<client>\"", "umdsserverconfiguration.html#umdsxmlclient", null ],
+        [ "UMDS Element \"<compression>\"", "umdsserverconfiguration.html#umdsxmlcompression", null ],
         [ "UMDS Element \"<server-reconnect>\"", "umdsserverconfiguration.html#umdsxmlserverreconnect", null ],
         [ "UMDS Element \"<client-nodelay>\"", "umdsserverconfiguration.html#umdsxmlclientnodelay", null ],
         [ "UMDS Element \"<client-sndbuf>\"", "umdsserverconfiguration.html#umdsxmlclientsndbuf", null ],

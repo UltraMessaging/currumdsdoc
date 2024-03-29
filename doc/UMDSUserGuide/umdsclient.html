@@ -67,23 +67,23 @@ Server Connection&nbsp;&nbsp;<small><a href="#serverconnection">&lt;-</a></small
 <p>A UMDS Client application can create multiple server connections, which can be to the same UMDS Server or different UMDS Servers.</p>
 <ol>
 <li>
-<p class="startli">UMDS Client application creates a <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object.</p>
+<p class="startli">UMDS Client application creates a <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">UMDS Client application sets configuration options using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a955af4e5ea2e3bcbd26af5e8a7229734">setProperty()</a> method of the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object. At a minimum, the <a class="el" href="umdsclient.html#propertyserverlist">server-list</a> property must be supplied. See <a class="el" href="umdsclient.html#clientconfigurationproperties">Client Configuration Properties</a> for the full list of properties.</p>
+<p class="startli">UMDS Client application sets configuration options using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a955af4e5ea2e3bcbd26af5e8a7229734">setProperty()</a> method of the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object. At a minimum, the <a class="el" href="umdsclient.html#propertyserverlist">server-list</a> property must be supplied. See <a class="el" href="umdsclient.html#clientconfigurationproperties">Client Configuration Properties</a> for the full list of properties.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">UMDS Client initiates the TCP connection using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a913f8fda96a54f9a89dd7304fa1ff361">start()</a> method of the server connection object.</p>
+<p class="startli">UMDS Client initiates the TCP connection using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a913f8fda96a54f9a89dd7304fa1ff361">start()</a> method of the server connection object.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">UMDS Client logs into the server and receives configuration parameters. The application detects completion using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ad07549cd44fc874e5ed3a9a12ea59eaf">isAuthenticated()</a> method of the server connection object.</p>
+<p class="startli">UMDS Client logs into the server and receives configuration parameters. The application detects completion using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#ad07549cd44fc874e5ed3a9a12ea59eaf">isAuthenticated()</a> method of the server connection object.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">UMDS Client application creates sources (<a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html">UMDSSource</a> objects). and/or receivers (<a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html">UMDSReceiver</a> objects). Messages are sent and/or received using those objects.</p>
+<p class="startli">UMDS Client application creates sources (<a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html">UMDSSource</a> objects). and/or receivers (<a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html">UMDSReceiver</a> objects). Messages are sent and/or received using those objects.</p>
 <p class="endli"></p>
 </li>
 <li>
@@ -91,7 +91,7 @@ Server Connection&nbsp;&nbsp;<small><a href="#serverconnection">&lt;-</a></small
 <p class="endli"></p>
 </li>
 <li>
-When finished with all messaging, the UMDS Client closes the server connection using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a2a44ab9270f124a20289462f87d9865e">close()</a> method of the server connection object. </li>
+When finished with all messaging, the UMDS Client closes the server connection using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a2a44ab9270f124a20289462f87d9865e">close()</a> method of the server connection object. </li>
 </ol>
 <p>For a subscriber example application, see <a href="../umds_java_example/umdsreceive.java">umdsreceive.java</a> or <a href="../umds_dotnet_example/umdsreceive.cs">umdsreceive.cs</a>. For a publisher example application, see <a href="../umds_java_example/umdssend.java">umdssend.java</a> or <a href="../umds_dotnet_example/umdssend.cs">umdssend.cs</a>.</p>
 <p><br />
@@ -111,23 +111,23 @@ UMDS Server List&nbsp;&nbsp;<small><a href="#umdsserverlist">&lt;-</a></small></
 <p>Note that a client is never connected to more than one of these servers at the same time.</p>
 <p>Contrast this with <a class="el" href="umdsclient.html#connectingtomultipleservers">Connecting to Multiple Servers</a>.</p>
 <p>There is one more interesting use case related to the server list. Most client connection properties can be overridden by the server. Those overrides can be on an application or even a user basis. In particular, the server list can be overridden to redirect a client to another server.</p>
-<p>You might have a UMDS server that is used as the initial connection for all UMDS clients. The whole purpose of that server is to identify the application and user of the client, and override the server list property with a server (or server list) appropriate for that client. If a client's server list is overridden, the client will disconnect from that server and then reconnect to a server chosen from the new list.</p>
+<p>You might have a UMDS Server that is used as the initial connection for all UMDS clients. The whole purpose of that server is to identify the application and user of the client, and override the server list property with a server (or server list) appropriate for that client. If a client's server list is overridden, the client will disconnect from that server and then reconnect to a server chosen from the new list.</p>
 <p><br />
  </p>
 <h2><a class="anchor" id="connectingtomultipleservers"></a>
 Connecting to Multiple Servers&nbsp;&nbsp;<small><a href="#connectingtomultipleservers">&lt;-</a></small></h2>
-<p>A UMDS client can create multiple connections to different UMDS servers. This involves creating more than one <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object, and configuring each one with different server lists. These connections are independent; a receiver or source created in one does not imply that the same receiver or source is automatically created in the other. This technique is <b>not</b> used to provide redundancy or load sharing (see <a class="el" href="umdsclient.html#umdsserverlist">UMDS Server List</a>).</p>
+<p>A UMDS client can create multiple connections to different UMDS Servers. This involves creating more than one <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object, and configuring each one with different server lists. These connections are independent; a receiver or source created in one does not imply that the same receiver or source is automatically created in the other. This technique is <b>not</b> used to provide redundancy or load sharing (see <a class="el" href="umdsclient.html#umdsserverlist">UMDS Server List</a>).</p>
 <p>Instead, the following use cases are reasons for creating multiple server connections:</p>
 <ul>
 <li>
 <p class="startli"><b>Multiple, Unconnected UM TRDs</b>. Although rare, some users have multiple instances of UM which are not interconnected. Each instance consists a <a href="https://ultramessaging.github.io/currdoc/doc/Design/fundamentalconcepts.html#topicresolutiondomain">TRD</a>, or multiple TRDs connected with DROs. But the instances themselves are not routed to each other. No communication happens between these instances.</p>
-<p>For a client to exchange messages with both instances, separate UMDS servers must be deployed in each instance. A UMDS client can create separate connection objects and connect to each of them.</p>
+<p>For a client to exchange messages with both instances, separate UMDS Servers must be deployed in each instance. A UMDS client can create separate connection objects and connect to each of them.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli"><b>Streaming and Persistence</b>. A UMDS server can be configured either for streaming (the default) or for <a class="el" href="umdsclient.html#usingumdspersistence">persistence</a>. When configured for steaming, the UMDS server can receive messages from both streaming and persistent sources. However, when receiving from persistent sources, the persistence functionality is not used.</p>
-<p>A UMDS server configured for persistence will implement the limited UMDS persistence functionality. However, this server cannot receive messages from streaming sources.</p>
-<p>For a UMDS client to get persistence functionality for persisted sources, and still be able to receive messages from streaming sources, two UMDS servers need to be deployed. The UMDS client can create two connection objects and connect separately to the two servers.</p>
+<p class="startli"><b>Streaming and Persistence</b>. A UMDS Server can be configured either for streaming (the default) or for <a class="el" href="umdsclient.html#usingumdspersistence">persistence</a>. When configured for steaming, the UMDS Server can receive messages from both streaming and persistent sources. However, when receiving from persistent sources, the persistence functionality is not used.</p>
+<p>A UMDS Server configured for persistence will implement the limited UMDS persistence functionality. However, this server cannot receive messages from streaming sources.</p>
+<p>For a UMDS client to get persistence functionality for persisted sources, and still be able to receive messages from streaming sources, two UMDS Servers need to be deployed. The UMDS client can create two connection objects and connect separately to the two servers.</p>
 <p>Note that streaming and persisted sources should not use the same topic names. UMDS is not designed for use cases where streaming and persisted sources share the same topics.</p>
 <p class="endli">For more information, see <a class="el" href="umdsclient.html#umdspersistencedifferences">UMDS Persistence Differences</a>. </p>
 </li>
@@ -136,18 +136,18 @@ Connecting to Multiple Servers&nbsp;&nbsp;<small><a href="#connectingtomultiples
  </p>
 <h2><a class="anchor" id="clientconfigurationproperties"></a>
 Client Configuration Properties&nbsp;&nbsp;<small><a href="#clientconfigurationproperties">&lt;-</a></small></h2>
-<p>The UMDS server connection object, class <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a>, has properties that can be set by the client application. Unlike Ultra Messaging, the UMDS client does not read a file containing configuration options. Instead, the application must set properties using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a955af4e5ea2e3bcbd26af5e8a7229734">setProperty()</a> method of the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object.</p>
-<p>Properties should be set after the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object is created but before it is connected (with <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a913f8fda96a54f9a89dd7304fa1ff361">UMDSServerConnection.start()</a>).</p>
-<p>Note that most of these properties represent client <em>requests</em> to set an operating parameter. The UMDS server's configuration might restrict the client's ability to set these properties. See the child elements for the servers configuration element <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">&lt;client&gt;</a>. In the list below, those properties that can be controlled by the server are indicated by a link to the server's corresponding configuration element. Those properties without a link are purely controlled by the client.</p>
-<p>Here are the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> properties that can be set: </p><table class="doxtable">
+<p>The UMDS Server connection object, class <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a>, has properties that can be set by the client application. Unlike Ultra Messaging, the UMDS client does not read a file containing configuration options. Instead, the application must set properties using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a955af4e5ea2e3bcbd26af5e8a7229734">setProperty()</a> method of the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object.</p>
+<p>Properties should be set after the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object is created but before it is connected (with <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a913f8fda96a54f9a89dd7304fa1ff361">UMDSServerConnection.start()</a>).</p>
+<p>Note that most of these properties represent client <em>requests</em> to set an operating parameter. The UMDS Server's configuration might restrict the client's ability to set these properties. See the child elements for the servers configuration element <a class="el" href="umdsserverconfiguration.html#umdsxmlclient">&lt;client&gt;</a>. In the list below, those properties that can be controlled by the server are indicated by a link to the server's corresponding configuration element. Those properties without a link are purely controlled by the client.</p>
+<p>Here are the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> properties that can be set: </p><table class="doxtable">
 <tr>
 <th>Property </th><th>Description </th><th><p class="starttd">Default</p>
 <p class="endtd"><a class="anchor" id="propertyserverlist"></a></p>
 </th></tr>
 <tr>
-<td>server-list </td><td><p class="starttd">Comma-separated list of IP:Port addresses for one or more UMDS servers for the client to initially connect to. Using multiple servers provides redundancy. If the currently-connected server fails, the UMDS client will connect to another server in the list.</p>
+<td>server-list </td><td><p class="starttd">Comma-separated list of IP:Port addresses for one or more UMDS Servers for the client to initially connect to. Using multiple servers provides redundancy. If the currently-connected server fails, the UMDS client will connect to another server in the list.</p>
 <p>See <a class="el" href="umdsclient.html#umdsserverlist">UMDS Server List</a> for more information.</p>
-<p class="endtd">Note that the UMDS server is able to overwrite this after connection. See the server's configuration element <a class="el" href="umdsserverconfiguration.html#umdsxmlserverlist">&lt;server-list&gt;</a>. <br />
+<p class="endtd">Note that the UMDS Server is able to overwrite this after connection. See the server's configuration element <a class="el" href="umdsserverconfiguration.html#umdsxmlserverlist">&lt;server-list&gt;</a>. <br />
 EXAMPLE: <code> serverConn.setProperty("server-list", "10.29.0.1:12000,10.29.1.1:12000"); </code> </p>
 </td><td><p class="starttd">(none, must be specified)</p>
 <p class="endtd"><a class="anchor" id="propertyuser"></a></p>
@@ -173,15 +173,15 @@ EXAMPLE: <code> serverConn.setProperty("server-list", "10.29.0.1:12000,10.29.1.1
 <p class="endtd"><a class="anchor" id="propertyserverrcvbuf"></a></p>
 </td></tr>
 <tr>
-<td>server-rcvbuf </td><td>Specify the UMDS server's TCP's SO_RCVBUF (receive-side socket buffer size) in its connection to the client. See the server's configuration element <a class="el" href="umdsserverconfiguration.html#umdsxmlserverrcvbuf">&lt;server-rcvbuf&gt;</a>. </td><td><p class="starttd">65536 (bytes)</p>
+<td>server-rcvbuf </td><td>Specify the UMDS Server's TCP's SO_RCVBUF (receive-side socket buffer size) in its connection to the client. See the server's configuration element <a class="el" href="umdsserverconfiguration.html#umdsxmlserverrcvbuf">&lt;server-rcvbuf&gt;</a>. </td><td><p class="starttd">65536 (bytes)</p>
 <p class="endtd"><a class="anchor" id="propertyserversndbuf"></a></p>
 </td></tr>
 <tr>
-<td>server-sndbuf </td><td>Specify the UMDS server's TCP's SO_SNDBUF (send-side socket buffer size) in its connection to the client. <a class="el" href="umdsserverconfiguration.html#umdsxmlserversndbuf">&lt;server-sndbuf&gt;</a>. </td><td><p class="starttd">65536 (bytes)</p>
+<td>server-sndbuf </td><td>Specify the UMDS Server's TCP's SO_SNDBUF (send-side socket buffer size) in its connection to the client. <a class="el" href="umdsserverconfiguration.html#umdsxmlserversndbuf">&lt;server-sndbuf&gt;</a>. </td><td><p class="starttd">65536 (bytes)</p>
 <p class="endtd"><a class="anchor" id="propertyservernodelay"></a></p>
 </td></tr>
 <tr>
-<td>server-nodelay </td><td>Specify if the UMDS server's TCP connection to the client should set the TCP_NODELAY socket option, which disables Nagle's algorithm. See the server's configuration element <a class="el" href="umdsserverconfiguration.html#umdsxmlservernodelay">&lt;server-nodelay&gt;</a>. </td><td><p class="starttd">0 (Nagle is enabled)</p>
+<td>server-nodelay </td><td>Specify if the UMDS Server's TCP connection to the client should set the TCP_NODELAY socket option, which disables Nagle's algorithm. See the server's configuration element <a class="el" href="umdsserverconfiguration.html#umdsxmlservernodelay">&lt;server-nodelay&gt;</a>. </td><td><p class="starttd">0 (Nagle is enabled)</p>
 <p class="endtd"><a class="anchor" id="propertyserverreconnect"></a></p>
 </td></tr>
 <tr>
@@ -225,13 +225,13 @@ EXAMPLE: <code> serverConn.setProperty("server-list", "10.29.0.1:12000,10.29.1.1
 Authenticating Applications and Users&nbsp;&nbsp;<small><a href="#authenticatingapplicationsandusers">&lt;-</a></small></h2>
 <p>You can authenticate either UMDS Client applications or individual desktop users when they connect to the server. By default, UMDS automatically authenticates all clients during the connection phase.</p>
 <dl class="section warning"><dt>Warning</dt><dd>The UMDS authentication system is for identification purposes only. The password is intended to prevent <em>accidental</em> misidentification. It <b>NOT</b> intended to provide security. By default, passwords are transmitted across the network in cleartext, and the server stores passwords in cleartext. See the <a class="el" href="umdsclient.html#usingumdsclientencryption">Using UMDS Client Encryption</a> feature if you need a secure connection.</dd></dl>
-<p>You can embed user passwords in a UMDS Client application or provide users with a login prompt. UMDS does not provide a login prompt facility. If you choose to authenticate applications or users, the application must supply a <a class="el" href="umdsclient.html#propertypassword">password</a> property using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a955af4e5ea2e3bcbd26af5e8a7229734">setProperty()</a> method of the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object. For an example, view the example application <a href="../umds_java_example/umdssend.java">umdssend.java</a> and search for <code>svrconn.setProperty("password", password)</code>.</p>
-<p>If an application or desktop user requires authentication upon connection to the UMDS Server, set the application name, user name, and password in a Basic Authentication File. UMDS formats and transmits these parameters when requesting a connection.</p>
+<p>You can embed user passwords in a UMDS Client application or provide users with a login prompt. UMDS does not provide a login prompt facility. If you choose to authenticate applications or users, the application must supply a <a class="el" href="umdsclient.html#propertypassword">password</a> property using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a955af4e5ea2e3bcbd26af5e8a7229734">setProperty()</a> method of the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object. For an example, view the example application <a href="../umds_java_example/umdssend.java">umdssend.java</a> and search for <code>svrconn.setProperty("password", password)</code>.</p>
+<p>If an application or desktop user requires authentication upon connection to the UMDS Server, set the application name, user name, and password in a <a class="el" href="umdsserverconfiguration.html#basicauthenticationfile">Basic Authentication File</a>. UMDS formats and transmits these parameters when requesting a connection.</p>
 <p><br />
  </p>
 <h2><a class="anchor" id="assigningdifferentclientsettingstoyourapplication"></a>
 Assigning Different Client Settings to Your Application&nbsp;&nbsp;<small><a href="#assigningdifferentclientsettingstoyourapplication">&lt;-</a></small></h2>
-<p>If your application requires different operating parameters from the UMDS Server, set the application name and parameters in a Basic Authentication File. UMDS formats and transmits these parameters when requesting a connection.</p>
+<p>If your application requires different operating parameters from the UMDS Server, set the application name and parameters in a <a class="el" href="umdsserverconfiguration.html#basicauthenticationfile">Basic Authentication File</a>. UMDS formats and transmits these parameters when requesting a connection.</p>
 <p><br />
  </p>
 <h2><a class="anchor" id="applicationname"></a>
@@ -241,7 +241,7 @@ Application Name&nbsp;&nbsp;<small><a href="#applicationname">&lt;-</a></small><
  </p>
 <h1><a class="anchor" id="receiving"></a>
 Receiving&nbsp;&nbsp;<small><a href="#receiving">&lt;-</a></small></h1>
-<p>A UMDS Client application uses the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html">UMDSReceiver</a>. class to start a receiver object and subscribe to a topic. This creates a UMS proxy receiver object at the UMDS server to listen for topic messages from other Ultra Messaging applications, including other UMDS client applications. As the UMDS Server receives messages for that topic, the UMDS Server routes the message to the proper UMDS Client applications.</p>
+<p>A UMDS Client application uses the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html">UMDSReceiver</a>. class to start a receiver object and subscribe to a topic. This creates a UMS proxy receiver object at the UMDS Server to listen for topic messages from other Ultra Messaging applications, including other UMDS client applications. As the UMDS Server receives messages for that topic, the UMDS Server routes the message to the proper UMDS Client applications.</p>
 <p>In the following figure, a UMDS Client application subscribes to a topic. The UMDS Client application then receives a message on the topic from a remote Ultra Messaging sending application.</p>
 <div class="image">
 <img src="UMDS-rcv.png" alt="UMDS-rcv.png"/>
@@ -258,7 +258,7 @@ The server's UM proxy receiver receives messages, which the server forwards to t
  </p>
 <h1><a class="anchor" id="sending"></a>
 Sending&nbsp;&nbsp;<small><a href="#sending">&lt;-</a></small></h1>
-<p>A UMDS Client application uses <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#ac3929e182b4ba4ee1fff5a7482a27ea1">UMDSSource.send()</a>. to send messages on a topic to the UMDS server. The UMDS server then uses a proxy source to stream these messages.</p>
+<p>A UMDS Client application uses <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#ac3929e182b4ba4ee1fff5a7482a27ea1">UMDSSource.send()</a>. to send messages on a topic to the UMDS Server. The UMDS Server then uses a proxy source to stream these messages.</p>
 <p>The following figure shows a UMDS Client application sending a message to all receivers listening on the topic.</p>
 <div class="image">
 <img src="UMDS_Send.png" alt="UMDS_Send.png"/>
@@ -266,7 +266,7 @@ Sending&nbsp;&nbsp;<small><a href="#sending">&lt;-</a></small></h1>
  <p>A UMDS Client send performs the following steps.</p>
 <ol>
 <li>
-UMDS Client application uses <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#ac3929e182b4ba4ee1fff5a7482a27ea1">UMDSSource.send()</a>. to send a message to the UMDS Server. </li>
+UMDS Client application uses <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSSource.html#ac3929e182b4ba4ee1fff5a7482a27ea1">UMDSSource.send()</a>. to send a message to the UMDS Server. </li>
 <li>
 UMDS Server multicasts the message to the Ultra Messaging Backbone. </li>
 <li>
@@ -294,7 +294,7 @@ Request and Response Capability&nbsp;&nbsp;<small><a href="#requestandresponseca
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>Send Request </td><td>The UMDS server forwards the request across the UM network. </td><td><p class="starttd"></p>
+<td>Send Request </td><td>The UMDS Server forwards the request across the UM network. </td><td><p class="starttd"></p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
@@ -306,7 +306,7 @@ Request and Response Capability&nbsp;&nbsp;<small><a href="#requestandresponseca
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>Send Response(s) </td><td>The UMDS server forwards the response across the UM network. </td><td><p class="starttd">n/a</p>
+<td>Send Response(s) </td><td>The UMDS Server forwards the response across the UM network. </td><td><p class="starttd">n/a</p>
 <p class="endtd"></p>
 </td></tr>
 <tr>
@@ -314,32 +314,32 @@ Request and Response Capability&nbsp;&nbsp;<small><a href="#requestandresponseca
 <p class="endtd"></p>
 </td></tr>
 <tr>
-<td>Request Timeout </td><td><p class="starttd">Each request has its own timeout period. When the configured timeout expires on the UMDS server, the UMDS server sends a request timeout notification to the sending client's <code>onEvent</code> callback. The timeout notification indicates that the request is closed, and that the source will deliver no more responses for that particular request. Requests always time out regardless of the number of responses received. A sending client must send new requests if it is dissatisfied with the number of responses.</p>
-<p class="endtd">The server sends timeout notification messages to the sending client. Therefore, if the client disconnects from the server, the client cannot receive timeout notifications. When a client disconnects, the UMDS server cancels all outstanding requests without notification. If the client reconnects, the server does not send to the client any responses or timeout notifications for the requests that the client issued before it disconnected. </p>
+<td>Request Timeout </td><td><p class="starttd">Each request has its own timeout period. When the configured timeout expires on the UMDS Server, the UMDS Server sends a request timeout notification to the sending client's <code>onEvent</code> callback. The timeout notification indicates that the request is closed, and that the source will deliver no more responses for that particular request. Requests always time out regardless of the number of responses received. A sending client must send new requests if it is dissatisfied with the number of responses.</p>
+<p class="endtd">The server sends timeout notification messages to the sending client. Therefore, if the client disconnects from the server, the client cannot receive timeout notifications. When a client disconnects, the UMDS Server cancels all outstanding requests without notification. If the client reconnects, the server does not send to the client any responses or timeout notifications for the requests that the client issued before it disconnected. </p>
 </td><td>onEvent() </td></tr>
 </table>
 <p><br />
  </p>
 <h1><a class="anchor" id="usingumdslatejoin"></a>
 Using UMDS Late Join&nbsp;&nbsp;<small><a href="#usingumdslatejoin">&lt;-</a></small></h1>
-<p>The UMDS server can provide a "Late Join" service to UMDS clients. The Late Join feature allows a new subscriber to a topic to receive previously-sent messages prior to receiving "live" messages from the topic's sources. The UMDS Late Join feature is a simplification of the Ultra Messaging Late Join feature (see <a class="el" href="umdsclient.html#umdslatejoindifferences">UMDS Late Join Differences</a>).</p>
-<dl class="section note"><dt>Note</dt><dd>This section describes the "streaming receiver" Late Join feature, not "persistence". By default, UMDS does not participate in Persistence. If desired, UMDS can be configured to participate in Persistence; see <a class="el" href="umdsclient.html#usingumdspersistence">Using UMDS Persistence</a>. However, note that UMDS Late Join and UMDS Persistence cannot both be enabled. UMDS Late Join is a streaming feature, and a UMDS server configured for persistence does not work with streaming sources.</dd></dl>
+<p>The UMDS Server can provide a "Late Join" service to UMDS clients. The Late Join feature allows a new subscriber to a topic to receive previously-sent messages prior to receiving "live" messages from the topic's sources. The UMDS Late Join feature is a simplification of the Ultra Messaging Late Join feature (see <a class="el" href="umdsclient.html#umdslatejoindifferences">UMDS Late Join Differences</a>).</p>
+<dl class="section note"><dt>Note</dt><dd>This section describes the "streaming receiver" Late Join feature, not "persistence". By default, UMDS does not participate in Persistence. If desired, UMDS can be configured to participate in Persistence; see <a class="el" href="umdsclient.html#usingumdspersistence">Using UMDS Persistence</a>. However, note that UMDS Late Join and UMDS Persistence cannot both be enabled. UMDS Late Join is a streaming feature, and a UMDS Server configured for persistence does not work with streaming sources.</dd></dl>
 <div class="image">
 <img src="UMDS_LJ_flow.png" alt="UMDS_LJ_flow.png"/>
 </div>
  <p>With Late Join enabled, the first application that subscribes to a topic causes the UMDS Server to create a UM "proxy" receiver for that topic, which initiates a Late Join request to the UM source(s) for that topic. The UMDS Server also creates a message cache for the topic and stores all received messages there. The cache is a fixed size; once it fills, new messages will push out the oldest messages. The purpose of the cache is to provide efficient Late Join service to subsequent UMDS clients.</p>
-<p>During the initial late joining from the source, recovered messages will be forwarded to the UMDS client with the message's <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#adc1617b1310e1583279d911f4fca3543">recovered</a> flag set to true, indicating that the message is not "live". When the server's UM proxy receiver switches to live messages, those will be forwarded to the UMDS client with "recovered" set to false.</p>
+<p>During the initial late joining from the source, recovered messages will be forwarded to the UMDS client with the message's <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#adc1617b1310e1583279d911f4fca3543">recovered</a> flag set to true, indicating that the message is not "live". When the server's UM proxy receiver switches to live messages, those will be forwarded to the UMDS client with "recovered" set to false.</p>
 <p>The amount of recovery data made available to UMDS clients is normally limited by the smaller of: </p><ul>
 <li>
 The source's <a href="https://ultramessaging.github.io/currdoc/doc/Config/grplatejoin.html#retransmitretentionsizelimitsource">retransmit_retention_size_limit (source)</a>, </li>
 <li>
-The UMDS server's message cache size - see "message-cache-size" option of the <a class="el" href="umdsserverconfiguration.html#umdsreceivertopicoptions">UMDS Receiver Topic Options</a>. </li>
+The UMDS Server's message cache size - see "message-cache-size" option of the <a class="el" href="umdsserverconfiguration.html#umdsreceivertopicoptions">UMDS Receiver Topic Options</a>. </li>
 </ul>
-<p>When a second UMDS Client application subscribes to the same topic, it receives Late Join recovery from the UMDS Server message cache, not from the source's retention buffer. Those recovered messages will be forwarded to the UMDS client with the message's <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#adc1617b1310e1583279d911f4fca3543">recovered</a> flag set to true, indicating that the message is not "live". When the server switches to live messages, those will be forwarded to the UMDS client with "recovered" set to false.</p>
-<p>Note that if the UM source's retention size limit holds fewer messages than the UMDS server's message cache size, live messages from the source will populate the additional space in the server's message cache. Thus, subsequent UMDS receivers for the topic can recover more messages than are retained in the source's retention buffer.</p>
-<p>If there are multiple UM sources for the topic, the UMDS server will add messages from all sources to the same message cache. Thus, the number of recovered messages from a given source can be smaller than the message cache size.</p>
+<p>When a second UMDS Client application subscribes to the same topic, it receives Late Join recovery from the UMDS Server message cache, not from the source's retention buffer. Those recovered messages will be forwarded to the UMDS client with the message's <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#adc1617b1310e1583279d911f4fca3543">recovered</a> flag set to true, indicating that the message is not "live". When the server switches to live messages, those will be forwarded to the UMDS client with "recovered" set to false.</p>
+<p>Note that if the UM source's retention size limit holds fewer messages than the UMDS Server's message cache size, live messages from the source will populate the additional space in the server's message cache. Thus, subsequent UMDS receivers for the topic can recover more messages than are retained in the source's retention buffer.</p>
+<p>If there are multiple UM sources for the topic, the UMDS Server will add messages from all sources to the same message cache. Thus, the number of recovered messages from a given source can be smaller than the message cache size.</p>
 <p>By default, Late Join is disabled for UMDS Client receive applications. To configure UMDS Client receiving applications to use Late Join, you must at a minimum set the "use-late-join" option in the <a class="el" href="umdsserverconfiguration.html#umdsreceivertopicoptions">UMDS Receiver Topic Options</a> to 1, and set the "message-cache-size" option of the <a class="el" href="umdsserverconfiguration.html#umdsreceivertopicoptions">UMDS Receiver Topic Options</a>.</p>
-<p>The following example shows part of a umdsd configuration file that sets the options related to a UMDS Client receiving application that uses Late Join on topic <code>orderAW</code>.</p>
+<p>The following example shows part of a <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a> that sets the options related to a UMDS Client receiving application that uses Late Join on topic <code>orderAW</code>.</p>
 <pre>
 &lt;topic pattern="orderAW" type="direct"&gt;
   &lt;umds-attributes&gt;
@@ -360,7 +360,7 @@ The UMDS server's message cache size - see "message-cache-size" option of the <a
           value="10000" /&gt;
   &lt;/umds-attributes&gt;
 &lt;/topic&gt;
-</pre><dl class="section note"><dt>Note</dt><dd>To use the Late Join feature, the message cache type is configured to "normal" (the default). See <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">&lt;server&gt;</a>'s "message-cache-type" attribute.</dd></dl>
+</pre><dl class="section note"><dt>Note</dt><dd>To use the Late Join feature, the message cache type is configured to "normal" (the default). See <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">&lt;server&gt;</a>'s <b>"message-cache-type"</b> attribute.</dd></dl>
 <p><br />
  </p>
 <h2><a class="anchor" id="umdslatejoindifferences"></a>
@@ -373,7 +373,7 @@ UMDS Late Join Differences&nbsp;&nbsp;<small><a href="#umdslatejoindifferences">
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">A given topic's UMDS server's message cache is populated from all sources for that topic. The number of messages from a given source will depend on the message rates of the other sources for the same topic. A very active source can, in effect, monopolize the cache, resulting in few, if any, messages from other less-active sources. <br />
+<p class="startli">A given topic's UMDS Server's message cache is populated from all sources for that topic. The number of messages from a given source will depend on the message rates of the other sources for the same topic. A very active source can, in effect, monopolize the cache, resulting in few, if any, messages from other less-active sources. <br />
 <b>In contrast</b>, the UM late join retention buffer is implemented at each UM source, guaranteeing a certain amount of recoverable message data from each UM source.</p>
 <p class="endli"></p>
 </li>
@@ -385,7 +385,7 @@ The first UMDS subscriber for a given topic will receive its late join recovery 
  </p>
 <h2><a class="anchor" id="latejoinumdssources"></a>
 Late Join UMDS Sources&nbsp;&nbsp;<small><a href="#latejoinumdssources">&lt;-</a></small></h2>
-<p>You can enable Late Join for UMDS sources in the same manner as for standard Ultra Messaging sources. This must be done on the UMDS server via its configuration file. The following example excerpt from a umdsd configuration file shows how to enable Late Join for topic <code>orderAW</code>. The example also shows other relevant source Late Join options.</p>
+<p>You can enable Late Join for UMDS sources in the same manner as for standard Ultra Messaging sources. This must be done on the UMDS Server via its configuration file. The following example excerpt from a <a class="el" href="umdsserverconfiguration.html#umdsdconfigurationfile">UMDS Server Configuration File</a> shows how to enable Late Join for topic <code>orderAW</code>. The example also shows other relevant source Late Join options.</p>
 <pre>
 &lt;topic pattern="orderAW" type="direct"&gt;
   &lt;umds-attributes&gt;
@@ -417,12 +417,12 @@ In contrast, UMDS Late Join always attempts to recover a full message cache. </l
 <img src="UMDS_Persist_flow.png" alt="UMDS_Persist_flow.png"/>
 </div>
  <p>With Persistence enabled, the first application that subscribes to a topic causes the UMDS Server to create a UM "proxy" receiver for that topic, which registers with the UM Stores and starts a recovery operation of previously-sent messages. The UMDS Server also creates a message cache for the topic/session ID, and stores all received messages there. The cache is a fixed size; once it fills, new messages will push out the oldest messages. The purpose of the cache is to provide efficient recovery service to subsequent UMDS clients.</p>
-<p>During the initial persistence recovery from the Store, recovered messages will be forwarded to the UMDS client with the message's <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#adc1617b1310e1583279d911f4fca3543">recovered</a> flag set to true, indicating that the message is not "live". When the server's UM proxy receiver switches to live messages, those will be forwarded to the UMDS client with "recovered" set to false.</p>
-<p>When a second UMDS Client application subscribes to the same topic, it receives recovery data from the UMDS Server message cache, not from the Store. Those recovered messages will be forwarded to the UMDS client with the message's <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#adc1617b1310e1583279d911f4fca3543">recovered</a> flag set to true, indicating that the message is not "live". When the server switches to live messages, those will be forwarded to the UMDS client with "recovered" set to false.</p>
-<p>Central to UMDS's support for persistence is its use of message caches. This is very similar to the message caches used by UMSD's Late Join functionality (see <a class="el" href="umdsclient.html#usingumdslatejoin">Using UMDS Late Join</a>), but with an important difference: UMDS creates multiple caches for a given receiver corresponding to the different persistent sources joined. For example, if there are two persistent sources for topic "ABC", the UMDS server will create two independent message caches, one for each source. A persisted source's session ID is used as the key to differentiate it from other persisted sources for the same topic.</p>
-<p>To use UMDS Persistence, the UMDS server must be configured for persistence and the UMDS client must create persistent receivers using the class <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html">UMDSPersistentReceiver</a>. If an application needs to receive some persisted messages and some streaming messages, it will need to connect to two different UMDS servers, one configured for persistence and the other not.</p>
-<p>The steps in receiving a persisted message are largely the same as receiving a non-persisted message. See <a class="el" href="umdsclient.html#serverconnection">Server Connection</a>. However, instead of creating a <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html">UMDSReceiver</a> object, the client creates a <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html">UMDSPersistentReceiver</a> object.</p>
-<p>After the UMDSPersistentReceiver object is created, UMDS invokes an application callback (using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/interfacecom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfoCallback.html">UMDSReceiverRecoveryInfoCallback</a> object) when the receiver is associated with a persistent source. That callback provides persistence information related to that source, and allows the application to control recovery. If there is more than one persisted source for a receiver's topic, the callback will be invoked multiple times, once for each source. Each source can have different persistence information (session ID, low sequence number, etc.).</p>
+<p>During the initial persistence recovery from the Store, recovered messages will be forwarded to the UMDS client with the message's <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#adc1617b1310e1583279d911f4fca3543">recovered</a> flag set to true, indicating that the message is not "live". When the server's UM proxy receiver switches to live messages, those will be forwarded to the UMDS client with "recovered" set to false.</p>
+<p>When a second UMDS Client application subscribes to the same topic, it receives recovery data from the UMDS Server message cache, not from the Store. Those recovered messages will be forwarded to the UMDS client with the message's <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#adc1617b1310e1583279d911f4fca3543">recovered</a> flag set to true, indicating that the message is not "live". When the server switches to live messages, those will be forwarded to the UMDS client with "recovered" set to false.</p>
+<p>Central to UMDS's support for persistence is its use of message caches. This is very similar to the message caches used by UMSD's Late Join functionality (see <a class="el" href="umdsclient.html#usingumdslatejoin">Using UMDS Late Join</a>), but with an important difference: UMDS creates multiple caches for a given receiver corresponding to the different persistent sources joined. For example, if there are two persistent sources for topic "ABC", the UMDS Server will create two independent message caches, one for each source. A persisted source's session ID is used as the key to differentiate it from other persisted sources for the same topic.</p>
+<p>To use UMDS Persistence, the UMDS Server must be configured for persistence and the UMDS client must create persistent receivers using the class <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html">UMDSPersistentReceiver</a>. If an application needs to receive some persisted messages and some streaming messages, it will need to connect to two different UMDS Servers, one configured for persistence and the other not.</p>
+<p>The steps in receiving a persisted message are largely the same as receiving a non-persisted message. See <a class="el" href="umdsclient.html#serverconnection">Server Connection</a>. However, instead of creating a <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSReceiver.html">UMDSReceiver</a> object, the client creates a <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html">UMDSPersistentReceiver</a> object.</p>
+<p>After the UMDSPersistentReceiver object is created, UMDS invokes an application callback (using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/interfacecom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfoCallback.html">UMDSReceiverRecoveryInfoCallback</a> object) when the receiver is associated with a persistent source. That callback provides persistence information related to that source, and allows the application to control recovery. If there is more than one persisted source for a receiver's topic, the callback will be invoked multiple times, once for each source. Each source can have different persistence information (session ID, low sequence number, etc.).</p>
 <p>The primary job of the application's recovery callback is to decide which messages should be recovered. Unlike UM persistent receivers, UMDS does not attempt to remember where persistent receivers left off. Instead, the application is told the earliest sequence number available in the Store's message cache, and the application can override it to define where message recovery starts.</p>
 <p>See the example application <a href="../umds_java_example/umdspersistentreceive.java">umdspersistentreceive.java</a> or <a href="../umds_dotnet_example/umdspersistentreceive.cs">umdspersistentreceive.cs</a>.</p>
 <p><br />
@@ -436,18 +436,18 @@ Manage multiple message caches per topic, one cache per source. The source's ses
 <li>
 Manage recovery information callbacks to the UDMS client application. The application access persistence information by session ID. </li>
 <li>
-As messages are received, the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html">UMDSMessage</a> class contains the public member <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a38a8ba4ba40dbd9a1f726248a964f983">source_session_id</a> that indicates which source it came from. The application is responsible for keeping track of processed message sequence numbers (using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ab62ca003c72a5c0f1f48d9dbbb5ae7e6">seqnum</a> public member) on a topic/session_id basis. </li>
+As messages are received, the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html">UMDSMessage</a> class contains the public member <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a38a8ba4ba40dbd9a1f726248a964f983">source_session_id</a> that indicates which source it came from. The application is responsible for keeping track of processed message sequence numbers (using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ab62ca003c72a5c0f1f48d9dbbb5ae7e6">seqnum</a> public member) on a topic/session_id basis. </li>
 </ul>
 <p><br />
  </p>
 <h2><a class="anchor" id="configuringumdsserverforpersistence"></a>
 Configuring UMDS Server for Persistence&nbsp;&nbsp;<small><a href="#configuringumdsserverforpersistence">&lt;-</a></small></h2>
-<p>An instance (process) of the UMDS server can be configured to participate in UM persistence. If so, that server will not receive messages from a non-persisted source.</p>
-<p>On the other hand, if the UMDS server is configured for normal operation (not persistence), that server will be able to receive messages from both persisted and non-persisted sources. However, for persisted sources, the UMDS server will not "participate" in the persistence. I.e. the server will not be able to recover missed messages. A persisted source will be treated the same as a non-persisted source.</p>
-<p>If a client application needs to participate in persistence for some topics, but also wants to receive messages from non-persisted sources for other topics, two instances of the UMDS servers will need to be available: one configured for persistence and the other not.</p>
+<p>An instance (process) of the UMDS Server can be configured to participate in UM persistence. If so, that server will not receive messages from a non-persisted source.</p>
+<p>On the other hand, if the UMDS Server is configured for normal operation (not persistence), that server will be able to receive messages from both persisted and non-persisted sources. However, for persisted sources, the UMDS Server will not "participate" in the persistence. I.e. the server will not be able to recover missed messages. A persisted source will be treated the same as a non-persisted source.</p>
+<p>If a client application needs to participate in persistence for some topics, but also wants to receive messages from non-persisted sources for other topics, two instances of the UMDS Servers will need to be available: one configured for persistence and the other not.</p>
 <p>To configure a server for persistence, do the following: </p><ul>
 <li>
-<p class="startli">Set the "message-cache-type" attribute of the <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">UMDS Element "&lt;server&gt;"</a> to "source-session-id". For example: </p><pre>
+<p class="startli">Set the <b>"message-cache-type"</b> attribute of the <a class="el" href="umdsserverconfiguration.html#umdsxmlserver">UMDS Element "&lt;server&gt;"</a> to "source-session-id". For example: </p><pre>
 &lt;server message-cache-type="source-session-id" ... /&gt;
 </pre><p class="endli"></p>
 </li>
@@ -483,35 +483,35 @@ Set the "message-cache-deletion-delay" option in the <a class="el" href="umdsser
  </p>
 <h2><a class="anchor" id="transientreceivers"></a>
 Transient Receivers&nbsp;&nbsp;<small><a href="#transientreceivers">&lt;-</a></small></h2>
-<p>A common use case for UMDS persistence is called "transient receivers." In this use case, an application does not stay connected to the UMDS server for long periods of time. Instead, an application might connect to the server, create sources and persistent receivers, perform a limited set of transactions, and then disconnect. Many seconds or minutes might pass between connections.</p>
+<p>A common use case for UMDS persistence is called "transient receivers." In this use case, an application does not stay connected to the UMDS Server for long periods of time. Instead, an application might connect to the server, create sources and persistent receivers, perform a limited set of transactions, and then disconnect. Many seconds or minutes might pass between connections.</p>
 <p>In this use case, the application remembers the sequence number of the last message it received during its previous connection, and uses that to control recovery.</p>
-<p>Here is a sequence that describes the use case. Let's assume that the UMDS server is configured to hold 50 messages in its message cache.</p>
+<p>Here is a sequence that describes the use case. Let's assume that the UMDS Server is configured to hold 50 messages in its message cache.</p>
 <ol>
 <li>
-<p class="startli">The last time the client application was connected, it last received message number 100. At this point, the UMDS server's message cache contains 51-100.</p>
+<p class="startli">The last time the client application was connected, it last received message number 100. At this point, the UMDS Server's message cache contains 51-100.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">While the client application is disconnected, the source sends messages 101-110. At this point, the UMDS server's message cache contains 61-110.</p>
+<p class="startli">While the client application is disconnected, the source sends messages 101-110. At this point, the UMDS Server's message cache contains 61-110.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">The client application reconnects. When UMDS invokes the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/interfacecom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfoCallback.html">UMDSReceiverRecoveryInfoCallback</a> object, the application learns that the low sequence number in the message cache is 61. But the application remembers that its last received message was 100. So it overrides the low sequence number to 101.</p>
+<p class="startli">The client application reconnects. When UMDS invokes the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/interfacecom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfoCallback.html">UMDSReceiverRecoveryInfoCallback</a> object, the application learns that the low sequence number in the message cache is 61. But the application remembers that its last received message was 100. So it overrides the low sequence number to 101.</p>
 <p class="endli"></p>
 </li>
 <li>
 The Server delivers messages 101-110 to the client application, followed by any live messages sent by the source while the application is connected. </li>
 </ol>
-<p>Note that if there is more than one persistent source for a subscribed topic, each one will have its own independent sequence number. Each received message is delivered in a <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html">UMDSMessage</a> object. The <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a38a8ba4ba40dbd9a1f726248a964f983">source_session_id</a> public member indicates which source it came from. The application is responsible for keeping track of processed message sequence numbers (using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ab62ca003c72a5c0f1f48d9dbbb5ae7e6">seqnum</a> public member) on a topic/session_id basis. This allows the client to disconnect and reconnect and specify the starting point for recovery when the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/interfacecom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfoCallback.html">UMDSReceiverRecoveryInfoCallback</a> is invoked.</p>
+<p>Note that if there is more than one persistent source for a subscribed topic, each one will have its own independent sequence number. Each received message is delivered in a <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html">UMDSMessage</a> object. The <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a38a8ba4ba40dbd9a1f726248a964f983">source_session_id</a> public member indicates which source it came from. The application is responsible for keeping track of processed message sequence numbers (using the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ab62ca003c72a5c0f1f48d9dbbb5ae7e6">seqnum</a> public member) on a topic/session_id basis. This allows the client to disconnect and reconnect and specify the starting point for recovery when the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/interfacecom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfoCallback.html">UMDSReceiverRecoveryInfoCallback</a> is invoked.</p>
 <p>If the client application exits and restarts with no knowledge of its last received message, it can leave the low sequence number unchanged, and the server will deliver all messages stored in its message cache.</p>
 <p>The "message-cache-deletion-delay" option in the <a class="el" href="umdsserverconfiguration.html#umdsreceivertopicoptions">UMDS Receiver Topic Options</a> should be set to the maximum number of milliseconds that a transient receiver is expected to remain disconnected. If a server has no persistent client receivers for a given message cache for more than that time, UMDS will delete the message cache.</p>
-<p>If a UMDS client application subsequently creates a persistent receiver for that topic, the UMDS server will need to re-create the message cache, re-register with the UM Store, and recover messages from UM's persistence. This is not an error condition, but it introduces delays and inefficiency.</p>
+<p>If a UMDS client application subsequently creates a persistent receiver for that topic, the UMDS Server will need to re-create the message cache, re-register with the UM Store, and recover messages from UM's persistence. This is not an error condition, but it introduces delays and inefficiency.</p>
 <p><br />
  </p>
 <h2><a class="anchor" id="persistenceandserverfailover"></a>
 Persistence and Server Failover&nbsp;&nbsp;<small><a href="#persistenceandserverfailover">&lt;-</a></small></h2>
-<p>The UMDS persistence feature is also useful for recovering messages that were sent when a UMDS server fails and a client needs to switch to an alternate server. (Both servers must be configured for persistence.)</p>
-<p>When a UMDS client detects that its currently connected server has failed, it can fail over to a different configured server (see <a class="el" href="umdsclient.html#umdsserverlist">UMDS Server List</a>). As with <a class="el" href="umdsclient.html#transientreceivers">Transient Receivers</a>, the application keeps track of its last received message from each source. When it re-creates its proxy receiver, that new server will use UM's persistence to recover data from the UM Store. Then, a new set of recovery callbacks are made. The application should supply the next expected sequence number for each session ID, and the UMDS server will recover any missed messages.</p>
+<p>The UMDS persistence feature is also useful for recovering messages that were sent when a UMDS Server fails and a client needs to switch to an alternate server. (Both servers must be configured for persistence.)</p>
+<p>When a UMDS client detects that its currently connected server has failed, it can fail over to a different configured server (see <a class="el" href="umdsclient.html#umdsserverlist">UMDS Server List</a>). As with <a class="el" href="umdsclient.html#transientreceivers">Transient Receivers</a>, the application keeps track of its last received message from each source. When it re-creates its proxy receiver, that new server will use UM's persistence to recover data from the UM Store. Then, a new set of recovery callbacks are made. The application should supply the next expected sequence number for each session ID, and the UMDS Server will recover any missed messages.</p>
 <p><br />
  </p>
 <h2><a class="anchor" id="umdspersistencedifferences"></a>
@@ -523,7 +523,7 @@ UMDS Persistence Differences&nbsp;&nbsp;<small><a href="#umdspersistencedifferen
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">A UMDS server configured for persistence must be used <em>only</em> for persistent sources using a <a href="https://ultramessaging.github.io/currdoc/doc/UME/registrationidentifiers.html#managingregidswithsessionids">session ID</a>. A UM source that is not persisted with a session ID will generate an error and no messages will be accepted (see <a class="el" href="umdsclient.html#umdspersistenceusessessionids">UMDS Persistence uses Session IDs</a>). A UMDS client that creates a non-persistent receiver will be rejected (disconnected). <br />
+<p class="startli">A UMDS Server configured for persistence must be used <em>only</em> for persistent sources using a <a href="https://ultramessaging.github.io/currdoc/doc/UME/registrationidentifiers.html#managingregidswithsessionids">session ID</a>. A UM source that is not persisted with a session ID will generate an error and no messages will be accepted (see <a class="el" href="umdsclient.html#umdspersistenceusessessionids">UMDS Persistence uses Session IDs</a>). A UMDS client that creates a non-persistent receiver will be rejected (disconnected). <br />
 (In contrast, a UM receiver can be configured to accept both persistent and non-persistent sources.)</p>
 <p class="endli"></p>
 </li>
@@ -540,46 +540,47 @@ UMDS Persistence Differences&nbsp;&nbsp;<small><a href="#umdspersistencedifferen
 <li>
 The Store's <a href="https://ultramessaging.github.io/currdoc/doc/UME/persistencearchitecture.html#repositorythresholdsandlimits">UM Persistent Store's disk repository size</a>, </li>
 <li>
-The UMDS server's message cache size - see "message-cache-size" option of the <a class="el" href="umdsserverconfiguration.html#umdsreceivertopicoptions">UMDS Receiver Topic Options</a>. Note that a Store's disk repository can typically be made much larger than the UMDS server's message cache, since the latter is stored in memory. Thus, the server's message cache size is typically the limiting factor for the number of messages that can be recovered by UMDS persistent receivers. </li>
+The UMDS Server's message cache size - see "message-cache-size" option of the <a class="el" href="umdsserverconfiguration.html#umdsreceivertopicoptions">UMDS Receiver Topic Options</a>. Note that a Store's disk repository can typically be made much larger than the UMDS Server's message cache, since the latter is stored in memory. Thus, the server's message cache size is typically the limiting factor for the number of messages that can be recovered by UMDS persistent receivers. </li>
 </ul>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">Whereas an Ultra Messaging persistent subscriber acknowledges consumption of received message, the UMDS persistent subscriber does not. Thus, the UMDS server does not remember which message a subscriber last consumed. No attempt is made by UMDS to inform a restarted receiver the sequence number it should recover from. Instead, the receiver is informed of the oldest sequence number available in the Server.</p>
+<p class="startli">Whereas an Ultra Messaging persistent subscriber acknowledges consumption of received message, the UMDS persistent subscriber does not. Thus, the UMDS Server does not remember which message a subscriber last consumed. No attempt is made by UMDS to inform a restarted receiver the sequence number it should recover from. Instead, the receiver is informed of the oldest sequence number available in the Server.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">When a UMDS client creates a persistent receiver, a series of one or more handshakes is made with the UMDS server to associate the receiver with UM persistent sources of the desired topic. The application is informed of the oldest (lowest) sequence number stored in the server's message cache for each unique UM persisted source, and the application has the option of overriding that sequence number as its recovery starting place.</p>
+<p class="startli">When a UMDS client creates a persistent receiver, a series of one or more handshakes is made with the UMDS Server to associate the receiver with UM persistent sources of the desired topic. The application is informed of the oldest (lowest) sequence number stored in the server's message cache for each unique UM persisted source, and the application has the option of overriding that sequence number as its recovery starting place.</p>
 <p>However, due to the time required to handshake the sequence number, it is possible that the desired recovery starting sequence number is no longer in the server's message cache.</p>
 <p class="endli"></p>
 </li>
 <li>
-<p class="startli">UM Persistence leverages the UM Late Join functionality. UM persistent sources and receivers must be enabled for Late Join. In fact, if a UMDS server is configured for persistence, the UM proxy receiver in the server must be configured for Late Join.</p>
-<p>However, the UMDS persistence and Late Join features are implemented differently, and are not compatible with each other. UMDS Late Join is a streaming feature, and a UMDS server configured for persistence does not work with streaming sources.</p>
+<p class="startli">UM Persistence leverages the UM Late Join functionality. UM persistent sources and receivers must be enabled for Late Join. In fact, if a UMDS Server is configured for persistence, the UM proxy receiver in the server must be configured for Late Join.</p>
+<p>However, the UMDS persistence and Late Join features are implemented differently, and are not compatible with each other. UMDS Late Join is a streaming feature, and a UMDS Server configured for persistence does not work with streaming sources.</p>
 <p class="endli"></p>
 </li>
 <li>
 <p class="startli">UMDS's message cache lifetime is not coordinated with the UM Store's source repository lifetime. With UM persistence, when a persisted source exits, the Store will maintain the sources previously-sent messages until either the source returns, or until the repository's state lifetime expires. If the source does not return and the state lifetime expires, subsequent persistent receivers will not be able to recover messages sent by that source.</p>
-<p class="endli">However, the UMDS message cache lifetime is associated with UMDS client receiver interest. So long as at least one UMDS client has a receiver for a persisted topic, the UMDS server will maintain the message cache(s) for that topic's sources, even if those sources exit and their UM Store's state lifetimes expire. </p>
+<p class="endli">However, the UMDS message cache lifetime is associated with UMDS client receiver interest. So long as at least one UMDS client has a receiver for a persisted topic, the UMDS Server will maintain the message cache(s) for that topic's sources, even if those sources exit and their UM Store's state lifetimes expire. </p>
 </li>
 </ul>
 <p><br />
  </p>
 <h1><a class="anchor" id="usingumdsclientencryption"></a>
 Using UMDS Client Encryption&nbsp;&nbsp;<small><a href="#usingumdsclientencryption">&lt;-</a></small></h1>
-<p>UMDS supports encrypting the connection between the UMDS server and client. It makes use of TLS (<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a>), sometimes known by its older designation SSL (Secure Sockets Layer), which is a family of standard protocols and algorithms for securing TCP communication between a client and a server. TLS supports secure authentication (through certificates), data confidentiality (through encryption), and data integrity (ensuring data are not changed, removed, or added-to).</p>
+<p>UMDS supports encrypting the connection between the UMDS Server and client. It makes use of TLS (<a href="https://en.wikipedia.org/wiki/Transport_Layer_Security">Transport Layer Security</a>), sometimes known by its older designation SSL (Secure Sockets Layer), which is a family of standard protocols and algorithms for securing TCP communication between a client and a server. TLS supports secure authentication (through certificates), data confidentiality (through encryption), and data integrity (ensuring data are not changed, removed, or added-to).</p>
 <p>The implementation of UMDS's TLS leverages the UM feature <a href="https://ultramessaging.github.io/currdoc/doc/Design/umfeatures.html#encryptedtcp">Encrypted TCP</a>, but with some important differences:</p>
 <ul>
 <li>
-<p class="startli">Whereas UM requires an entire Topic Resolution Domain to be configured for encryption, UMDS's encryption is on a server basis. If a UMDS server is configured for encryption, all connecting clients must also be configured for encryption.</p>
+<p class="startli">Whereas UM requires an entire Topic Resolution Domain to be configured for encryption, UMDS's encryption is on a server basis. If a UMDS Server is configured for encryption, all connecting clients must also be configured for encryption.</p>
 <p class="endli"></p>
 </li>
 <li>
 Whereas UM only encrypts the data transports, leaving topic resolution in cleartext, UMDS encrypts its entire client/server connection. All traffic, both user data and internal control messages, are encrypted. </li>
 </ul>
 <p>Note that enabling UMDS client encryption does not enable encryption of the server's UM context. Both can be enabled, but they are independent. See <a href="https://ultramessaging.github.io/currdoc/doc/Design/umfeatures.html#encryptedtcp">Encrypted TCP</a> for UM context encryption.</p>
-<p>UMDS client encryption is enabled using configuration; no encryption APIs are needed. When the UMDS server is configure for encryption, all clients that connect to it must also be configured for encryption. Conversely, if the UMDS server is not configured for encryption, none of the clients may be configured for it.</p>
+<p>UMDS client encryption is enabled using configuration; no encryption APIs are needed. When the UMDS Server is configure for encryption, all clients that connect to it must also be configured for encryption. Conversely, if the UMDS Server is not configured for encryption, none of the clients may be configured for it.</p>
 <p>As with UM encryption, UMDS encryption is certificate based. Both the client and server must have a valid TLS certificate, and each must have the other's public key in its list of valid certificates.</p>
+<dl class="section note"><dt>Note</dt><dd>The <a class="el" href="umdsclient.html#clientcompression">Client Compression</a> feature is not compatible with encryption. If you enable encryption, do not enable compression.</dd></dl>
 <p><br />
  </p>
 <h2><a class="anchor" id="umdstlsauthentication"></a>
@@ -593,7 +594,7 @@ UMDS TLS Authentication&nbsp;&nbsp;<small><a href="#umdstlsauthentication">&lt;-
 <h2><a class="anchor" id="configuringencryptiononclient"></a>
 Configuring Encryption on Client&nbsp;&nbsp;<small><a href="#configuringencryptiononclient">&lt;-</a></small></h2>
 <p>To use the TLS encryption feature, both the client and the server must be configured for TLS.</p>
-<p>To configure the client, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a955af4e5ea2e3bcbd26af5e8a7229734">setProperty()</a> set the property <a class="el" href="umdsclient.html#propertyusetls">use-tls</a> to 1 using the method of the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object. For example: <code> serverConn.setProperty("use-tls", "1"); </code></p>
+<p>To configure the client, <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html#a955af4e5ea2e3bcbd26af5e8a7229734">setProperty()</a> set the property <a class="el" href="umdsclient.html#propertyusetls">use-tls</a> to 1 using the method of the <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsjavaapi.tag:../UMDSJavaAPI/" href="../UMDSJavaAPI/classcom_1_1latencybusters_1_1umds_1_1UMDSServerConnection.html">UMDSServerConnection</a> object. For example: <code> serverConn.setProperty("use-tls", "1"); </code></p>
 <p>If you are using Java and have a custom key store, you may specify it with the <a class="el" href="umdsclient.html#propertytruststore">truststore</a> property.</p>
 <p>If your trust store is password protected, you can supply the password with the <a class="el" href="umdsclient.html#propertytruststorepassword">truststore-password</a> property.</p>
 <p><br />
@@ -615,6 +616,104 @@ Configuring Encryption on Server&nbsp;&nbsp;<small><a href="#configuringencrypti
 <li>
 <a class="el" href="umdsserverconfiguration.html#umdsxmltrustedcertificates">UMDS Element "&lt;trusted-certificates&gt;"</a> </li>
 </ul>
+<p><br />
+ </p>
+<h1><a class="anchor" id="clientcompression"></a>
+Client Compression&nbsp;&nbsp;<small><a href="#clientcompression">&lt;-</a></small></h1>
+<p>UMDS supports compressing the connection between the UMDS Server and client. The primary purpose of compression is to reduce the bandwidth requirement, not to improve latency.</p>
+<ul>
+<li>
+Compression is configured on a UMDS Server basis. I.e. a server is either configured for compression or not (default is not). </li>
+<li>
+If a server is configured for compression, all clients must support compression, and must therefore be UMDS version 6.14 or above. </li>
+<li>
+If a server is not configured for compression, it can interoperate with UMDS clients running earlier versions of the UMDS client library. For example a 6.14 server not configured for compression can service UMDS 6.13.1 clients. </li>
+<li>
+A server configured for compression should not enable <a class="el" href="umdsclient.html#usingumdsclientencryption">encryption</a>; the features are not compatible. </li>
+</ul>
+<p>See <a class="el" href="umdsserverconfiguration.html#umdsxmlcompression">UMDS Element "&lt;compression&gt;"</a> for configuration information.</p>
+<p><br />
+ </p>
+<h1><a class="anchor" id="loghandling"></a>
+Log Handling&nbsp;&nbsp;<small><a href="#loghandling">&lt;-</a></small></h1>
+<p>By default, the UMDS Server's log file grows without bound for as long as it is running. If the server is restarted, it opens the log file in "append" mode and writes new logs to the end of the file. Thus, over time, the log file can become very large. (This "open with append" behavior is new as of UMDS version 6.14; see <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSUserGuide/umdsreleasenotes.tag:../UMDSReleaseNotes/" href="../UMDSReleaseNotes/umdsversion6_14.html#specialupgradeinstructionsfor6_14">Special Upgrade Instructions for 6.14</a>.)</p>
+<p>The <b>"frequency"</b> and <b>"size"</b> attributes for the <a class="el" href="umdsserverconfiguration.html#umdsxmllog">UMDS Element "&lt;log&gt;"</a> can be used to control the log file length. It does this by "rolling" the log file - closing the current one and creating a new one with a different name.</p>
+<p>With no log rolling, the log file created is exactly as specified by the &lt;log&gt; element. However, if any of the log rolling attributes are specified, the configured log file name is always appended by a numeric date/time stamp of the form: <code>".yyyy-mm-dd.hh.mm.dd"</code>. For example, the configuration: </p><pre class="fragment">&lt;log type="file" frequency="hourly"&gt;umds.log&lt;/log&gt;
+</pre><p> will create a log file line like this: </p><pre class="fragment">umds.log.2024-01-20.09-08-09
+</pre><p> This indicates that the log file was created on January 20, 2024 at 9:08:09.</p>
+<dl class="section note"><dt>Note</dt><dd>UM log file rolling does not delete old log files. It is still the user's responsibility to delete old log files that are no longer needed. Informatica recommends retaining at least a week's worth of log files.</dd></dl>
+<p><br />
+ </p>
+<h2><a class="anchor" id="sizebasedlogrolling"></a>
+Size-Based Log Rolling&nbsp;&nbsp;<small><a href="#sizebasedlogrolling">&lt;-</a></small></h2>
+<p>By using the <b>"size"</b> attribute to the <a class="el" href="umdsserverconfiguration.html#umdsxmllog">UMDS Element "&lt;log&gt;"</a> the UMDS Server will close the current log file and start a new one automatically when it has written the specified number of megabytes (1,000,000 bytes) to the log file. The new log file will be named according to the date/time that the server creates the new log file.</p>
+<p><br />
+ </p>
+<h2><a class="anchor" id="timebasedlogrolling"></a>
+Time-Based Log Rolling&nbsp;&nbsp;<small><a href="#timebasedlogrolling">&lt;-</a></small></h2>
+<p>By using the <b>"frequency"</b> attribute to the <a class="el" href="umdsserverconfiguration.html#umdsxmllog">UMDS Element "&lt;log&gt;"</a> the UMDS Server will close the current log file and start a new one automatically at the specified interval. There are three valid values for the <b>"frequency"</b> attribute: </p><ul>
+<li>
+disable - do not roll the log file based on time (default). </li>
+<li>
+hourly - Roll log file when the UMDS Server has been running for a multiple of 60 minutes since it was started. </li>
+<li>
+daily - Roll log file when the UMDS Server has been running for a multiple of 24 hours since it was started. </li>
+</ul>
+<p>Note that the log file rolling does not happen at the <em>start</em> of the hour/day. For example, let's say your server's configuration contains: </p><pre class="fragment">&lt;log type="file" frequency="hourly"&gt;umds.log&lt;/log&gt;
+</pre><p> and it is started on January 1, 2024 at 9:08:09 AM. The initial log file will be named: </p><pre class="fragment">umds.log.2024-01-20.09-08-09
+</pre><p> Then, 60 minutes later, the server will be ready to roll the log file (close the current and create a new one).</p>
+<p>However, the server will not actually roll the log file until the server generates its next log message. Let's say a client connects at 10:28:03, which generates a log message. This will trigger the UMDS Server to close the <code>"umds.log.2024-01-20.09-08-09"</code> file and create <code>"umds.log.2024-01-20.10-28-03"</code>.</p>
+<p>Note that you can even have instances where one or more time periods contain no log files at all. In the above example, the server will be ready to roll the log file at 11:28:03. However, if the UMDS Server has nothing to log for three hours, there will be no log file for the 11 o-clock hour or the 12 o-clock hour. log would be at 11:28:03.</p>
+<p><br />
+ </p>
+<h2><a class="anchor" id="combinedlogrolling"></a>
+Combined Log Rolling&nbsp;&nbsp;<small><a href="#combinedlogrolling">&lt;-</a></small></h2>
+<p>By using both the <b>"size"</b> and <b>"frequency"</b> attributes of the <a class="el" href="umdsserverconfiguration.html#umdsxmllog">UMDS Element "&lt;log&gt;"</a> the UMDS Server will close the current log file and start a new one automatically when it has written the specified number of megabytes (1,000,000 bytes) to the log file or at the specified interval. The new log file will be named according to the date/time that the server creates the new log file.</p>
+<p>For example, let's say your server's configuration contains: </p><pre class="fragment">&lt;log type="file" size="1" frequency="hourly"&gt;umds.log&lt;/log&gt;
+</pre><p> and it is started on January 1, 2024 at 9:08:09 AM. The initial log file will be named: </p><pre class="fragment">umds.log.2024-01-20.09-08-09
+</pre><p>For a quickly-growing log file, the file will roll each time 1 megabyte of log messages are written. For a slowly-growing log file, the file will roll after the hourly interval.</p>
+<p><br />
+<br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+ <br />
+</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.11-->

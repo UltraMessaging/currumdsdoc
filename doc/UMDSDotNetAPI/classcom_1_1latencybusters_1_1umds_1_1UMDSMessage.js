@@ -8,6 +8,7 @@ var classcom_1_1latencybusters_1_1umds_1_1UMDSMessage =
     [ "appdata", "classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#adbb8d6162e1554dd959afaa87318b5c8", null ],
     [ "appmeta_data", "classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ada1110a7d6d380ab0b36299369b7c656", null ],
     [ "appmetadata_present", "classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#acd0139e1e8d278c9b0200ad2c081c2f1", null ],
+    [ "compress_orig_data_len", "classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ab459b419006fdb31f0614a9783e31bc7", null ],
     [ "low_seqnum", "classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#a276fec395da3e91fcc3c6e82c24c6738", null ],
     [ "recovered", "classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#aa37f6b3c0c17164eb2492e8fb741b836", null ],
     [ "requestID", "classcom_1_1latencybusters_1_1umds_1_1UMDSMessage.html#ac988c6cec23eb0ae214933b18e91064b", null ],

@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2005-2019 Informatica Corporation  Permission is granted to licensees to use
+(C) Copyright 2005,2024 Informatica Inc.  Permission is granted to licensees to use
 or alter this software for any purpose, including commercial applications,
 according to the terms laid out in the Software License Agreement.
 
@@ -352,6 +352,8 @@ void umdsd_dmon_msg_handler(const char *buffer, int size)
 			printf("  User messages tossed for age:  %"PRIu64"\n",COND_SWAP64(msg_swap, record->user_msgs_tossed_for_age));
 			printf(" User messages tossed for size:  %"PRIu64"\n",COND_SWAP64(msg_swap, record->user_msgs_tossed_for_size));
 			printf("                 Messages lost:  %"PRIu64"\n",COND_SWAP64(msg_swap, record->msgs_lost));
+			printf("Messages tossed for total size:  %"PRIu64"\n",COND_SWAP64(msg_swap, record->user_msgs_tossed_for_total_size));
+			printf("   Bytes tossed for total size:  %"PRIu64"\n",COND_SWAP64(msg_swap, record->user_bytes_tossed_for_total_size));
 
 		}
 		break;

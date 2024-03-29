@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1UMDSDisconnectException.html#a777d52b91663f613724d97d5e88c19c3":[2,0,0,0,0,0,4,0],
+"classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1UMDSException.html":[2,0,0,0,0,0,5],
+"classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1UMDSException.html#a0534b8402d8ddabdf265dd1bd8ab65a2":[2,0,0,0,0,0,5,3],
+"classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1UMDSException.html#a27924232c7fd632452a2c7be120e4080":[2,0,0,0,0,0,5,4],
 "classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1UMDSException.html#aaa528bf53ff6377711937bbc3502115e":[2,0,0,0,0,0,5,2],
 "classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1UMDSException.html#ac93fff763d9a076ad976f63c367de6c7":[2,0,0,0,0,0,5,0],
 "classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1UMDSException.html#ad87da9fdeba86dc7878602eba1c48387":[2,0,0,0,0,0,5,1],

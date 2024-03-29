@@ -21,7 +21,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"namespacecom.html"
+"classcom_1_1latencybusters_1_1umds_1_1UMDS_1_1UMDSPermissionsException.html#a1938afca7584133cb75265c0b51cd2f9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

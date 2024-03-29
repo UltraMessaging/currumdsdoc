@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">UMDS .NET API
-   &#160;<span id="projectnumber">6.13.1</span>
+   &#160;<span id="projectnumber">6.14</span>
    </div>
   </td>
  </tr>
@@ -114,7 +114,7 @@ Object&#160;</td><td class="memItemRight" valign="bottom"><b>getReceiverRecovery
 <div class="textblock"><p>Class to receive persisted messages by a topic or wildcard receiver. </p>
 <p>There are three callbacks to the user code: persistence information, non-message events, and messages. To use this class, applications typically define their own class derived from this one, providing their own <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a92e3c6b2f52efe645c9fd0728b29d5c3" title="Message Delivery function. This is called to deliver messages to the application. ...">onMessage()</a> and <a class="el" href="classcom_1_1latencybusters_1_1umds_1_1UMDSPersistentReceiver.html#a6a9ea4c9ff490ec347030e197ed8f21d" title="Event Notification function. This function is called when non-data events occur, E.G. Loss reported by the server. ">onEvent()</a> functions. UMDS will call those methods asynchronously as needed.</p>
 <p>In addition, a persistence recovery information callback is available. Applications define their own callback class derived from the <a class="el" href="interfacecom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfoCallback.html">UMDSReceiverRecoveryInfoCallback</a> template. When the UMDS associates a persistent Ultra Messaging source with this client receiver, it invokes the <a class="el" href="interfacecom_1_1latencybusters_1_1umds_1_1UMDSReceiverRecoveryInfoCallback.html#ae78c0139a7462244d7042a0f82f80fc1" title="Callback method for giving applications access to persistence related information. ">UMDSReceiverRecoveryInfoCallback::setReceiverRecoverySequenceNumber()</a> method to give the application access to persistence information.</p>
-<p>For more information, see <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.13.1_RC2/doc/UMDSDotNetAPI/umdsuser.tag:../UMDSUserGuide/" href="../UMDSUserGuide/umdsclient.html#usingumdspersistence">Using UMDS Persistence</a>. </p>
+<p>For more information, see <a class="elRef" doxygen="/29W/Amun/home/jenkins/backup_exclude.1/rc/UMDS_6.14_RC4/doc/UMDSDotNetAPI/umdsuser.tag:../UMDSUserGuide/" href="../UMDSUserGuide/umdsclient.html#usingumdspersistence">Using UMDS Persistence</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aefe12cba8c691d73d9cff0770d6bfd22"></a>
 <div class="memitem">
